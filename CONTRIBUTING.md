@@ -20,8 +20,9 @@ You may also wish to take a look at
 
 ## Ideas and Feedback
 
-Please use [Heroku Cloud Native Buildpacks discussions](#discussions) to
-provide feedback, request enhancements, or discuss ideas.
+Please use
+[Heroku Cloud Native Buildpacks discussions](https://github.com/heroku/buildpacks/discussions)
+to provide feedback, request enhancements, or discuss ideas.
 
 ## Issues, Feature Requests, and Bug Reports
 
@@ -59,7 +60,8 @@ request to the appropriate buildpack repository:
 - [heroku/python](https://github.com/heroku/buildpacks-python/pulls)
 - [heroku/ruby](https://github.com/heroku/buildpacks-ruby/pulls)
 
-For non-trivial changes, consider [opening an issue](#issues) to discuss it
+For non-trivial changes, consider
+[opening an issue](#issues-feature-requests-and-bug-reports) to discuss it
 first instead.
 
 ## Code of Conduct
@@ -67,5 +69,5 @@ Please follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## License
 By contributing your code, you agree to license your contribution under the
-terms of our project [LICENSE](LICENSE.txt) and to sign the
+terms of our project [LICENSE](LICENSE) and to sign the
 [Salesforce CLA](https://cla.salesforce.com/sign-cla).
