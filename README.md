@@ -1,21 +1,21 @@
-<h1 align="center">
+# Heroku Cloud Native Buildpacks
+<p align="center">
   <img alt="Heroku Cloud Native Buildpacks Logo" src="./logo.png" height="100px">
-</h1>
+</p>
 
-## What are Heroku Buildpacks?
+## What are Heroku Cloud Native Buildpacks?
 
-Heroku Buildpacks create a production ready container image for your app with a single command, without the need to write a Dockerfile or configuring a complex build system. 
+Heroku Cloud Native Buildpacks create a production ready container image for your app with a single command, without the need to write a Dockerfile or configuring a complex build system. 
 
-Heroku Buildpacks implement the [Cloud Native Buildpacks specification](https://buildpacks.io/) and are free and open-source software. They can be used independently of the Heroku platform.
+Heroku Cloud Native Buildpacks implement the [Cloud Native Buildpacks specification](https://buildpacks.io/) (CNB) and are free and open-source software. They can be used independently of the Heroku platform.
 
 ### Philosophy
 
-Heroku buildpacks are written with the app developer in mind. We want it to be as easy and simple as possible to transform an app into an OCI image. 
-Our buildpacks are highly opinionated and apply industry best-practices without requiring additional configuration.
+Heroku CNBs are written with the app developer in mind. We want it to be as easy and simple as possible to transform an app into an OCI image. Our buildpacks are highly opinionated and apply industry best-practices without requiring additional configuration.
 
 ## Table of contents
 
-* [What are Heroku Buildpacks?](#what-are-heroku-buildpacks)
+* [What are Heroku Buildpacks?](#what-are-heroku-cloud-native-buildpacks)
   * [Philosophy](#philosophy)
 * [See it in action](#see-it-in-action)
   * [Prerequisites](#prerequisites)
