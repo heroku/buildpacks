@@ -1,6 +1,5 @@
 <h1 align="center">
-  <div>Heroku Buildpacks</div>
-  <img alt="" src="./logo.png">
+  <img alt="Heroku Cloud Native Buildpacks Logo" src="./logo.png" height="100px">
 </h1>
 
 ## What are Heroku Buildpacks?
