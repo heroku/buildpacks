@@ -27,6 +27,7 @@ Heroku CNBs are written with the app developer in mind. We want it to be as easy
 * [Supported Languages](#supported-languages)
 * [Associated Projects](#associated-projects)
   * [libcnb.rs](#libcnbrs)
+  * [Builder images](#builder-images)
 
 ## See it in action
 
@@ -81,6 +82,10 @@ Each supported ecosystem has its own Git repository where all related buildpacks
 
 Heroku buildpacks are implemented in Rust. We developed and open-sourced a framework for writing Cloud Native Buildpacks in Rust called libcnb.rs.
 You can find [the repository on GitHub](https://github.com/heroku/libcnb.rs).
+
+### Builder Images
+
+A CNB builder image is a packaged set of buildpacks, base images and a lifecycle binary that orchestrates the build process. You can find [Heroku's CNB Builder Images here](https://github.com/heroku/cnb-builder-images).
 
 [go-repository]: https://github.com/heroku/buildpacks-go
 [jvm-repository]: https://github.com/heroku/buildpacks-jvm
