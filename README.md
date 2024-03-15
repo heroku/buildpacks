@@ -28,6 +28,7 @@ Heroku CNBs are written with the app developer in mind. We want it to be as easy
 * [Associated Projects](#associated-projects)
   * [libcnb.rs](#libcnbrs)
   * [Builder images](#builder-images)
+  * [Procfile buildpack](#procfile-buildpack)
 
 ## See it in action
 
@@ -86,6 +87,10 @@ You can find [the repository on GitHub](https://github.com/heroku/libcnb.rs).
 ### Builder Images
 
 A CNB builder image is a packaged set of buildpacks, base images and a lifecycle binary that orchestrates the build process. You can find [Heroku's CNB Builder Images here](https://github.com/heroku/cnb-builder-images).
+
+### Procfile Buildpack
+
+Our Cloud Native Procfile Buildpack is available [here on GitHub as well](https://github.com/heroku/buildpacks-procfile).
 
 [go-repository]: https://github.com/heroku/buildpacks-go
 [jvm-repository]: https://github.com/heroku/buildpacks-jvm
