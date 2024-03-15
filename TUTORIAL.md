@@ -1,7 +1,7 @@
 # Cloud Native Buildpack Tutorial 
 Build a Node.js application image in 5 minutes, no Dockerfile required.
 
-At the end of this tutorial, you'll have a working [OCI image](https://opencontainers.org/) of a Node.js application that can run locally. You will learn about the Cloud Native Buildpack (CNB) ecosystem, and how to utilize the [pack cli](https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/) to build images without the need to write or maintain a Dockerfile.
+At the end of this tutorial, you'll have a working [OCI image](https://opencontainers.org/) of a Node.js application that can run locally. You will learn about the Cloud Native Buildpack (CNB) ecosystem, and how to utilize the [pack CLI](https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/) to build images without the need to write or maintain a Dockerfile.
 
 ## Install the pack CLI
 
@@ -347,7 +347,7 @@ We are actively working on our Cloud Native Buildpacks and want to hear about yo
 
 Language support is provided by individual buildpacks that are shipped with the builder. The above example uses the `heroku/nodejs` buildpack which is [visible on GitHub](https://github.com/heroku/buildpacks-nodejs). When you execute `pack build` with a builder, every buildpack has the opportunity to "detect" if it should execute against that project. The `heroku/nodejs` buildpack looks for a `package.json` in the root of the project and if found, knows how to detect a node version and install dependencies.
 
-In addition to this auto-detection behavior, you can specify buildpacks through the `--buildpack` flag with the `pack` cli or through a [project.toml](https://buildpacks.io/docs/for-app-developers/how-to/build-inputs/specify-buildpacks/) file at the root of your application.
+In addition to this auto-detection behavior, you can specify buildpacks through the `--buildpack` flag with the `pack` CLI or through a [project.toml](https://buildpacks.io/docs/for-app-developers/how-to/build-inputs/specify-buildpacks/) file at the root of your application.
 
 For example, if you wanted to install both Node.js and Python you could create a `project.toml` file in the root of your application:
 
