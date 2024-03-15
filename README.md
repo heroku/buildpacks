@@ -53,7 +53,7 @@ pack build my-app-image --builder heroku/builder:22 --path node-js-getting-start
 
 ### Tutorial
 
-We also have a more in-depth tutorial available. It can be found in the [Heroku Buildpacks repository](https://github.com/heroku/buildpacks). 
+We also have a more in-depth tutorial available. It can be found in the [`TUTORIAL.md` file](TUTORIAL.md).
 
 ## Discussions
 
