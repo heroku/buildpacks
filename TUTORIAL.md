@@ -189,7 +189,7 @@ Successfully built image my-image-name
 Verify that you see “Successfully built image my-image-name” at the end of the output. And verify that the image is present locally:
 
 ```
-$ docker image ls  --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
+$ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
 16d18262dd4c   my-image-name             latest
 ```
 
@@ -264,7 +264,7 @@ Here's a quick breakdown of that command we just ran:
 - `-p 9292:9292` Publishes a container's port(s) to the host. This is what allows requests from your machine to be received by the container.
 - `my-image-name` The name of the image you want to use for the application.
 
-So far, we've downloaded an application via git and run a single command `pack build` to generate an image, and then we can use that image as if it was generated via a Dockerfile via the `docker  run` command.
+So far, we've downloaded an application via git and run a single command `pack build` to generate an image, and then we can use that image as if it was generated via a Dockerfile via the `docker run` command.
 
 In addition to running the image as a web server, you can access the container's terminal interactively. In a new terminal window try running this command:
 
