@@ -1,6 +1,6 @@
 # Heroku Cloud Native Buildpacks
 <p align="center">
-  <img alt="Heroku Cloud Native Buildpacks Logo" src="./logo.png" height="100px">
+  <img alt="Heroku Cloud Native Buildpacks Logo" src="./logo.png" width="100%">
 </p>
 
 ## What are Heroku Cloud Native Buildpacks?
