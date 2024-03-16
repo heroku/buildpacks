@@ -55,7 +55,7 @@ pack build my-app-image --builder heroku/builder:22 --path node-js-getting-start
 
 ### Tutorial
 
-We also have a more in-depth tutorial available. It can be found in the [`TUTORIAL.md` file](TUTORIAL.md).
+Check out our [hands-on tutorial](TUTORIAL.md) to learn more about how our buildpacks can help you create production ready container images.
 
 ## Discussions
 
