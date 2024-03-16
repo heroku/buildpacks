@@ -5,7 +5,7 @@
 
 ## What are Heroku Cloud Native Buildpacks?
 
-Heroku Cloud Native Buildpacks create a production ready container image for your app with a single command, without the need to write a Dockerfile or configuring a complex build system. 
+Heroku Cloud Native Buildpacks can help you create a production ready container image for your app with a single command, without the need to write a Dockerfile or configuring a complex build system. 
 
 Heroku Cloud Native Buildpacks implement the [Cloud Native Buildpacks specification](https://buildpacks.io/) (CNB) and are free and open-source software. They can be used independently of the Heroku platform.
 
