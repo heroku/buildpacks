@@ -5,7 +5,7 @@
 
 ## What are Heroku Cloud Native Buildpacks?
 
-Heroku Cloud Native Buildpacks create a production ready container image for your app with a single command, without the need to write a Dockerfile or configuring a complex build system. 
+Heroku Cloud Native Buildpacks, now in preview, can help you create a production ready container image for your app with a single command, without the need to write a Dockerfile or configuring a complex build system.
 
 Heroku Cloud Native Buildpacks implement the [Cloud Native Buildpacks specification](https://buildpacks.io/) (CNB) and are free and open-source software. They can be used independently of the Heroku platform.
 
@@ -27,6 +27,8 @@ Heroku CNBs are written with the app developer in mind. We want it to be as easy
 * [Supported Languages](#supported-languages)
 * [Associated Projects](#associated-projects)
   * [libcnb.rs](#libcnbrs)
+  * [Builder images](#builder-images)
+  * [Procfile buildpack](#procfile-buildpack)
 
 ## See it in action
 
@@ -53,7 +55,7 @@ pack build my-app-image --builder heroku/builder:22 --path node-js-getting-start
 
 ### Tutorial
 
-We also have a more in-depth tutorial available. It can be found in the [`TUTORIAL.md` file](TUTORIAL.md).
+Check out our [hands-on tutorial](TUTORIAL.md) to learn more about how our buildpacks can help you create production-ready container images.
 
 ## Discussions
 
@@ -81,6 +83,14 @@ Each supported ecosystem has its own Git repository where all related buildpacks
 
 Heroku buildpacks are implemented in Rust. We developed and open-sourced a framework for writing Cloud Native Buildpacks in Rust called libcnb.rs.
 You can find [the repository on GitHub](https://github.com/heroku/libcnb.rs).
+
+### Builder Images
+
+A CNB builder image is a packaged set of buildpacks, [base images](https://github.com/heroku/base-images) and a lifecycle binary that orchestrates the build process. You can find [Heroku's CNB Builder Images here](https://github.com/heroku/cnb-builder-images).
+
+### Procfile Buildpack
+
+Our Procfile Cloud Native Buildpack is available [here on GitHub as well](https://github.com/heroku/buildpacks-procfile).
 
 [go-repository]: https://github.com/heroku/buildpacks-go
 [jvm-repository]: https://github.com/heroku/buildpacks-jvm
