@@ -86,7 +86,7 @@ You can find [the repository on GitHub](https://github.com/heroku/libcnb.rs).
 
 ### Builder Images
 
-A CNB builder image is a packaged set of buildpacks, base images and a lifecycle binary that orchestrates the build process. You can find [Heroku's CNB Builder Images here](https://github.com/heroku/cnb-builder-images).
+A CNB builder image is a packaged set of buildpacks, [base images](https://github.com/heroku/base-images) and a lifecycle binary that orchestrates the build process. You can find [Heroku's CNB Builder Images here](https://github.com/heroku/cnb-builder-images).
 
 ### Procfile Buildpack
 
