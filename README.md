@@ -90,7 +90,7 @@ A CNB builder image is a packaged set of buildpacks, [base images](https://githu
 
 ### Procfile Buildpack
 
-Our Cloud Native Procfile Buildpack is available [here on GitHub as well](https://github.com/heroku/buildpacks-procfile).
+Our Procfile Cloud Native Buildpack is available [here on GitHub as well](https://github.com/heroku/buildpacks-procfile).
 
 [go-repository]: https://github.com/heroku/buildpacks-go
 [jvm-repository]: https://github.com/heroku/buildpacks-jvm
