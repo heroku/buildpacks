@@ -3,15 +3,22 @@
   <img alt="Heroku Cloud Native Buildpacks Logo" src="./logo.png" width="100%">
 </p>
 
-## What are Heroku Cloud Native Buildpacks?
+Create a production-ready container image for your application with a [single command](TUTORIAL.md); no Dockerfile required. [Try Heroku Cloud Native Buildpacks today](TUTORIAL.md).
 
-Heroku Cloud Native Buildpacks, [now in preview](https://blog.heroku.com/heroku-cloud-native-buildpacks), can help you create a production ready container image for your app with a single command, without the need to write a Dockerfile or configuring a complex build system.
+## What is a Cloud Native Buildpack?
 
-Heroku Cloud Native Buildpacks implement the [Cloud Native Buildpacks specification](https://buildpacks.io/) (CNB) and are free and open-source software. They can be used independently of the Heroku platform.
+In 2012, Heroku introduced the world to the declarative build system now known as [classic buildpacks](https://blog.heroku.com/buildpacks). Twelve years later, we've joined forces with the Cloud Native Compute Foundation (CNCF) to bring the next evolution in building reliable and consistent images to everyone with [Cloud Native Buildpacks](https://buildpacks.io).
+
+Cloud Native Buildpacks (CNBs) are an [open specification for building and running container images](https://buildpacks.io/) by the CNCF. Heroku Cloud Native Buildpacks implement the CNB spec, are open-source, can be used independently of the Heroku platform, and are [available now as a preview](https://blog.heroku.com/heroku-cloud-native-buildpacks).
 
 ### Philosophy
 
-Heroku CNBs are written with the app developer in mind. We want it to be as easy and simple as possible to transform an app into an OCI image. Our buildpacks are highly opinionated and apply industry best-practices without requiring additional configuration.
+While a Dockerfile is procedural, CNBs are declarative. Give us your application, and we'll give you an image that can run it. Don't believe us? [Try it out today](TUTORIAL.md).
+
+We believe:
+Building OCI images shouldn't be a pain.
+Developers should spend time writing application code, not endless container configurations.
+Community standards and build experiences that **just work** like you expect them to.
 
 ## Table of contents
 
@@ -22,7 +29,6 @@ Heroku CNBs are written with the app developer in mind. We want it to be as easy
     * [Docker](#docker)
     * [pack](#pack)
   * [Create the app image](#create-the-app-image)
-  * [Tutorial](#tutorial)
 * [Discussions](#discussions)
 * [Supported Languages](#supported-languages)
 * [Associated Projects](#associated-projects)
@@ -32,40 +38,47 @@ Heroku CNBs are written with the app developer in mind. We want it to be as easy
 
 ## See it in action
 
-In this section we will use Heroku's Buildpacks to transform a Node.js app into a container image. The process for other languages is identical, you are encouraged to try it with your own app!
+This section will use Heroku's Buildpacks to transform a Node.js app into a container image. The process for other languages is identical; you are encouraged to try it with your application!
 
 ### Prerequisites
 
 #### Docker
+
 If you don't have it already, you need to install Docker. Refer to the Docker documentation on how to install it for your operating system: https://docs.docker.com/engine/install/
 
 #### pack
 
-To run our buildpack locally, we will use `pack`, a tool maintained by the Cloud Native Buildpacks project to support the use of buildpacks. Find their documentation about installing it here: https://buildpacks.io/docs/install-pack/
+To run our buildpack locally, we will use `pack`, a tool maintained by the Cloud Native Buildpacks project. Follow their documentation to [install the pack CLI](https://buildpacks.io/docs/install-pack/).
 
 ### Create the app image
 
-First, we need an app to transform into an image. We use [Heroku's "getting started" app for Node.js](https://github.com/heroku/node-js-getting-started), but any other app that uses a supported ecosystem will work. We can clone the repository like so: `git clone https://github.com/heroku/node-js-getting-started.git`. 
+> [!NOTE]
+> For a full hands-on getting started experience [follow our getting started tutorial](TUTORIAL.md).
 
-Then, we can run the following command to build our app image - no additional steps needed! The required buildpacks for your app will be detected automatically.
+First, we need an application to produce an image. We will use [Heroku's getting started app for Node.js](https://github.com/heroku/node-js-getting-started), but any other app that uses a supported ecosystem will work. Clone the application:
 
 ```
-pack build my-app-image --builder heroku/builder:22 --path node-js-getting-started
+$ git clone https://github.com/heroku/node-js-getting-started.git
+$ cd node-js-getting-started
 ```
 
-### Tutorial
+In your application directory, run the `pack build` command. No additional steps are needed! The required buildpacks for your app will be detected automatically:
 
-Check out our [hands-on tutorial](TUTORIAL.md) to learn more about how our buildpacks can help you create production-ready container images.
+```
+$ pack build my-app-image --builder heroku/builder:22 --path .
+```
+
+Once the image is built, you can run it with the tools you're already comfortable with, like the `docker` CLI, for a demonstration of how [read out getting started tutorial](TUTORIAL.md).
 
 ## Discussions
 
-Overarching discussions about the Heroku Buildpacks project happen on GitHub in the [discussions tab of this repository](https://github.com/heroku/buildpacks/discussions). Feel free to open a new discussion if you have any questions, feedback or other input - we want to hear from you!
+We want to provide great user experiences and can only do that with your help. Please try our Cloud Native Buildpacks and let us know how it went. What went well? What could be better?  Let us know on GitHub in the [discussions tab of this repository](https://github.com/heroku/buildpacks/discussions). Feel free to open a new discussion if you have any questions, feedback, or other input - we want to hear from you!
 
-To view and report issues that are specific to a language ecosystem, see the issue tracker links in the ["Supported Languages" section](#supported-languages).  
+To view and report issues that are specific to a language ecosystem, see the issue tracker links in the ["Supported Languages" section](#supported-languages).
 
 ## Supported Languages
 
-Each supported ecosystem has its own Git repository where all related buildpacks are bundled. Language specific issues are tracked in their respective repositories.
+Each supported ecosystem has a Git repository where all related buildpacks are bundled. Language-specific issues are tracked in their respective repositories.
 
 | Name    | Repository                             | Issue Tracker           | Buildpack Registry                                                                               |
 |---------|----------------------------------------|-------------------------|--------------------------------------------------------------------------------------------------|
@@ -81,16 +94,17 @@ Each supported ecosystem has its own Git repository where all related buildpacks
 
 ### libcnb.rs
 
-Heroku buildpacks are implemented in Rust. We developed and open-sourced a framework for writing Cloud Native Buildpacks in Rust called libcnb.rs.
-You can find [the repository on GitHub](https://github.com/heroku/libcnb.rs).
+Heroku buildpacks are implemented in Rust for speed, safety, and security. We developed and open-sourced a framework for writing Cloud Native Buildpacks in Rust called [libcnb.rs](https://github.com/heroku/libcnb.rs).
+
+You can use [libcnb.rs](https://github.com/heroku/libcnb.rs) to implement your own Cloud Native Buildpacks.
 
 ### Builder Images
 
-A CNB builder image is a packaged set of buildpacks, [base images](https://github.com/heroku/base-images) and a lifecycle binary that orchestrates the build process. You can find [Heroku's CNB Builder Images here](https://github.com/heroku/cnb-builder-images).
+A CNB builder image is a packaged set of buildpacks, [base images](https://github.com/heroku/base-images), and a lifecycle binary for orchestrating the build process. Find [Heroku's CNB Builder Images here](https://github.com/heroku/cnb-builder-images).
 
 ### Procfile Buildpack
 
-Our Procfile Cloud Native Buildpack is available [here on GitHub as well](https://github.com/heroku/buildpacks-procfile).
+A `Procfile` is a [Heroku standard for declaring process types on your application](https://devcenter.heroku.com/articles/procfile). Our Procfile Cloud Native Buildpack brings this great Heroku experience to the Cloud Native world, and the source is available [here on GitHub as well](https://github.com/heroku/buildpacks-procfile).
 
 [go-repository]: https://github.com/heroku/buildpacks-go
 [jvm-repository]: https://github.com/heroku/buildpacks-jvm
