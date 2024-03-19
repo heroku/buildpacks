@@ -61,7 +61,7 @@ Check out our [hands-on tutorial](TUTORIAL.md) to learn more about how our build
 
 Overarching discussions about the Heroku Buildpacks project happen on GitHub in the [discussions tab of this repository](https://github.com/heroku/buildpacks/discussions). Feel free to open a new discussion if you have any questions, feedback or other input - we want to hear from you!
 
-To view and report issues that are specific to a language ecosystem, see the issue tracker links in the ["Supported Languages" section](#supported-languages).  
+To view and report issues that are specific to a language ecosystem, see the issue tracker links in the [Supported Languages](#supported-languages) section below.  
 
 ## Supported Languages
 
