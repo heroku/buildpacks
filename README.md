@@ -45,7 +45,11 @@ To run our buildpack locally, we will use `pack`, a tool maintained by the Cloud
 
 ### Create the app image
 
-First, we need an app to transform into an image. We use [Heroku's "getting started" app for Node.js](https://github.com/heroku/node-js-getting-started), but any other app that uses a supported ecosystem will work. We can clone the repository like so: `git clone https://github.com/heroku/node-js-getting-started.git`. 
+First, we need an app to transform into an image. We use [Heroku's "getting started" app for Node.js](https://github.com/heroku/node-js-getting-started), but any other app that uses a supported ecosystem will work. We can clone the repository like so:
+
+```
+git clone https://github.com/heroku/node-js-getting-started.git
+``` 
 
 Then, we can run the following command to build our app image - no additional steps needed! The required buildpacks for your app will be detected automatically.
 
