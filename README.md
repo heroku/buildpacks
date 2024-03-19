@@ -72,7 +72,7 @@ Once the image is built, you can run it with the tools you're already comfortabl
 
 ## Discussions
 
-We want to provide great user experiences and can only do that with your help. Please try our Cloud Native Buildpacks and let us know how it went. What went well? What could be better?  Let us know on GitHub in the [discussions tab of this repository](https://github.com/heroku/buildpacks/discussions). Feel free to open a new discussion if you have any questions, feedback, or other input - we want to hear from you!
+We want to provide great user experiences and can only do that with your help. Please try our Cloud Native Buildpacks and let us know how it went. What went well? What could be better? Let us know on GitHub in the [discussions tab of this repository](https://github.com/heroku/buildpacks/discussions)!
 
 To view and report issues that are specific to a language ecosystem, see the issue tracker links in the ["Supported Languages" section](#supported-languages).
 
