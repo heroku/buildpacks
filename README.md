@@ -7,7 +7,7 @@ Create a production-ready container image for your application with a [single co
 
 ## What is a Cloud Native Buildpack?
 
-In 2012, Heroku introduced the world to the declarative build system now known as [classic buildpacks](https://blog.heroku.com/buildpacks). Twelve years later, we've joined forces with the Cloud Native Compute Foundation (CNCF) to bring the next evolution in building reliable and consistent images to everyone with [Cloud Native Buildpacks](https://buildpacks.io).
+Twelve years ago, Heroku introduced the world to the declarative build system known as [buildpacks](https://blog.heroku.com/buildpacks). Since then, we've joined forces with the Cloud Native Computing Foundation (CNCF) to bring the next evolution in building reliable and consistent images to everyone with [Cloud Native Buildpacks](https://buildpacks.io).
 
 Cloud Native Buildpacks (CNBs) are an [open specification for building and running container images](https://buildpacks.io/) by the CNCF. Heroku Cloud Native Buildpacks implement the CNB spec, are open-source, can be used independently of the Heroku platform, and are [available now as a preview](https://blog.heroku.com/heroku-cloud-native-buildpacks).
 
