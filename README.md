@@ -13,12 +13,12 @@ Cloud Native Buildpacks (CNBs) are an [open specification for building and runni
 
 ### Philosophy
 
-While a Dockerfile is procedural, CNBs are declarative. Give us your application, and we'll give you an image that can run it. Don't believe us? [Try it out today](TUTORIAL.md).
+Heroku CNBs are written with the app developer in mind. We want it to be as easy and simple as possible to transform an app into an OCI image. While a Dockerfile is procedural, CNBs are declarative. Give us your application, and we'll give you an image that can run it. Don't believe us? [Try it out today](TUTORIAL.md).
 
 We believe:
-Building OCI images shouldn't be a pain.
-Developers should spend time writing application code, not endless container configurations.
-Community standards and build experiences that **just work** like you expect them to.
+- Building OCI images shouldn't be a pain.
+- Developers should spend time writing application code, not endless container configurations.
+-Community standards and build experiences that **just work** like you expect them to.
 
 ## Table of contents
 
