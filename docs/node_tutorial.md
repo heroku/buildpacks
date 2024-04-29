@@ -253,7 +253,7 @@ $ docker run -it --rm --env PORT=9292 -p 9292:9292 my-image-name
 
 Now when you visit http://localhost:9292 you should see a working web application:
 
-![Screenshot of Heroku's Node.js getting started app](nodejs-getting-started-screenshot.png)
+![Screenshot of Heroku's Node.js getting started app](assets/images/nodejs-getting-started-screenshot.png)
 
 Here's a quick breakdown of that command we just ran:
 

@@ -502,7 +502,7 @@ $ docker run -it --rm --env PORT=9292 -p 9292:9292 my-image-name
 
 Now when you visit http://localhost:9292 you should see a working web application:
 
-![Screenshot of http://localhost:9292/](tmp/rundoc_screenshots/screenshot_1.png)
+![Screenshot of http://localhost:9292/](assets/images/ruby-getting-started-screenshot.png)
 Don't forget to stop the docker container when you're done.
 
 
