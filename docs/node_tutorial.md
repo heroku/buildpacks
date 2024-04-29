@@ -1,4 +1,4 @@
-# Cloud Native Buildpack Tutorial 
+# Cloud Native Buildpack Tutorial
 Build a Node.js application image in 5 minutes, no Dockerfile required.
 
 At the end of this tutorial, you'll have a working [OCI image](https://opencontainers.org/) of a Node.js application that can run locally. You will learn about the Cloud Native Buildpack (CNB) ecosystem, and how to utilize the [pack CLI](https://buildpacks.io/docs/for-platform-operators/how-to/integrate-ci/pack/) to build images without the need to write or maintain a Dockerfile.
@@ -37,7 +37,7 @@ The current default builder is heroku/builder:22
 ## What is a builder?
 
 > [!NOTE]
-> Skip ahead if you want to build the application first and get into the details later. You won't need to 
+> Skip ahead if you want to build the application first and get into the details later. You won't need to
 > know about builders for the rest of this tutorial.
 
 In short, a builder is a delivery mechanism for buildpacks. A builder contains references to base images and individual buildpacks. A base image contains the operating system and system dependencies. Buildpacks are the components that will configure an image to run your application, that’s where the bulk of the logic lives and why the project is called “Cloud Native Buildpacks” and not “Cloud Native Builders.”
@@ -78,7 +78,7 @@ This output shows the various buildpacks that represent the different languages 
 
 ## Download an example Node.js application
 
-How do you configure a CNB? Give them an application. While Dockerfile is procedural, buildpacks, are declarative. A buildpack will determine what your application needs to function by inspecting the code on disk. 
+How do you configure a CNB? Give them an application. While Dockerfile is procedural, buildpacks, are declarative. A buildpack will determine what your application needs to function by inspecting the code on disk.
 
 For this example, we're using a pre-built Node.js application. Download it now:
 
@@ -94,7 +94,7 @@ $ ls
 Procfile        README.md        app.json        index.js        package-lock.json    package.json        public            test.js            views
 ```
 
-Now build an image named `my-image-name` by executing the `heroku/builder:22` against the application by running the 
+Now build an image named `my-image-name` by executing the `heroku/builder:22` against the application by running the
 `pack build` command:
 
 ```
@@ -399,4 +399,4 @@ This is the Procfile of the Node.js getting started guide:
 web: npm start
 ```
 
-By including this file and using `heroku/procfile` buildpack, your application will receive a default web process that calls `npm start`. You can configure this behavior by changing the contents of that file. 
+By including this file and using `heroku/procfile` buildpack, your application will receive a default web process that calls `npm start`. You can configure this behavior by changing the contents of that file.

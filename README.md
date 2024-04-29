@@ -3,7 +3,7 @@
   <img alt="Heroku Cloud Native Buildpacks Logo" src="./logo.png" width="100%">
 </p>
 
-Create a production-ready container image for your application with a [single command](TUTORIAL.md); no Dockerfile required. [Try Heroku Cloud Native Buildpacks today](TUTORIAL.md).
+Create a production-ready container image for your application with a [single command](docs/node_tutorial.md); no Dockerfile required. [Try Heroku Cloud Native Buildpacks today](docs/node_tutorial.md).
 
 ## What is a Cloud Native Buildpack?
 
@@ -13,7 +13,7 @@ Cloud Native Buildpacks (CNBs) are an [open specification for building and runni
 
 ### Philosophy
 
-Heroku CNBs are written with the app developer in mind. We want it to be as easy and simple as possible to transform an app into an OCI image. While a Dockerfile is procedural, CNBs are declarative. Give us your application, and we'll give you an image that can run it. Don't believe us? [Try it out today](TUTORIAL.md).
+Heroku CNBs are written with the app developer in mind. We want it to be as easy and simple as possible to transform an app into an OCI image. While a Dockerfile is procedural, CNBs are declarative. Give us your application, and we'll give you an image that can run it. Don't believe us? [Try it out today](docs/node_tutorial.md).
 
 We believe:
 - Building OCI images shouldn't be a pain.
@@ -53,7 +53,7 @@ To run our buildpack locally, we will use `pack`, a tool maintained by the Cloud
 ### Create the app image
 
 > [!NOTE]
-> For a full hands-on getting started experience [follow our getting started tutorial](TUTORIAL.md).
+> For a full hands-on getting started experience [follow our getting started tutorial](docs/node_tutorial.md).
 
 First, we need an application to produce an image. We will use [Heroku's getting started app for Node.js](https://github.com/heroku/node-js-getting-started), but any other app that uses a supported ecosystem will work. Clone the application:
 
@@ -67,7 +67,7 @@ In your application directory, run the `pack build` command. No additional steps
 $ pack build my-app-image --builder heroku/builder:22 --path node-js-getting-started
 ```
 
-Once the image is built, you can run it with the tools you're already comfortable with, like the `docker` CLI, for a demonstration of how [read out getting started tutorial](TUTORIAL.md).
+Once the image is built, you can run it with the tools you're already comfortable with, like the `docker` CLI, for a demonstration of how [read out getting started tutorial](docs/node_tutorial.md).
 
 ## Discussions
 
