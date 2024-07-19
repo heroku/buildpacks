@@ -1,0 +1,20 @@
+current directory: /home/runner/work/buildpacks/buildpacks/.rundoc-workspace/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+/opt/hostedtoolcache/Ruby/3.3.2/x64/bin/ruby extconf.rb
+checking for onig_region_memsize() in ruby.h... yes
+checking for rb_reg_onig_match() in ruby.h... yes
+creating Makefile
+
+current directory: /home/runner/work/buildpacks/buildpacks/.rundoc-workspace/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20240719-3576-fla9hv sitelibdir\=./.gem.20240719-3576-fla9hv clean
+
+current directory: /home/runner/work/buildpacks/buildpacks/.rundoc-workspace/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20240719-3576-fla9hv sitelibdir\=./.gem.20240719-3576-fla9hv
+compiling strscan.c
+linking shared-object strscan.so
+
+current directory: /home/runner/work/buildpacks/buildpacks/.rundoc-workspace/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20240719-3576-fla9hv sitelibdir\=./.gem.20240719-3576-fla9hv install
+/usr/bin/install -c -m 0755 strscan.so ./.gem.20240719-3576-fla9hv
+
+current directory: /home/runner/work/buildpacks/buildpacks/.rundoc-workspace/vendor/bundle/ruby/3.3.0/gems/strscan-3.1.0/ext/strscan
+make DESTDIR\= sitearchdir\=./.gem.20240719-3576-fla9hv sitelibdir\=./.gem.20240719-3576-fla9hv clean

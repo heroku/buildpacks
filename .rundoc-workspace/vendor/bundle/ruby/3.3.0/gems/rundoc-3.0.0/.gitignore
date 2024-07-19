@@ -1,0 +1,17 @@
+test/fixtures/**/*/rundoc_output/
+test/fixtures/**/*/rundoc_failure/
+test/fixtures/**/*/project/
+test/fixtures/**/*/tmp/
+test/fixtures/**/*/myapp/
+
+coverage/
+
+*.gem
+
+.DS_Store
+Gemfile.lock
+.env
+
+# IDEs
+.idea/
+.vscode/
