@@ -15,7 +15,7 @@ Ensure that it is installed correctly:
 
 ```
 $ pack --version
-0.33.2+git-f2cffc4.build-5562
+0.35.0+git-f6b450f.build-6065
 ```
 
 ## Configure the default pack builder
@@ -23,15 +23,15 @@ $ pack --version
 Once `pack` is installed, the only configuration you'll need for this tutorial is to set a default builder:
 
 ```
-$ pack config default-builder heroku/builder:22
-Builder heroku/builder:22 is now the default builder
+$ pack config default-builder heroku/builder:24
+Builder heroku/builder:24 is now the default builder
 ```
 
 You can view your default builder at any time:
 
 ```
 $ pack config default-builder
-The current default builder is heroku/builder:22
+The current default builder is heroku/builder:24
 ```
 
 ## What is a builder?
@@ -45,29 +45,19 @@ In short, a builder is a delivery mechanism for buildpacks. A builder contains r
 You can view the contents of a builder via the command `pack builder inspect`. For example:
 
 ```
-$ pack builder inspect heroku/builder:22
+$ pack builder inspect heroku/builder:24
 # ...
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
-  heroku/go                         Heroku Go                          0.1.16         https://github.com/heroku/buildpacks-go
-  heroku/gradle                     Heroku Gradle                      4.1.0          https://github.com/heroku/buildpacks-jvm
-  heroku/java                       Heroku Java                        4.1.0          https://github.com/heroku/buildpacks-jvm
-  heroku/jvm                        Heroku OpenJDK                     4.1.0          https://github.com/heroku/buildpacks-jvm
-  heroku/maven                      Heroku Maven                       4.1.0          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     2.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            2.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              2.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          2.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         2.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         2.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm install        2.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                2.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                        Heroku PHP                         0.1.2          https://github.com/heroku/buildpacks-php
-  heroku/procfile                   Heroku Procfile                    3.0.0          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      0.8.2          https://github.com/heroku/buildpacks-python
-  heroku/ruby                       Heroku Ruby                        2.1.2          https://github.com/heroku/buildpacks-ruby
-  heroku/sbt                        Heroku sbt                         4.1.0          https://github.com/heroku/buildpacks-jvm
-  heroku/scala                      Heroku Scala                       4.1.0          https://github.com/heroku/buildpacks-jvm
+  heroku/go                         Heroku Go                          0.4.1          https://github.com/heroku/buildpacks-go
+  heroku/gradle                     Heroku Gradle                      6.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/java                       Heroku Java                        6.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/jvm                        Heroku OpenJDK                     6.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/maven                      Heroku Maven                       6.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/nodejs                     Heroku Node.js                     3.2.9          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.2.9          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.2.9          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.2.9          https://github.com/heroku/buildpacks-nodejs
 # ...
 ```
 
@@ -91,74 +81,48 @@ Verify you're in the correct directory:
 
 ```
 $ ls
-Procfile        README.md        app.json        index.js        package-lock.json    package.json        public            test.js            views
+Procfile
+README.md
+app.json
+index.js
+package-lock.json
+package.json
+public
+test.js
+views
 ```
 
-Now build an image named `my-image-name` by executing the `heroku/builder:22` against the application by running the
+Now build an image named `my-image-name` by executing the `heroku/builder:24` against the application by running the
 `pack build` command:
 
 ```
 $ pack build my-image-name --path .
-22: Pulling from heroku/builder
-Digest: sha256:5856c2e1f6c55ec5e289453b872f57f4ebe1a32a6da31f053cd27eddccbf21c5
-Status: Image is up to date for heroku/builder:22
-22-cnb: Pulling from heroku/heroku
-01007420e9b0: Already exists
-df2d2178126f: Already exists
-aad43203853c: Already exists
-7443f334f93e: Pull complete
-4376f68108d7: Pull complete
-Digest: sha256:ed04f7f3d8e423c90069416ccfdcd688cf0fa7edb9de57995b47d81c770fa169
-Status: Downloaded newer image for heroku/heroku:22-nb
+24: Pulling from heroku/builder
+Digest: sha256:166781425a049e081a3fd23882905a7e35b5d79d57b18028cad18142a739281b
+Status: Image is up to date for heroku/builder:24
+24: Pulling from heroku/heroku
+Digest: sha256:36e92b6b4e2a980a02363b9f1ddce582c32f38e236b778a6570dedf3d52ab733
+Status: Image is up to date for heroku/heroku:24
 ===> ANALYZING
 Image with name "my-image-name" not found
 ===> DETECTING
 3 of 5 buildpacks participating
-heroku/nodejs-engine      2.6.6
-heroku/nodejs-npm-install 2.6.6
-heroku/procfile           3.0.0
+heroku/nodejs-engine      3.2.9
+heroku/nodejs-npm-install 3.2.9
+heroku/procfile           3.1.2
 ===> RESTORING
+Restoring metadata for "heroku/nodejs-npm-install:npm_cache" from cache
+Restoring data for "heroku/nodejs-npm-install:npm_cache" from cache
 ===> BUILDING
 
 [Heroku Node.js Engine Buildpack]
 
 [Checking Node.js version]
 Detected Node.js version range: >=20.0.0 <21.0.0-0
-Resolved Node.js version: 20.11.1
+Resolved Node.js version: 20.15.1
 
-[Installing Node.js distribution]
-Downloading Node.js 20.11.1
-Extracting Node.js 20.11.1
-Installing Node.js 20.11.1
-
-# Heroku Node.js npm Install Buildpack
-
-- Installing node modules
-  - Using npm version `10.2.4`
-  - Creating npm cache
-  - Configuring npm cache directory
-  - Running `npm ci "--production=false"`
-
-      npm WARN config production Use `--omit=dev` instead.
-
-      added 153 packages, and audited 154 packages in 2s
-
-      70 packages are looking for funding
-        run `npm fund` for details
-
-      found 0 vulnerabilities
-      npm notice
-      npm notice New minor version of npm available! 10.2.4 -> 10.5.0
-      npm notice Changelog: <https://github.com/npm/cli/releases/tag/v10.5.0>
-      npm notice Run `npm install -g npm@10.5.0` to update!
-      npm notice
-
-  - Done (2.629s)
-- Running scripts
-  - No build scripts found
-- Configuring default processes
-  - Adding default web process for `npm start`
-- Done (finished in 4.061s)
+# ...
+- Done (finished in 0.744s)
 
 [Discovering process types]
 Procfile declares types -> web
@@ -166,6 +130,7 @@ Procfile declares types -> web
 Adding layer 'heroku/nodejs-engine:dist'
 Adding layer 'heroku/nodejs-engine:node_runtime_metrics'
 Adding layer 'heroku/nodejs-engine:web_env'
+Adding layer 'heroku/nodejs-npm-install:npm_runtime_config'
 Adding layer 'buildpacksio/lifecycle:launch.sbom'
 Adding 1/1 app layer(s)
 Adding layer 'buildpacksio/lifecycle:launcher'
@@ -176,8 +141,9 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (97b42d93c354):
+*** Images (d4ce4d02bd1c):
       my-image-name
+Reusing cache layer 'heroku/nodejs-engine:dist'
 Adding cache layer 'heroku/nodejs-engine:dist'
 Adding cache layer 'heroku/nodejs-npm-install:npm_cache'
 Successfully built image my-image-name
@@ -190,7 +156,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-16d18262dd4c   my-image-name             latest
+d4ce4d02bd1c   my-image-name            latest
 ```
 
 ## What does `pack build` do?
@@ -203,9 +169,9 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 3 of 5 buildpacks participating
-heroku/nodejs-engine      2.6.6
-heroku/nodejs-npm-install 2.6.6
-heroku/procfile           3.0.0
+heroku/nodejs-engine      3.2.9
+heroku/nodejs-npm-install 3.2.9
+heroku/procfile           3.1.2
 ```
 
 After the detect phase, each buildpack will execute. Buildpacks can inspect your project, install files to disk, run commands, write environment variables, [and more](https://buildpacks.io/docs/for-buildpack-authors/). You can see some examples of that in the output above.
@@ -214,29 +180,23 @@ You can see that the Node binary is being downloaded:
 
 ```
 [Installing Node.js distribution]
-Downloading Node.js 20.11.1
 ```
 
 Later you can see npm dependencies installed:
 
 ```
-- Running `npm ci "--production=false"`
+  - Running `npm ci "--production=false"`
 
-  npm WARN config production Use `--omit=dev` instead.
+      npm warn config production Use `--omit=dev` instead.
 
-  added 153 packages, and audited 154 packages in 2s
+      added 161 packages, and audited 162 packages in 606ms
 
-  70 packages are looking for funding
-    run `npm fund` for details
+      75 packages are looking for funding
+        run `npm fund` for details
 
-  found 0 vulnerabilities
-  npm notice
-  npm notice New minor version of npm available! 10.2.4 -> 10.5.0
-  npm notice Changelog: <https://github.com/npm/cli/releases/tag/v10.5.0>
-  npm notice Run `npm install -g npm@10.5.0` to update!
-  npm notice
+      found 0 vulnerabilities
 
-- Done (2.629s)
+  - Done (0.638s)
 ```
 
 If you’re familiar with Dockerfile you might know that [many commands in a Dockerfile will create a layer](https://dockerlabs.collabnix.com/beginners/dockerfile/Layering-Dockerfile.html). Buildpacks also use layers, but the CNB buildpack API provides for fine grained control over what exactly is in these layers and how they’re composed. Unlike Dockerfile, all images produced by CNBs [can be rebased](https://tag-env-sustainability.cncf.io/blog/2023-12-reduce-reuse-rebase-buildpacks/#reduce-reuserebase). The CNB api also improves on many of the pitfalls outlined in the satirical article [Write a Good Dockerfile in 19 'Easy' Steps](https://jkutner.github.io/2021/04/26/write-good-dockerfile.html).
@@ -276,15 +236,16 @@ Now you can inspect the container interactively. For example, you can see the np
 
 ```
 heroku@d97cd3f44535:/workspace$ npm --version
-10.2.4
+10.7.0
 ```
 
 View files on disk:
 
 ```
-heroku@d97cd3f44535:/workspace$ ls
-Procfile  README.md  app.json  index.js  node_modules  package-lock.json  package.json    public    test.js  views
-heroku@d97cd3f44535:/workspace$ cat Procfile
+heroku@3f4c2ebedff9:/workspace$ ls
+Procfile   app.json  node_modules       package.json  test.js
+README.md  index.js  package-lock.json  public        views
+heroku@3f4c2ebedff9:/workspace$ cat Procfile
 web: npm start
 ```
 
@@ -302,6 +263,7 @@ If you view the root directory `/` you’ll see there is a `layers` folder. Ever
 ```
 heroku@edc80579a982:/workspace$ ls /layers | grep node
 heroku_nodejs-engine
+heroku_nodejs-npm-install
 ```
 
 Individual buildpacks can compose multiple layers from their buildpack directory. For example you can see that `npm` is present within that node buildpack directory under a layer named `dist`:
