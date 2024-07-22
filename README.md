@@ -64,7 +64,7 @@ $ git clone https://github.com/heroku/node-js-getting-started.git
 In your application directory, run the `pack build` command. No additional steps are needed! The required buildpacks for your app will be detected automatically:
 
 ```
-$ pack build my-app-image --builder heroku/builder:22 --path node-js-getting-started
+$ pack build my-app-image --builder heroku/builder:24 --path node-js-getting-started
 ```
 
 Once the image is built, you can run it with the tools you're already comfortable with, like the `docker` CLI, for a demonstration of how [read out getting started tutorial](TUTORIAL.md).

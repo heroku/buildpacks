@@ -3,7 +3,10 @@
 Once `pack` is installed, the only configuration you'll need for this tutorial is to set a default builder:
 
 ```
-:::>> $ pack config default-builder heroku/builder:22
+:::-- $ docker pull heroku/builder:24
+:::-- $ docker pull heroku/heroku:24
+:::-- $ docker pull heroku/heroku:24-build
+:::>> $ pack config default-builder heroku/builder:24
 ```
 
 You can view your default builder at any time:
