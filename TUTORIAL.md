@@ -80,7 +80,7 @@ $ cd node-js-getting-started
 Verify you're in the correct directory:
 
 ```
-$ ls
+$ ls -1
 Procfile
 README.md
 app.json

@@ -5,7 +5,6 @@ Once `pack` is installed, the only configuration you'll need for this tutorial i
 ```
 :::-- $ docker pull heroku/builder:24
 :::-- $ docker pull heroku/heroku:24
-:::-- $ docker pull heroku/heroku:24-build
 :::>> $ pack config default-builder heroku/builder:24
 ```
 
