@@ -3,7 +3,9 @@
 Once `pack` is installed, the only configuration you'll need for this tutorial is to set a default builder:
 
 ```
-:::>> $ pack config default-builder heroku/builder:22
+:::-- $ docker pull heroku/builder:24
+:::-- $ docker pull heroku/heroku:24
+:::>> $ pack config default-builder heroku/builder:24
 ```
 
 You can view your default builder at any time:
@@ -12,12 +14,4 @@ You can view your default builder at any time:
 :::>> $ pack config default-builder
 ```
 
-The following tutorial is built on amd64 architecture (also known as x86). If you are building on a machine with different architecture (such as arm64/aarch64 for a Mac) you will need to tell Docker to use `linux/amd64` architecture. You can do this via a `--platform linux/amd64` flag or by exporting an environment variable:
-
-```
-$ export DOCKER_DEFAULT_PLATFORM=linux/amd64
-:::-- rundoc.configure
-# Needed because all `$` commands are run as separate isolated processes
-
-ENV["DOCKER_DEFAULT_PLATFORM"] = "linux/amd64"
-```
+> Note: The `heroku/builder:24` supports both amd64 (also known as x86) and arm64 (such as aarch64 used with newer Mac machines) architectures. If needed, you can configure the architecture for `docker` and `pack` CLIs using the `--platform` argument if needed. For example `--platform linux/amd64`.
