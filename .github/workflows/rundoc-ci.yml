@@ -5,19 +5,11 @@ on:
       - main
 jobs:
   test-rundoc:
-    runs-on: pub-hk-ubuntu-24.04-ip
+    runs-on: ubuntu-latest
     steps:
-      - name: Get token for GH application (Linguist)
-        uses: actions/create-github-app-token@v1
-        id: generate-token
-        with:
-          app-id: ${{ vars.LINGUIST_GH_APP_ID }}
-          private-key: ${{ secrets.LINGUIST_GH_PRIVATE_KEY }}
-
       - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          token: ${{ steps.generate-token.outputs.token }}
 
       - uses: ruby/setup-ruby@v1
         with:
