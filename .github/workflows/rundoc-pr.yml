@@ -1,12 +1,12 @@
-name: run-rundoc
-run-name: running rundoc on tutorials
+name: execute rundoc on tutorials
+run-name: execute rundoc on tutorials
 on:
   schedule:
     # This schedule triggers the workflow at 00:00 every Monday
-    - cron: '0 0 * * 1'
+    - cron: "0 0 * * 1"
   workflow_dispatch:
 jobs:
-  rundoc-ubuntu:
+  run-rundoc:
     runs-on: pub-hk-ubuntu-24.04-ip
     steps:
       - name: Get token for GH application (Linguist)
@@ -23,20 +23,18 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3.2'
+          ruby-version: "3.3.2"
           bundler-cache: true # do run 'bundle install' and cache
           working-directory: .rundoc-workspace
       - uses: buildpacks/github-actions/setup-pack@v5.7.1
 
-
-      # [CONFIG] different languages set up here
+      # [CONFIG] add different languages set up here
       - run: bundle exec rundoc ../docs/src/ruby/ruby_tutorial.md --on-success-dir ../docs/ruby --on-failure-dir ../docs/fail --force
         working-directory: .rundoc-workspace
         continue-on-error: true
       - run: rm -rf ruby-getting-started
         working-directory: docs/ruby
         continue-on-error: true
-
 
       - name: Create Pull Request
         id: pr
@@ -57,4 +55,3 @@ jobs:
         run: gh pr merge --auto --squash "${{ steps.pr.outputs.pull-request-number }}"
         env:
           GH_TOKEN: ${{ steps.generate-token.outputs.token }}
-

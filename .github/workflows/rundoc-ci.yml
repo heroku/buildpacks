@@ -1,0 +1,23 @@
+name: rundoc-ci-test
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  test-rundoc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.2"
+          bundler-cache: true # do run 'bundle install' and cache
+          working-directory: .rundoc-workspace
+      - uses: buildpacks/github-actions/setup-pack@v5.7.1
+
+      # [CONFIG] add different languages set up here
+      - run: bundle exec rundoc ../docs/src/ruby/ruby_tutorial.md --on-success-dir ../docs/ruby --on-failure-dir ../docs/fail --force
+        working-directory: .rundoc-workspace
