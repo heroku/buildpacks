@@ -29,6 +29,7 @@ to provide feedback, request enhancements, or discuss ideas.
 Issues, feature requests, and bug reports are tracked via GitHub issues on
 each buildpack repository:
 
+- [heroku/dotnet](https://github.com/heroku/buildpacks-dotnet/issues)
 - [heroku/go](https://github.com/heroku/buildpacks-go/issues)
 - [heroku/jvm](https://github.com/heroku/buildpacks-jvm/issues)
 - [heroku/nodejs](https://github.com/heroku/buildpacks-nodejs/issues)
