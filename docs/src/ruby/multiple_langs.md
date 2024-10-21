@@ -4,7 +4,7 @@ Language support is provided by individual buildpacks that are shipped with the 
 
 In addition to this auto-detection behavior, you can specify buildpacks through the `--buildpack` flag with the `pack` CLI or through a [project.toml](https://buildpacks.io/docs/for-app-developers/how-to/build-inputs/specify-buildpacks/) file at the root of your application.
 
-For example, if you wanted to install both Ruby, NodeJS and Python you could create a `project.toml` file in the root of your application and specify those buildpacks.
+For example, if you wanted to install both Ruby, Node.js and Python you could create a `project.toml` file in the root of your application and specify those buildpacks.
 
 ```toml
 :::>> file.write project.toml
@@ -30,8 +30,10 @@ uri = "heroku/procfile"
 Ensure that a `requirements.txt` file, a `package.json` file and a `Gemfile.lock` file all exist and then build your application:
 
 ```
-:::>> $ touch requirements.txt
-:::>> $ pack build my-image-name --path .
+$ pack build my-image-name --path .
+:::-- $ touch requirements.txt
+:::-- $ docker rmi -f my-image-name
+:::-> $ pack build my-image-name --path . --pull-policy if-not-present --clear-cache | sed --regexp-extended -e '/Fetching gem metadata/,/Bundle complete/d' -e "/$(date --iso)/d" -e 's/Done \(.+s\)/Done/' -e 's/\.\.\.+ \(.+s\)/.../' -e 's/\b[0-9a-f]{12}\b/abcdef012345/'
 ```
 
 You can run the image and inspect everything is installed as expected:
