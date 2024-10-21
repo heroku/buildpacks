@@ -26,7 +26,7 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true # do run 'bundle install' and cache
           working-directory: .rundoc-workspace
-      - uses: buildpacks/github-actions/setup-pack@v5.7.1
+      - uses: buildpacks/github-actions/setup-pack@v5.7.4
 
       # [CONFIG] add different languages set up here
       - run: bundle exec rundoc ../docs/src/ruby/ruby_tutorial.md --on-success-dir ../docs/ruby --on-failure-dir ../docs/fail --force
