@@ -63,7 +63,7 @@ $ pack builder inspect heroku/builder:24 | grep Buildpacks: -m1 -A10
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.0.2          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.1.6          https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet                     Heroku .NET                        0.1.8          https://github.com/heroku/buildpacks-dotnet
   heroku/go                         Heroku Go                          0.4.6          https://github.com/heroku/buildpacks-go
   heroku/gradle                     Heroku Gradle                      6.0.3          https://github.com/heroku/buildpacks-jvm
   heroku/java                       Heroku Java                        6.0.3          https://github.com/heroku/buildpacks-jvm
