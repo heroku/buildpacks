@@ -22,8 +22,8 @@ $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle install
 ```
 $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
     rundoc docs/src/ruby/RUNDOC.md \
-      --on-success-dir=./docs/ruby \
-      --on-failure-dir ../docs/fail/ruby
+      --on-success-dir docs/ruby \
+      --on-failure-dir docs/fail/ruby
 ```
 
 ### Build .NET
@@ -32,6 +32,6 @@ $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
 ```
 $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
     rundoc docs/src/dotnet/RUNDOC.md \
-      --on-success-dir=./docs/dotnet \
-      --on-failure-dir ../docs/fail/dotnet/
+      --on-success-dir docs/dotnet \
+      --on-failure-dir docs/fail/dotnet
 ```

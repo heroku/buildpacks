@@ -6,6 +6,12 @@ on:
 jobs:
   test-rundoc:
     runs-on: ubuntu-latest
+    env:
+      BUNDLE_GEMFILE: .rundoc-workspace/Gemfile
+    strategy:
+      matrix:
+        lang: ["ruby", "dotnet"]
+      fail-fast: false
     steps:
       - uses: actions/checkout@v4
         with:
@@ -15,13 +21,11 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true # do run 'bundle install' and cache
-          working-directory: .rundoc-workspace
       - uses: buildpacks/github-actions/setup-pack@v5.8.3
 
       # [CONFIG] add different languages set up here
       - run: |
-          bundle exec rundoc ../docs/src/ruby/RUNDOC.md \
-            --on-success-dir ../docs/ruby \
-            --on-failure-dir ../docs/fail \
+          bundle exec rundoc docs/src/${{ matrix.lang }}/RUNDOC.md \
+            --on-success-dir docs/${{ matrix.lang }} \
+            --on-failure-dir docs/fail/${{ matrix.lang }} \
             --force
-        working-directory: .rundoc-workspace
