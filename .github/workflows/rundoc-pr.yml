@@ -36,10 +36,6 @@ jobs:
             --force
         working-directory: .rundoc-workspace
         continue-on-error: true
-      - run: rm -rf ruby-getting-started
-        working-directory: docs/ruby
-        continue-on-error: true
-
       - name: Create Pull Request
         id: pr
         uses: peter-evans/create-pull-request@v7
