@@ -4,18 +4,20 @@
 require 'uri'
 
 class << self
-  attr_reader :app_url, :dir_name, :tutorial_type, :buildpack_name, :dependency_file, :language_name, :install_cmd_grep, :which_binary
+  attr_reader :app_url, :buildpack_url, :dir_name, :tutorial_type, :buildpack_name, :dependency_file, :language_name, :install_cmd_grep, :which_binary, :fir_tutorial_url
 end
 
-def setup(app_url: , tutorial_type: , buildpack_name: , dependency_file: , language_name: , install_cmd_grep:, which_binary: )
+def setup(app_url: , buildpack_url:, tutorial_type: , buildpack_name: , dependency_file: , language_name: , install_cmd_grep:, which_binary: , fir_tutorial_url:)
   @app_url = app_url
   @dir_name = File.basename(URI.parse(@app_url).path)
   @which_binary = which_binary
+  @buildpack_url = buildpack_url
   @language_name = language_name
   @tutorial_type = tutorial_type
   @buildpack_name = buildpack_name
   @dependency_file = dependency_file
   @install_cmd_grep = install_cmd_grep
+  @fir_tutorial_url = fir_tutorial_url
 end
 
 %>
