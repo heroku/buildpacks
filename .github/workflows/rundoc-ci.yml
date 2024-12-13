@@ -20,8 +20,8 @@ jobs:
 
       # [CONFIG] add different languages set up here
       - run: |
-          bundle exec rundoc ../docs/src/ruby/ruby_tutorial.md \
-          --on-success-dir ../docs/ruby \
-          --on-failure-dir ../docs/fail \
-          --force
+          bundle exec rundoc ../docs/src/ruby/RUNDOC.md \
+            --on-success-dir ../docs/ruby \
+            --on-failure-dir ../docs/fail \
+            --force
         working-directory: .rundoc-workspace
