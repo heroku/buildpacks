@@ -6,10 +6,9 @@
 Create a production-ready container image for your application with a [single command](TUTORIAL.md); no Dockerfile required. [Try Heroku Cloud Native Buildpacks today](TUTORIAL.md).
 
 > [!IMPORTANT]
-> The Heroku Cloud Native Buildpacks program is an open-source preview, and is
-not currently available for use on the Heroku platform. If you are looking for
-information or help with Heroku Cedar Buildpacks on the Heroku platform, you
-may find more information [here](https://devcenter.heroku.com/articles/buildpacks).
+> The Heroku Cloud Native Buildpacks are available for use on [Heroku Fir](https://devcenter.heroku.com/articles/generations#fir) generation. If you are looking for
+> information or help with Heroku Cedar generation [Classic Buildpacks](https://devcenter.heroku.com/articles/buildpacks#classic-buildpacks) on the Heroku platform, you
+> may find more information [on the Dev Center](https://devcenter.heroku.com/articles/buildpacks).
 
 ## What is a Cloud Native Buildpack?
 
