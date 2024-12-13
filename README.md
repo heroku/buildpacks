@@ -5,6 +5,9 @@
 
 Create a production-ready container image for your application with a [single command](TUTORIAL.md); no Dockerfile required. [Try Heroku Cloud Native Buildpacks today](TUTORIAL.md).
 
+- [.NET CNB Local Tutorial](docs/dotnet/README.md)
+- [Ruby CNB Local Tutorial](docs/ruby/README.md)
+
 > [!IMPORTANT]
 > The Heroku Cloud Native Buildpacks are available for use on [Heroku Fir](https://devcenter.heroku.com/articles/generations#fir) generation. If you are looking for
 > information or help with Heroku Cedar generation [Classic Buildpacks](https://devcenter.heroku.com/articles/buildpacks#classic-buildpacks) on the Heroku platform, you
