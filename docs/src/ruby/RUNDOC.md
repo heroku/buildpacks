@@ -4,12 +4,14 @@
 <%
   setup(
     app_url: "https://github.com/heroku/ruby-getting-started",
-    tutorial_type: "Ruby on Rails",
-    buildpack_name: "heroku/ruby",
-    dependency_file: "Gemfile",
-    language_name: "Ruby",
-    install_cmd_grep: "bundle install",
-    which_binary: "ruby"
+    which_binary: "ruby", # Executable on disk after buildpack i.e. `which ruby`
+    tutorial_type: "Ruby on Rails", # Type of app "Ruby on Rails" tutorial
+    language_name: "Ruby", # Buildpack name Heroku "Ruby" buildpack
+    buildpack_url: "https://github.com/heroku/buildpacks-ruby",
+    buildpack_name: "heroku/ruby", # Name of buildpack in registry
+    dependency_file: "Gemfile", # File needed for detection
+    install_cmd_grep: "bundle install", # A command (or other string) notable in the build output
+    fir_tutorial_url: "https://devcenter.heroku.com/articles/getting-started-with-ruby-fir"
   )
 %>
 ```
