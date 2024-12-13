@@ -33,7 +33,7 @@ Ensure that a `requirements.txt` file, a `package.json` file and a `Gemfile.lock
 $ pack build my-image-name --path .
 :::-- $ touch requirements.txt
 :::-- $ docker rmi -f my-image-name
-:::-> $ pack build my-image-name --path . --pull-policy if-not-present --clear-cache | sed --regexp-extended -e '/Fetching gem metadata/,/Bundle complete/d' -e "/$(date --iso)/d" -e 's/Done \(.+s\)/Done/' -e 's/\.\.\.+ \(.+s\)/.../' -e 's/\b[0-9a-f]{12}\b/abcdef012345/'
+:::-> $ pack build my-image-name --path . --pull-policy if-not-present --clear-cache
 ```
 
 You can run the image and inspect everything is installed as expected:
