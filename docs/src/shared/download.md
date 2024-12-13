@@ -5,8 +5,8 @@ How do you configure a CNB? Give them an application. While Dockerfile is proced
 For this example, we're using a pre-built Ruby on Rails application. Download it now:
 
 ```
-:::>- $ git clone https://github.com/heroku/ruby-getting-started
-:::>- $ cd ruby-getting-started
+:::>- pre.erb $ git clone <%= app_url %>
+:::>- pre.erb $ cd <%= dir_name %>
 ```
 
 Verify you're in the correct directory:
