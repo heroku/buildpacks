@@ -29,7 +29,11 @@ jobs:
       - uses: buildpacks/github-actions/setup-pack@v5.8.3
 
       # [CONFIG] add different languages set up here
-      - run: bundle exec rundoc ../docs/src/ruby/ruby_tutorial.md --on-success-dir ../docs/ruby --on-failure-dir ../docs/fail --force
+      - run: |
+          bundle exec rundoc ../docs/src/ruby/RUNDOC.md \
+            --on-success-dir ../docs/ruby \
+            --on-failure-dir ../docs/fail \
+            --force
         working-directory: .rundoc-workspace
         continue-on-error: true
       - run: rm -rf ruby-getting-started
