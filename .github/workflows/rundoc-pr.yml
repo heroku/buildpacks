@@ -12,7 +12,7 @@ jobs:
       BUNDLE_GEMFILE: .rundoc-workspace/Gemfile
     strategy:
       matrix:
-        lang: ["ruby", "dotnet", "nodejs", "python", "php"]
+        lang: ["ruby", "dotnet", "nodejs", "python", "php", "go"]
       fail-fast: false
     steps:
       - name: Get token for GH application (Linguist)

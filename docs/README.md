@@ -61,3 +61,12 @@ $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
       --on-success-dir docs/php \
       --on-failure-dir docs/fail/php/
 ```
+
+### Build Go
+
+```
+$ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
+    rundoc docs/src/go/RUNDOC.md \
+      --on-success-dir docs/go \
+      --on-failure-dir docs/fail/go/
+```
