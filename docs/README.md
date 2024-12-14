@@ -28,10 +28,18 @@ $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
 
 ### Build .NET
 
-
 ```
 $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
     rundoc docs/src/dotnet/RUNDOC.md \
       --on-success-dir docs/dotnet \
       --on-failure-dir docs/fail/dotnet
+```
+
+### Build Node.js
+
+```
+$ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
+    rundoc docs/src/nodejs/RUNDOC.md \
+      --on-success-dir docs/nodejs \
+      --on-failure-dir docs/fail/nodejs
 ```
