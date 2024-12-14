@@ -43,3 +43,12 @@ $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
       --on-success-dir docs/nodejs \
       --on-failure-dir docs/fail/nodejs
 ```
+
+### Build Python
+
+```
+$ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
+    rundoc docs/src/python/RUNDOC.md \
+      --on-success-dir docs/python \
+      --on-failure-dir docs/fail/python/
+```
