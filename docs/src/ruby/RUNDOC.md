@@ -29,4 +29,5 @@
 :::>> rundoc.require "../shared/call_to_action.md"
 :::>> rundoc.require "./multiple_langs.md"
 :::>> rundoc.require "../shared/procfile.md"
+:::>> rundoc.require "../shared/cleanup.md"
 ```
