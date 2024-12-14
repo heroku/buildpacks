@@ -52,3 +52,12 @@ $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
       --on-success-dir docs/python \
       --on-failure-dir docs/fail/python/
 ```
+
+### Build PHP
+
+```
+$ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
+    rundoc docs/src/php/RUNDOC.md \
+      --on-success-dir docs/php \
+      --on-failure-dir docs/fail/php/
+```
