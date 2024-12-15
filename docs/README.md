@@ -70,3 +70,12 @@ $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
       --on-success-dir docs/go \
       --on-failure-dir docs/fail/go/
 ```
+
+### Build Java (Maven)
+
+```
+$ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
+    rundoc docs/src/java_maven/RUNDOC.md \
+      --on-success-dir docs/java_maven \
+      --on-failure-dir docs/fail/java_maven/
+```
