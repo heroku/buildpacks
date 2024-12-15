@@ -88,3 +88,12 @@ $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
       --on-success-dir docs/java_gradle \
       --on-failure-dir docs/fail/java_gradle/
 ```
+
+### Build Scala
+
+```
+$ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
+    rundoc docs/src/scala/RUNDOC.md \
+      --on-success-dir docs/scala \
+      --on-failure-dir docs/fail/scala/
+```
