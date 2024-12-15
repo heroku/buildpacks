@@ -79,3 +79,12 @@ $ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
       --on-success-dir docs/java_maven \
       --on-failure-dir docs/fail/java_maven/
 ```
+
+### Build Java (Gradle)
+
+```
+$ BUNDLE_GEMFILE="./.rundoc-workspace/Gemfile" bundle exec \
+    rundoc docs/src/java_gradle/RUNDOC.md \
+      --on-success-dir docs/java_gradle \
+      --on-failure-dir docs/fail/java_gradle/
+```
