@@ -10,7 +10,7 @@
     buildpack_url: "https://github.com/heroku/buildpacks-go",
     buildpack_name: "heroku/go", # Name of buildpack in registry
     dependency_file: "go.mod", # File needed for detection
-    install_cmd_grep: "[Building Go binaries]", # A command (or other string) notable in the build output
+    install_cmd_grep: "\\[Building Go binaries\\]", # A command (or other string) notable in the build output
     fir_tutorial_url: "https://devcenter.heroku.com/articles/getting-started-with-go-fir"
   )
 %>

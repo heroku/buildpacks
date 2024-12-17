@@ -10,7 +10,7 @@
     buildpack_url: "https://github.com/heroku/buildpacks-php",
     buildpack_name: "heroku/php", # Name of buildpack in registry
     dependency_file: "composer.json", # File needed for detection
-    install_cmd_grep: "[Installing dependencies]", # A command (or other string) notable in the build output
+    install_cmd_grep: "\\[Installing dependencies\\]", # A command (or other string) notable in the build output
     fir_tutorial_url: "https://devcenter.heroku.com/articles/getting-started-with-php-fir"
   )
 %>
