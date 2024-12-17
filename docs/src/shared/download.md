@@ -1,18 +1,22 @@
-## Download an example Ruby on Rails application
+```md
+:::-> print.erb
+## Download an example <%= tutorial_type %> application
 
 How do you configure a CNB? Give them an application. While Dockerfile is procedural, buildpacks, are declarative. A buildpack will determine what your application needs to function by inspecting the code on disk.
 
-For this example, we're using a pre-built Ruby on Rails application. Download it now:
+For this example, we're using a pre-built <%= tutorial_type %> application. Download it now:
 
 ```
-:::>- $ git clone https://github.com/heroku/ruby-getting-started
-:::>- $ cd ruby-getting-started
+
+```
+:::>- pre.erb $ git clone <%= app_url %>
+:::>- pre.erb $ cd <%= dir_name %>
 ```
 
 Verify you're in the correct directory:
 
 ```
-:::>> $ ls
+:::>> $ ls -A
 ```
 
 This tutorial was built using the following commit SHA:

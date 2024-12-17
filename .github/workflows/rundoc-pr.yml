@@ -8,6 +8,12 @@ on:
 jobs:
   run-rundoc:
     runs-on: pub-hk-ubuntu-24.04-ip
+    env:
+      BUNDLE_GEMFILE: .rundoc-workspace/Gemfile
+    strategy:
+      matrix:
+        lang: ["ruby", "dotnet", "nodejs", "python", "php", "go", "java_maven", "java_gradle", "scala"]
+      fail-fast: false
     steps:
       - name: Get token for GH application (Linguist)
         uses: actions/create-github-app-token@v1
@@ -25,23 +31,21 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true # do run 'bundle install' and cache
-          working-directory: .rundoc-workspace
       - uses: buildpacks/github-actions/setup-pack@v5.8.3
 
       # [CONFIG] add different languages set up here
-      - run: bundle exec rundoc ../docs/src/ruby/ruby_tutorial.md --on-success-dir ../docs/ruby --on-failure-dir ../docs/fail --force
-        working-directory: .rundoc-workspace
+      - run: |
+          bundle exec rundoc docs/src/${{ matrix.lang }}/RUNDOC.md \
+            --on-success-dir docs/${{ matrix.lang }} \
+            --on-failure-dir docs/fail/${{ matrix.lang }} \
+            --force
         continue-on-error: true
-      - run: rm -rf ruby-getting-started
-        working-directory: docs/ruby
-        continue-on-error: true
-
       - name: Create Pull Request
         id: pr
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ steps.generate-token.outputs.token }}
-          branch: rundoc-update
+          branch: rundoc-update-${{ matrix.lang }}
           delete-branch: true
           base: main
           commit-message: Update tutorials

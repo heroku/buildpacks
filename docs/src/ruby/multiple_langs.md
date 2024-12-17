@@ -1,6 +1,9 @@
 ## Configuring multiple languages
 
-Language support is provided by individual buildpacks that are shipped with the builder. The above example uses the `heroku/ruby` buildpack which is [visible on GitHub](https://github.com/heroku/buildpacks-ruby). When you execute `pack build` with a builder, every buildpack has the opportunity to "detect" if it should execute against that project. The `heroku/ruby` buildpack looks for a `Gemfile.lock` in the root of the project and if found, knows how to detect a Ruby version and install dependencies.
+```md
+:::-> print.erb
+Language support is provided by individual buildpacks that are shipped with the builder. The above example uses the `<%= buildpack_name %>` buildpack which is [visible on GitHub](<%= buildpack_url %>). When you execute `pack build` with a builder, every buildpack has the opportunity to "detect" if it should execute against that project. The `<%= buildpack_name %>` buildpack looks for a <%= dependency_file %> file in the root of the project and if found, knows how to detect a <%= which_binary %> version and install dependencies.
+```
 
 In addition to this auto-detection behavior, you can specify buildpacks through the `--buildpack` flag with the `pack` CLI or through a [project.toml](https://buildpacks.io/docs/for-app-developers/how-to/build-inputs/specify-buildpacks/) file at the root of your application.
 
@@ -33,7 +36,7 @@ Ensure that a `requirements.txt` file, a `package.json` file and a `Gemfile.lock
 $ pack build my-image-name --path .
 :::-- $ touch requirements.txt
 :::-- $ docker rmi -f my-image-name
-:::-> $ pack build my-image-name --path . --pull-policy if-not-present --clear-cache | sed --regexp-extended -e '/Fetching gem metadata/,/Bundle complete/d' -e "/$(date --iso)/d" -e 's/Done \(.+s\)/Done/' -e 's/\.\.\.+ \(.+s\)/.../' -e 's/\b[0-9a-f]{12}\b/abcdef012345/'
+:::-> $ pack build my-image-name --path . --pull-policy if-not-present --clear-cache
 ```
 
 You can run the image and inspect everything is installed as expected:
