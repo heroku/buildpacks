@@ -11,7 +11,8 @@
     buildpack_name: "heroku/java", # Name of buildpack in registry
     dependency_file: "pom.xml", # File needed for detection
     install_cmd_grep: "./mvnw", # A command (or other string) notable in the build output
-    fir_tutorial_url: "https://devcenter.heroku.com/articles/getting-started-with-java-maven-fir"
+    fir_tutorial_url: "https://devcenter.heroku.com/articles/getting-started-with-java-maven-fir",
+    pack_build_head_tail: 50 # Number of lines to show from `pack build`
   )
 %>
 ```
