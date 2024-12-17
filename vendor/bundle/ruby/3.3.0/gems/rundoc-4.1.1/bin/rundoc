@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+$stdout.sync = true
+$stderr.sync = true
+
+unless File.respond_to? :realpath
+  class File #:nodoc:
+    def self.realpath path
+      return realpath(File.readlink(path)) if symlink?(path)
+      path
+    end
+  end
+end
+$: << File.expand_path(File.dirname(File.realpath(__FILE__)) + '/../lib')
+
+require 'rundoc'
+
+options = Rundoc::CLIArgumentParser.new(argv: ARGV).call.options
+
+cli = Rundoc::CLI.new(**options)
+cli.call
