@@ -16,7 +16,7 @@ For this example, we're using a pre-built <%= tutorial_type %> application. Down
 Verify you're in the correct directory:
 
 ```
-:::>> $ ls
+:::>> $ ls -A
 ```
 
 This tutorial was built using the following commit SHA:

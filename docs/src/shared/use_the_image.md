@@ -45,8 +45,8 @@ $ docker run -it --rm my-image-name bash
 Now you can inspect the container interactively. For example, you can see the files on disk with `ls`:
 
 ```
-$ ls
-:::-> $ docker run --rm my-image-name ls
+:::>> print.text $ ls -A
+:::-> $ docker run --rm my-image-name "ls -A"
 ```
 
 And anything else you would typically do via an interactive container session.
