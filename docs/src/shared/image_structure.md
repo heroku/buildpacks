@@ -11,7 +11,10 @@ If you view the root directory `/` you’ll see there is a `layers` folder. Ever
 :::>> $ docker run --rm my-image-name "ls /layers"
 ```
 
+```
+:::-> print.erb
 Individual buildpacks can compose multiple layers from their buildpack directory. For example you can see that `<%= which_binary %>` binary is present within that buildpack layer directory:
+```
 
 ```
 :::>> pre.erb $ docker run --rm my-image-name "which <%= which_binary %>"
