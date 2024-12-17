@@ -6,15 +6,15 @@ This section contains tutorials for using Heroku's Cloud Native Buildpacks (CNBs
 
 Follow along with the language-specific tutorial of your choice:
 
-- [.NET](docs/dotnet/README.md)
-- [Go](docs/go/README.md)
-- [Java (Gradle)](docs/java_gradle/README.md)
-- [Java (Maven)](docs/java_maven/README.md)
-- [Node.JS](docs/nodejs/README.md)
-- [PHP](docs/php/README.md)
-- [Python](docs/python/README.md)
-- [Ruby](docs/ruby/README.md)
-- [Scala](docs/scala/README.md)
+- [.NET](dotnet/README.md)
+- [Go](go/README.md)
+- [Java (Gradle)](java_gradle/README.md)
+- [Java (Maven)](java_maven/README.md)
+- [Node.JS](nodejs/README.md)
+- [PHP](php/README.md)
+- [Python](python/README.md)
+- [Ruby](ruby/README.md)
+- [Scala](scala/README.md)
 
 ## Development
 
