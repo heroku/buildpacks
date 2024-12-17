@@ -19,7 +19,7 @@ After the detect phase, each buildpack will execute. Buildpacks can inspect your
 ```
 
 ```
-:::-> pre.erb $ grep "<% install_cmd_grep %>" -m1 ./build_output.txt
+:::-> pre.erb $ grep "<%= install_cmd_grep %>" -m1 ./build_output.txt
 ```
 
 If you’re familiar with Dockerfile you might know that [many commands in a Dockerfile will create a layer](https://dockerlabs.collabnix.com/beginners/dockerfile/Layering-Dockerfile.html). Buildpacks also use layers, but the CNB buildpack API provides for fine grained control over what exactly is in these layers and how they’re composed. Unlike Dockerfile, all images produced by CNBs [can be rebased](https://tag-env-sustainability.cncf.io/blog/2023-12-reduce-reuse-rebase-buildpacks/#reduce-reuserebase). The CNB api also improves on many of the pitfalls outlined in the satirical article [Write a Good Dockerfile in 19 'Easy' Steps](https://jkutner.github.io/2021/04/26/write-good-dockerfile.html).

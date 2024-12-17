@@ -2,7 +2,7 @@
 
 ```md
 :::-> print.erb
-Language support is provided by individual buildpacks that are shipped with the builder. The above example uses the `<%= buildpack_name %>` buildpack which is [visible on GitHub](<%= buildpack_url %>). When you execute `pack build` with a builder, every buildpack has the opportunity to "detect" if it should execute against that project. The `<%= buildpack_name %>` buildpack looks for a <% dependency_file %> file in the root of the project and if found, knows how to detect a <%= which_binary %> version and install dependencies.
+Language support is provided by individual buildpacks that are shipped with the builder. The above example uses the `<%= buildpack_name %>` buildpack which is [visible on GitHub](<%= buildpack_url %>). When you execute `pack build` with a builder, every buildpack has the opportunity to "detect" if it should execute against that project. The `<%= buildpack_name %>` buildpack looks for a <%= dependency_file %> file in the root of the project and if found, knows how to detect a <%= which_binary %> version and install dependencies.
 ```
 
 In addition to this auto-detection behavior, you can specify buildpacks through the `--buildpack` flag with the `pack` CLI or through a [project.toml](https://buildpacks.io/docs/for-app-developers/how-to/build-inputs/specify-buildpacks/) file at the root of your application.
