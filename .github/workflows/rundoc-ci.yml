@@ -3,6 +3,9 @@ on:
   pull_request:
     branches:
       - main
+    paths:
+      - "docs/src/**"
+      - ".rundoc-workspace/**"
 jobs:
   test-rundoc:
     runs-on: ubuntu-latest
