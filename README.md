@@ -68,7 +68,7 @@ To run our buildpack locally, we will use `pack`, a tool maintained by the Cloud
 ### Create the app image
 
 > [!NOTE]
-> For a full hands-on getting started experience [follow our getting started tutorial](TUTORIAL.md).
+> For a full hands-on getting started experience [follow our getting started tutorials](TUTORIAL.md).
 
 First, we need an application to produce an image. We will use [Heroku's getting started app for Node.js](https://github.com/heroku/node-js-getting-started), but any other app that uses a supported ecosystem will work. Clone the application:
 
@@ -82,7 +82,7 @@ In your application directory, run the `pack build` command. No additional steps
 $ pack build my-app-image --builder heroku/builder:24 --path node-js-getting-started
 ```
 
-Once the image is built, you can run it with the tools you're already comfortable with, like the `docker` CLI, for a demonstration of how [read out getting started tutorial](TUTORIAL.md).
+Once the image is built, you can run it with the tools you're already comfortable with, like the `docker` CLI, for a demonstration of how [read out getting started tutorials](TUTORIAL.md).
 
 ## Discussions
 
