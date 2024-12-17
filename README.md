@@ -3,7 +3,7 @@
   <img alt="Heroku Cloud Native Buildpacks Logo" src="./logo.png" width="100%">
 </p>
 
-Create a production-ready container image for your application with a [single command](TUTORIAL.md); no Dockerfile required. [Try Heroku Cloud Native Buildpacks today](TUTORIAL.md).
+Create a production-ready container image for your application with a single command; no Dockerfile required. Try Heroku Cloud Native Buildpacks today with one of the local language-specific tutorials:
 
 - [.NET](docs/dotnet/README.md)
 - [Go](docs/go/README.md)
