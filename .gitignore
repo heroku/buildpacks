@@ -1,3 +1,7 @@
 .DS_Store
 
 .rundoc-workspace/
+
+# Ignore GHA generated Ruby files
+# https://github.com/ruby/setup-ruby/tree/v1/?tab=readme-ov-file#bundle-config
+vendor/bundle
