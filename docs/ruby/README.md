@@ -140,7 +140,7 @@ Image with name "my-image-name" not found
 3 of 6 buildpacks participating
 heroku/nodejs-engine 3.4.0
 heroku/ruby          5.0.0
-heroku/procfile      3.1.2
+heroku/procfile      3.2.0
 ===> RESTORING
 Skipping buildpack layer analysis
 ===> BUILDING
@@ -163,28 +163,28 @@ Installing application metrics scripts
 - Metrics agent
   - Skipping install (`barnes` gem not found)
 - Ruby version `3.2.4` from `Gemfile.lock`
-  - Installing ... (0.7s)
+  - Installing .... (1.5s)
 - Bundler version `2.5.9` from `Gemfile.lock`
-  - Running `gem install bundler --version 2.5.9` ... (0.5s)
+  - Running `gem install bundler --version 2.5.9` ... (0.4s)
 - Bundle install gems
   - Running `BUNDLE_BIN="/layers/heroku_ruby/gems/bin" BUNDLE_CLEAN="1" BUNDLE_DEPLOYMENT="1" BUNDLE_GEMFILE="/workspace/Gemfile" BUNDLE_PATH="/layers/heroku_ruby/gems" BUNDLE_WITHOUT="development:test" bundle install`
 
       Fetching gem metadata from https://rubygems.org/.........
       Fetching rake 13.2.1
       Installing rake 13.2.1
+      Fetching base64 0.2.0
       Fetching bigdecimal 3.1.8
       Fetching concurrent-ruby 1.2.3
       Fetching connection_pool 2.4.1
-      Fetching base64 0.2.0
       Installing base64 0.2.0
-      Installing connection_pool 2.4.1
       Fetching drb 2.2.1
       Installing bigdecimal 3.1.8 with native extensions
+      Installing connection_pool 2.4.1
       Installing drb 2.2.1
       Fetching minitest 5.23.0
       Installing concurrent-ruby 1.2.3
-      Installing minitest 5.23.0
       Fetching mutex_m 0.2.0
+      Installing minitest 5.23.0
       Installing mutex_m 0.2.0
       Fetching builder 3.2.4
       Installing builder 3.2.4
@@ -192,8 +192,8 @@ Installing application metrics scripts
       Installing erubi 1.12.0
       Fetching racc 1.7.3
       Fetching crass 1.0.6
-      Installing crass 1.0.6
       Installing racc 1.7.3 with native extensions
+      Installing crass 1.0.6
       Fetching rack 3.0.11
       Installing rack 3.0.11
       Fetching nio4r 2.7.3
@@ -285,49 +285,49 @@ Installing application metrics scripts
       Fetching rails-dom-testing 2.2.0
       Installing rails-dom-testing 2.2.0
       Fetching globalid 1.2.1
-      Installing globalid 1.2.1
       Fetching activemodel 7.1.3.2
-      Installing activemodel 7.1.3.2
+      Installing globalid 1.2.1
       Fetching irb 1.13.1
+      Installing activemodel 7.1.3.2
       Installing irb 1.13.1
       Fetching sdoc 2.6.1
-      Installing sdoc 2.6.1
       Fetching actionview 7.1.3.2
+      Installing sdoc 2.6.1
       Installing actionview 7.1.3.2
+      Fetching rb-inotify 0.10.1
+      Installing rb-inotify 0.10.1
       Fetching activejob 7.1.3.2
+      Fetching sassc 2.4.0
       Installing activejob 7.1.3.2
+      Installing sassc 2.4.0 with native extensions
       Fetching activerecord 7.1.3.2
       Installing activerecord 7.1.3.2
       Fetching actionpack 7.1.3.2
       Installing actionpack 7.1.3.2
       Fetching jbuilder 2.12.0
       Installing jbuilder 2.12.0
+      Fetching listen 3.9.0
+      Installing listen 3.9.0
       Fetching actioncable 7.1.3.2
       Fetching activestorage 7.1.3.2
       Installing actioncable 7.1.3.2
       Installing activestorage 7.1.3.2
       Fetching actionmailer 7.1.3.2
-      Installing actionmailer 7.1.3.2
       Fetching railties 7.1.3.2
+      Installing actionmailer 7.1.3.2
+      Installing railties 7.1.3.2
       Fetching sprockets-rails 3.4.2
       Installing sprockets-rails 3.4.2
-      Fetching rb-inotify 0.10.1
-      Installing railties 7.1.3.2
-      Installing rb-inotify 0.10.1
-      Fetching sassc 2.4.0
-      Installing sassc 2.4.0 with native extensions
       Fetching actionmailbox 7.1.3.2
       Installing actionmailbox 7.1.3.2
       Fetching actiontext 7.1.3.2
       Installing actiontext 7.1.3.2
-      Fetching listen 3.9.0
-      Installing listen 3.9.0
       Fetching coffee-rails 5.0.0
-      Installing coffee-rails 5.0.0
       Fetching jquery-rails 4.6.0
+      Installing coffee-rails 5.0.0
       Fetching rails 7.1.3.2
-      Installing rails 7.1.3.2
       Installing jquery-rails 4.6.0
+      Installing rails 7.1.3.2
       Fetching sassc-rails 2.1.2
       Installing sassc-rails 2.1.2
       Fetching sass-rails 6.0.0
@@ -336,13 +336,13 @@ Installing application metrics scripts
       Gems in the groups 'development' and 'test' were not installed.
       Bundled gems are installed into `/layers/heroku_ruby/gems`
 
-  - Done (1m 28s)
+  - Done (1m 25s)
 - Default process detection
   - Running `bundle list` ... (0.2s)
   - Detected rails app (`rails` gem found)
 - Rake assets install
   - Detected rake (`rake` gem found, `Rakefile` found at `/workspace/Rakefile`)
-  - Running `bundle exec rake -P --trace` .... (1.5s)
+  - Running `bundle exec rake -P --trace` .... (1.4s)
   - Compiling assets with cache (detected `rake assets:precompile` and `rake assets:clean` via `bundle exec rake -P`)
   - Creating cache for /workspace/public/assets
   - Creating cache for /workspace/tmp/cache/assets
@@ -354,52 +354,55 @@ Installing application metrics scripts
       ** Invoke environment (first_time)
       ** Execute environment
       ** Execute assets:precompile
-      I, [2024-12-18T16:29:20.876100 #1516]  INFO -- : Writing /workspace/public/assets/manifest-dad05bf766af0fe3d79dd746db3c1361c0583026cdf35d6a2921bccaea835331.js
-      I, [2024-12-18T16:29:20.876324 #1516]  INFO -- : Writing /workspace/public/assets/manifest-dad05bf766af0fe3d79dd746db3c1361c0583026cdf35d6a2921bccaea835331.js.gz
-      I, [2024-12-18T16:29:20.876750 #1516]  INFO -- : Writing /workspace/public/assets/lang-logo-b6c7c4b6a37e9c2425ca4d54561010c0719870ae325c849de398499f1ab098a9.png
-      I, [2024-12-18T16:29:20.877025 #1516]  INFO -- : Writing /workspace/public/assets/application-9ced36c9568ebfd1053e04ba411af767274dfcccd9807c0989f8bd17ca5e8f5b.js
-      I, [2024-12-18T16:29:20.877391 #1516]  INFO -- : Writing /workspace/public/assets/application-9ced36c9568ebfd1053e04ba411af767274dfcccd9807c0989f8bd17ca5e8f5b.js.gz
-      I, [2024-12-18T16:29:20.877584 #1516]  INFO -- : Writing /workspace/public/assets/welcome-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js
-      I, [2024-12-18T16:29:20.878078 #1516]  INFO -- : Writing /workspace/public/assets/welcome-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js.gz
-      I, [2024-12-18T16:29:20.878837 #1516]  INFO -- : Writing /workspace/public/assets/widgets-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js
-      I, [2024-12-18T16:29:20.879424 #1516]  INFO -- : Writing /workspace/public/assets/widgets-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js.gz
-      I, [2024-12-18T16:29:20.879596 #1516]  INFO -- : Writing /workspace/public/assets/application-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css
-      I, [2024-12-18T16:29:20.879771 #1516]  INFO -- : Writing /workspace/public/assets/application-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css.gz
-      I, [2024-12-18T16:29:20.879896 #1516]  INFO -- : Writing /workspace/public/assets/scaffolds-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
-      I, [2024-12-18T16:29:20.879979 #1516]  INFO -- : Writing /workspace/public/assets/scaffolds-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
-      I, [2024-12-18T16:29:20.880087 #1516]  INFO -- : Writing /workspace/public/assets/theme-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css
-      I, [2024-12-18T16:29:20.880168 #1516]  INFO -- : Writing /workspace/public/assets/theme-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css.gz
-      I, [2024-12-18T16:29:20.880715 #1516]  INFO -- : Writing /workspace/public/assets/welcome-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
-      I, [2024-12-18T16:29:20.881803 #1516]  INFO -- : Writing /workspace/public/assets/welcome-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
-      I, [2024-12-18T16:29:20.882308 #1516]  INFO -- : Writing /workspace/public/assets/widgets-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
-      I, [2024-12-18T16:29:20.883102 #1516]  INFO -- : Writing /workspace/public/assets/widgets-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
-      I, [2024-12-18T16:29:20.883351 #1516]  INFO -- : Writing /workspace/public/assets/actiontext-78de0ebeae470799f9ec25fd0e20ae2d931df88c2ff9315918d1054a2fca2596.js
-      I, [2024-12-18T16:29:20.883940 #1516]  INFO -- : Writing /workspace/public/assets/actiontext-78de0ebeae470799f9ec25fd0e20ae2d931df88c2ff9315918d1054a2fca2596.js.gz
-      I, [2024-12-18T16:29:20.884412 #1516]  INFO -- : Writing /workspace/public/assets/actiontext.esm-328ef022563f73c1b9b45ace742bd21330da0f6bd6c1c96d352d52fc8b8857e5.js
-      I, [2024-12-18T16:29:20.884587 #1516]  INFO -- : Writing /workspace/public/assets/actiontext.esm-328ef022563f73c1b9b45ace742bd21330da0f6bd6c1c96d352d52fc8b8857e5.js.gz
-      I, [2024-12-18T16:29:20.885157 #1516]  INFO -- : Writing /workspace/public/assets/trix-e17a480fcb4e30c8571f0fed42dc81de5faeef93755ca30fe9623eb3f5c709e5.js
-      I, [2024-12-18T16:29:20.885903 #1516]  INFO -- : Writing /workspace/public/assets/trix-e17a480fcb4e30c8571f0fed42dc81de5faeef93755ca30fe9623eb3f5c709e5.js.gz
-      I, [2024-12-18T16:29:20.886050 #1516]  INFO -- : Writing /workspace/public/assets/trix-5552afe828fe79c41e53b9cc3616e9d7b8c2de1979ea62cbd663b88426ec41de.css
-      I, [2024-12-18T16:29:20.886135 #1516]  INFO -- : Writing /workspace/public/assets/trix-5552afe828fe79c41e53b9cc3616e9d7b8c2de1979ea62cbd663b88426ec41de.css.gz
-      I, [2024-12-18T16:29:20.886261 #1516]  INFO -- : Writing /workspace/public/assets/activestorage-503a4fe23aabfbcb752dad255f01835904e6961d5f20d1de13987a691c27d9cd.js
-      I, [2024-12-18T16:29:20.886358 #1516]  INFO -- : Writing /workspace/public/assets/activestorage-503a4fe23aabfbcb752dad255f01835904e6961d5f20d1de13987a691c27d9cd.js.gz
-      I, [2024-12-18T16:29:20.886486 #1516]  INFO -- : Writing /workspace/public/assets/activestorage.esm-b3f7f0a5ef90530b509c5e681c4b3ef5d5046851e5b70d57fdb45e32b039c883.js
-      I, [2024-12-18T16:29:20.886602 #1516]  INFO -- : Writing /workspace/public/assets/activestorage.esm-b3f7f0a5ef90530b509c5e681c4b3ef5d5046851e5b70d57fdb45e32b039c883.js.gz
-      I, [2024-12-18T16:29:20.886732 #1516]  INFO -- : Writing /workspace/public/assets/actioncable-1c7f008c6deb7b55c6878be38700ff6bf56b75444a086fa1f46e3b781365a3ea.js
-      I, [2024-12-18T16:29:20.886824 #1516]  INFO -- : Writing /workspace/public/assets/actioncable-1c7f008c6deb7b55c6878be38700ff6bf56b75444a086fa1f46e3b781365a3ea.js.gz
-      I, [2024-12-18T16:29:20.886952 #1516]  INFO -- : Writing /workspace/public/assets/actioncable.esm-06609b0ecaffe2ab952021b9c8df8b6c68f65fc23bee728fc678a2605e1ce132.js
-      I, [2024-12-18T16:29:20.887053 #1516]  INFO -- : Writing /workspace/public/assets/actioncable.esm-06609b0ecaffe2ab952021b9c8df8b6c68f65fc23bee728fc678a2605e1ce132.js.gz
+      I, [2024-12-23T00:25:02.440036 #1517]  INFO -- : Writing /workspace/public/assets/manifest-dad05bf766af0fe3d79dd746db3c1361c0583026cdf35d6a2921bccaea835331.js
+      I, [2024-12-23T00:25:02.440410 #1517]  INFO -- : Writing /workspace/public/assets/manifest-dad05bf766af0fe3d79dd746db3c1361c0583026cdf35d6a2921bccaea835331.js.gz
+      I, [2024-12-23T00:25:02.440662 #1517]  INFO -- : Writing /workspace/public/assets/lang-logo-b6c7c4b6a37e9c2425ca4d54561010c0719870ae325c849de398499f1ab098a9.png
+      I, [2024-12-23T00:25:02.441260 #1517]  INFO -- : Writing /workspace/public/assets/application-9ced36c9568ebfd1053e04ba411af767274dfcccd9807c0989f8bd17ca5e8f5b.js
+      I, [2024-12-23T00:25:02.441487 #1517]  INFO -- : Writing /workspace/public/assets/application-9ced36c9568ebfd1053e04ba411af767274dfcccd9807c0989f8bd17ca5e8f5b.js.gz
+      I, [2024-12-23T00:25:02.441884 #1517]  INFO -- : Writing /workspace/public/assets/welcome-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js
+      I, [2024-12-23T00:25:02.442187 #1517]  INFO -- : Writing /workspace/public/assets/welcome-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js.gz
+      I, [2024-12-23T00:25:02.442303 #1517]  INFO -- : Writing /workspace/public/assets/widgets-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js
+      I, [2024-12-23T00:25:02.442480 #1517]  INFO -- : Writing /workspace/public/assets/widgets-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js.gz
+      I, [2024-12-23T00:25:02.442663 #1517]  INFO -- : Writing /workspace/public/assets/application-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css
+      I, [2024-12-23T00:25:02.442863 #1517]  INFO -- : Writing /workspace/public/assets/application-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css.gz
+      I, [2024-12-23T00:25:02.443882 #1517]  INFO -- : Writing /workspace/public/assets/scaffolds-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
+      I, [2024-12-23T00:25:02.444405 #1517]  INFO -- : Writing /workspace/public/assets/scaffolds-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
+      I, [2024-12-23T00:25:02.444613 #1517]  INFO -- : Writing /workspace/public/assets/theme-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css
+      I, [2024-12-23T00:25:02.444807 #1517]  INFO -- : Writing /workspace/public/assets/theme-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css.gz
+      I, [2024-12-23T00:25:02.444934 #1517]  INFO -- : Writing /workspace/public/assets/welcome-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
+      I, [2024-12-23T00:25:02.445003 #1517]  INFO -- : Writing /workspace/public/assets/welcome-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
+      I, [2024-12-23T00:25:02.445116 #1517]  INFO -- : Writing /workspace/public/assets/widgets-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
+      I, [2024-12-23T00:25:02.445193 #1517]  INFO -- : Writing /workspace/public/assets/widgets-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
+      I, [2024-12-23T00:25:02.445439 #1517]  INFO -- : Writing /workspace/public/assets/actiontext-78de0ebeae470799f9ec25fd0e20ae2d931df88c2ff9315918d1054a2fca2596.js
+      I, [2024-12-23T00:25:02.446788 #1517]  INFO -- : Writing /workspace/public/assets/actiontext-78de0ebeae470799f9ec25fd0e20ae2d931df88c2ff9315918d1054a2fca2596.js.gz
+      I, [2024-12-23T00:25:02.446989 #1517]  INFO -- : Writing /workspace/public/assets/actiontext.esm-328ef022563f73c1b9b45ace742bd21330da0f6bd6c1c96d352d52fc8b8857e5.js
+      I, [2024-12-23T00:25:02.447456 #1517]  INFO -- : Writing /workspace/public/assets/actiontext.esm-328ef022563f73c1b9b45ace742bd21330da0f6bd6c1c96d352d52fc8b8857e5.js.gz
+      I, [2024-12-23T00:25:02.447574 #1517]  INFO -- : Writing /workspace/public/assets/trix-e17a480fcb4e30c8571f0fed42dc81de5faeef93755ca30fe9623eb3f5c709e5.js
+      I, [2024-12-23T00:25:02.447643 #1517]  INFO -- : Writing /workspace/public/assets/trix-e17a480fcb4e30c8571f0fed42dc81de5faeef93755ca30fe9623eb3f5c709e5.js.gz
+      I, [2024-12-23T00:25:02.447737 #1517]  INFO -- : Writing /workspace/public/assets/trix-5552afe828fe79c41e53b9cc3616e9d7b8c2de1979ea62cbd663b88426ec41de.css
+      I, [2024-12-23T00:25:02.448816 #1517]  INFO -- : Writing /workspace/public/assets/trix-5552afe828fe79c41e53b9cc3616e9d7b8c2de1979ea62cbd663b88426ec41de.css.gz
+      I, [2024-12-23T00:25:02.448964 #1517]  INFO -- : Writing /workspace/public/assets/activestorage-503a4fe23aabfbcb752dad255f01835904e6961d5f20d1de13987a691c27d9cd.js
+      I, [2024-12-23T00:25:02.449060 #1517]  INFO -- : Writing /workspace/public/assets/activestorage-503a4fe23aabfbcb752dad255f01835904e6961d5f20d1de13987a691c27d9cd.js.gz
+      I, [2024-12-23T00:25:02.449201 #1517]  INFO -- : Writing /workspace/public/assets/activestorage.esm-b3f7f0a5ef90530b509c5e681c4b3ef5d5046851e5b70d57fdb45e32b039c883.js
+      I, [2024-12-23T00:25:02.449337 #1517]  INFO -- : Writing /workspace/public/assets/activestorage.esm-b3f7f0a5ef90530b509c5e681c4b3ef5d5046851e5b70d57fdb45e32b039c883.js.gz
+      I, [2024-12-23T00:25:02.449840 #1517]  INFO -- : Writing /workspace/public/assets/actioncable-1c7f008c6deb7b55c6878be38700ff6bf56b75444a086fa1f46e3b781365a3ea.js
+      I, [2024-12-23T00:25:02.449954 #1517]  INFO -- : Writing /workspace/public/assets/actioncable-1c7f008c6deb7b55c6878be38700ff6bf56b75444a086fa1f46e3b781365a3ea.js.gz
+      I, [2024-12-23T00:25:02.450499 #1517]  INFO -- : Writing /workspace/public/assets/actioncable.esm-06609b0ecaffe2ab952021b9c8df8b6c68f65fc23bee728fc678a2605e1ce132.js
+      I, [2024-12-23T00:25:02.450688 #1517]  INFO -- : Writing /workspace/public/assets/actioncable.esm-06609b0ecaffe2ab952021b9c8df8b6c68f65fc23bee728fc678a2605e1ce132.js.gz
       ** Invoke assets:clean (first_time)
       ** Invoke assets:environment 
       ** Execute assets:clean
 
-  - Done (1.3s)
+  - Done (1.2s)
   - Storing cache for /workspace/public/assets
   - Storing cache for /workspace/tmp/cache/assets
-- Done (finished in 1m 32s)
+- Done (finished in 1m 30s)
 
-[Discovering process types]
-Procfile declares types -> web
+## Procfile Buildpack
+
+- Processes from `Procfile`
+  - web: `bundle exec puma -C config/puma.rb`
+- Done (finished in < 0.1s)
 ===> EXPORTING
 Adding layer 'heroku/nodejs-engine:dist'
 Adding layer 'heroku/nodejs-engine:node_runtime_metrics'
@@ -420,7 +423,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (a290a0806170):
+*** Images (e087d18755e9):
       my-image-name
 Adding cache layer 'heroku/nodejs-engine:dist'
 Adding cache layer 'heroku/ruby:bundler'
@@ -439,7 +442,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-a290a0806170   my-image-name    latest
+e087d18755e9   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -455,7 +458,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 3 of 6 buildpacks participating
 heroku/nodejs-engine 3.4.0
 heroku/ruby          5.0.0
-heroku/procfile      3.1.2
+heroku/procfile      3.2.0
 ===> RESTORING
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
@@ -650,7 +653,7 @@ Image with name "my-image-name" not found
 heroku/python        0.21.0
 heroku/nodejs-engine 3.4.0
 heroku/ruby          5.0.0
-heroku/procfile      3.1.2
+heroku/procfile      3.2.0
 ===> RESTORING
 Skipping buildpack layer analysis
 ===> BUILDING
@@ -688,42 +691,42 @@ Installing application metrics scripts
 - Metrics agent
   - Skipping install (`barnes` gem not found)
 - Ruby version `3.2.4` from `Gemfile.lock`
-  - Installing ... (0.6s)
+  - Installing .... (1.5s)
 - Bundler version `2.5.9` from `Gemfile.lock`
-  - Running `gem install bundler --version 2.5.9` ... (0.6s)
+  - Running `gem install bundler --version 2.5.9` ... (0.5s)
 - Bundle install gems
   - Running `BUNDLE_BIN="/layers/heroku_ruby/gems/bin" BUNDLE_CLEAN="1" BUNDLE_DEPLOYMENT="1" BUNDLE_GEMFILE="/workspace/Gemfile" BUNDLE_PATH="/layers/heroku_ruby/gems" BUNDLE_WITHOUT="development:test" bundle install`
 
       Fetching gem metadata from https://rubygems.org/.........
       Fetching rake 13.2.1
       Installing rake 13.2.1
-      Fetching base64 0.2.0
       Fetching bigdecimal 3.1.8
+      Fetching base64 0.2.0
       Fetching concurrent-ruby 1.2.3
       Fetching connection_pool 2.4.1
+      Installing bigdecimal 3.1.8 with native extensions
       Installing base64 0.2.0
       Fetching drb 2.2.1
       Installing connection_pool 2.4.1
-      Installing bigdecimal 3.1.8 with native extensions
       Installing drb 2.2.1
       Fetching minitest 5.23.0
-      Fetching mutex_m 0.2.0
-      Installing mutex_m 0.2.0
-      Installing minitest 5.23.0
       Installing concurrent-ruby 1.2.3
+      Fetching mutex_m 0.2.0
+      Installing minitest 5.23.0
+      Installing mutex_m 0.2.0
       Fetching builder 3.2.4
       Installing builder 3.2.4
       Fetching erubi 1.12.0
-      Fetching racc 1.7.3
       Installing erubi 1.12.0
+      Fetching racc 1.7.3
       Fetching crass 1.0.6
-      Installing crass 1.0.6
       Installing racc 1.7.3 with native extensions
+      Installing crass 1.0.6
       Fetching rack 3.0.11
       Installing rack 3.0.11
       Fetching nio4r 2.7.3
-      Fetching websocket-extensions 0.1.5
       Installing nio4r 2.7.3 with native extensions
+      Fetching websocket-extensions 0.1.5
       Installing websocket-extensions 0.1.5
       Fetching zeitwerk 2.6.14
       Installing zeitwerk 2.6.14
@@ -784,9 +787,9 @@ Installing application metrics scripts
       Fetching psych 5.1.2
       Installing psych 5.1.2 with native extensions
       Fetching bootsnap 1.18.3
+      Installing bootsnap 1.18.3 with native extensions
       Fetching rackup 2.1.0
       Installing rackup 2.1.0
-      Installing bootsnap 1.18.3 with native extensions
       Fetching reline 0.5.7
       Installing reline 0.5.7
       Fetching turbolinks 5.2.1
@@ -822,36 +825,36 @@ Installing application metrics scripts
       Fetching activejob 7.1.3.2
       Installing activejob 7.1.3.2
       Fetching activerecord 7.1.3.2
-      Fetching actionpack 7.1.3.2
-      Installing activerecord 7.1.3.2
-      Installing actionpack 7.1.3.2
-      Fetching jbuilder 2.12.0
-      Installing jbuilder 2.12.0
       Fetching rb-inotify 0.10.1
       Installing rb-inotify 0.10.1
       Fetching sassc 2.4.0
-      Fetching actioncable 7.1.3.2
+      Installing activerecord 7.1.3.2
       Installing sassc 2.4.0 with native extensions
+      Fetching actionpack 7.1.3.2
+      Installing actionpack 7.1.3.2
+      Fetching jbuilder 2.12.0
+      Installing jbuilder 2.12.0
+      Fetching listen 3.9.0
+      Installing listen 3.9.0
+      Fetching actioncable 7.1.3.2
       Installing actioncable 7.1.3.2
+      Fetching activestorage 7.1.3.2
+      Installing activestorage 7.1.3.2
       Fetching actionmailer 7.1.3.2
       Installing actionmailer 7.1.3.2
       Fetching railties 7.1.3.2
       Installing railties 7.1.3.2
       Fetching sprockets-rails 3.4.2
       Installing sprockets-rails 3.4.2
-      Fetching listen 3.9.0
-      Installing listen 3.9.0
-      Fetching activestorage 7.1.3.2
-      Installing activestorage 7.1.3.2
-      Fetching coffee-rails 5.0.0
-      Installing coffee-rails 5.0.0
-      Fetching jquery-rails 4.6.0
-      Installing jquery-rails 4.6.0
       Fetching actionmailbox 7.1.3.2
       Installing actionmailbox 7.1.3.2
       Fetching actiontext 7.1.3.2
       Installing actiontext 7.1.3.2
+      Fetching coffee-rails 5.0.0
+      Installing coffee-rails 5.0.0
+      Fetching jquery-rails 4.6.0
       Fetching rails 7.1.3.2
+      Installing jquery-rails 4.6.0
       Installing rails 7.1.3.2
       Fetching sassc-rails 2.1.2
       Installing sassc-rails 2.1.2
@@ -861,13 +864,13 @@ Installing application metrics scripts
       Gems in the groups 'development' and 'test' were not installed.
       Bundled gems are installed into `/layers/heroku_ruby/gems`
 
-  - Done (1m 26s)
+  - Done (1m 25s)
 - Default process detection
   - Running `bundle list` ... (0.2s)
   - Detected rails app (`rails` gem found)
 - Rake assets install
   - Detected rake (`rake` gem found, `Rakefile` found at `/workspace/Rakefile`)
-  - Running `bundle exec rake -P --trace` .... (1.4s)
+  - Running `bundle exec rake -P --trace` .... (1.3s)
   - Compiling assets with cache (detected `rake assets:precompile` and `rake assets:clean` via `bundle exec rake -P`)
   - Creating cache for /workspace/public/assets
   - Creating cache for /workspace/tmp/cache/assets
@@ -879,41 +882,41 @@ Installing application metrics scripts
       ** Invoke environment (first_time)
       ** Execute environment
       ** Execute assets:precompile
-      I, [2024-12-18T16:31:42.745931 #1563]  INFO -- : Writing /workspace/public/assets/manifest-dad05bf766af0fe3d79dd746db3c1361c0583026cdf35d6a2921bccaea835331.js
-      I, [2024-12-18T16:31:42.746114 #1563]  INFO -- : Writing /workspace/public/assets/manifest-dad05bf766af0fe3d79dd746db3c1361c0583026cdf35d6a2921bccaea835331.js.gz
-      I, [2024-12-18T16:31:42.746433 #1563]  INFO -- : Writing /workspace/public/assets/lang-logo-b6c7c4b6a37e9c2425ca4d54561010c0719870ae325c849de398499f1ab098a9.png
-      I, [2024-12-18T16:31:42.747082 #1563]  INFO -- : Writing /workspace/public/assets/application-9ced36c9568ebfd1053e04ba411af767274dfcccd9807c0989f8bd17ca5e8f5b.js
-      I, [2024-12-18T16:31:42.747309 #1563]  INFO -- : Writing /workspace/public/assets/application-9ced36c9568ebfd1053e04ba411af767274dfcccd9807c0989f8bd17ca5e8f5b.js.gz
-      I, [2024-12-18T16:31:42.747586 #1563]  INFO -- : Writing /workspace/public/assets/welcome-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js
-      I, [2024-12-18T16:31:42.747940 #1563]  INFO -- : Writing /workspace/public/assets/welcome-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js.gz
-      I, [2024-12-18T16:31:42.748469 #1563]  INFO -- : Writing /workspace/public/assets/widgets-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js
-      I, [2024-12-18T16:31:42.748607 #1563]  INFO -- : Writing /workspace/public/assets/widgets-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js.gz
-      I, [2024-12-18T16:31:42.748873 #1563]  INFO -- : Writing /workspace/public/assets/application-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css
-      I, [2024-12-18T16:31:42.749395 #1563]  INFO -- : Writing /workspace/public/assets/application-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css.gz
-      I, [2024-12-18T16:31:42.749551 #1563]  INFO -- : Writing /workspace/public/assets/scaffolds-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
-      I, [2024-12-18T16:31:42.749655 #1563]  INFO -- : Writing /workspace/public/assets/scaffolds-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
-      I, [2024-12-18T16:31:42.750606 #1563]  INFO -- : Writing /workspace/public/assets/theme-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css
-      I, [2024-12-18T16:31:42.750909 #1563]  INFO -- : Writing /workspace/public/assets/theme-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css.gz
-      I, [2024-12-18T16:31:42.751802 #1563]  INFO -- : Writing /workspace/public/assets/welcome-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
-      I, [2024-12-18T16:31:42.751976 #1563]  INFO -- : Writing /workspace/public/assets/welcome-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
-      I, [2024-12-18T16:31:42.752693 #1563]  INFO -- : Writing /workspace/public/assets/widgets-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
-      I, [2024-12-18T16:31:42.753058 #1563]  INFO -- : Writing /workspace/public/assets/widgets-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
-      I, [2024-12-18T16:31:42.753191 #1563]  INFO -- : Writing /workspace/public/assets/actiontext-78de0ebeae470799f9ec25fd0e20ae2d931df88c2ff9315918d1054a2fca2596.js
-      I, [2024-12-18T16:31:42.753283 #1563]  INFO -- : Writing /workspace/public/assets/actiontext-78de0ebeae470799f9ec25fd0e20ae2d931df88c2ff9315918d1054a2fca2596.js.gz
-      I, [2024-12-18T16:31:42.753663 #1563]  INFO -- : Writing /workspace/public/assets/actiontext.esm-328ef022563f73c1b9b45ace742bd21330da0f6bd6c1c96d352d52fc8b8857e5.js
-      I, [2024-12-18T16:31:42.753774 #1563]  INFO -- : Writing /workspace/public/assets/actiontext.esm-328ef022563f73c1b9b45ace742bd21330da0f6bd6c1c96d352d52fc8b8857e5.js.gz
-      I, [2024-12-18T16:31:42.753858 #1563]  INFO -- : Writing /workspace/public/assets/trix-e17a480fcb4e30c8571f0fed42dc81de5faeef93755ca30fe9623eb3f5c709e5.js
-      I, [2024-12-18T16:31:42.753969 #1563]  INFO -- : Writing /workspace/public/assets/trix-e17a480fcb4e30c8571f0fed42dc81de5faeef93755ca30fe9623eb3f5c709e5.js.gz
-      I, [2024-12-18T16:31:42.754104 #1563]  INFO -- : Writing /workspace/public/assets/trix-5552afe828fe79c41e53b9cc3616e9d7b8c2de1979ea62cbd663b88426ec41de.css
-      I, [2024-12-18T16:31:42.754194 #1563]  INFO -- : Writing /workspace/public/assets/trix-5552afe828fe79c41e53b9cc3616e9d7b8c2de1979ea62cbd663b88426ec41de.css.gz
-      I, [2024-12-18T16:31:42.754313 #1563]  INFO -- : Writing /workspace/public/assets/activestorage-503a4fe23aabfbcb752dad255f01835904e6961d5f20d1de13987a691c27d9cd.js
-      I, [2024-12-18T16:31:42.754400 #1563]  INFO -- : Writing /workspace/public/assets/activestorage-503a4fe23aabfbcb752dad255f01835904e6961d5f20d1de13987a691c27d9cd.js.gz
-      I, [2024-12-18T16:31:42.754543 #1563]  INFO -- : Writing /workspace/public/assets/activestorage.esm-b3f7f0a5ef90530b509c5e681c4b3ef5d5046851e5b70d57fdb45e32b039c883.js
-      I, [2024-12-18T16:31:42.754630 #1563]  INFO -- : Writing /workspace/public/assets/activestorage.esm-b3f7f0a5ef90530b509c5e681c4b3ef5d5046851e5b70d57fdb45e32b039c883.js.gz
-      I, [2024-12-18T16:31:42.754760 #1563]  INFO -- : Writing /workspace/public/assets/actioncable-1c7f008c6deb7b55c6878be38700ff6bf56b75444a086fa1f46e3b781365a3ea.js
-      I, [2024-12-18T16:31:42.754856 #1563]  INFO -- : Writing /workspace/public/assets/actioncable-1c7f008c6deb7b55c6878be38700ff6bf56b75444a086fa1f46e3b781365a3ea.js.gz
-      I, [2024-12-18T16:31:42.754978 #1563]  INFO -- : Writing /workspace/public/assets/actioncable.esm-06609b0ecaffe2ab952021b9c8df8b6c68f65fc23bee728fc678a2605e1ce132.js
-      I, [2024-12-18T16:31:42.755068 #1563]  INFO -- : Writing /workspace/public/assets/actioncable.esm-06609b0ecaffe2ab952021b9c8df8b6c68f65fc23bee728fc678a2605e1ce132.js.gz
+      I, [2024-12-23T00:27:21.082163 #1560]  INFO -- : Writing /workspace/public/assets/manifest-dad05bf766af0fe3d79dd746db3c1361c0583026cdf35d6a2921bccaea835331.js
+      I, [2024-12-23T00:27:21.082444 #1560]  INFO -- : Writing /workspace/public/assets/manifest-dad05bf766af0fe3d79dd746db3c1361c0583026cdf35d6a2921bccaea835331.js.gz
+      I, [2024-12-23T00:27:21.082690 #1560]  INFO -- : Writing /workspace/public/assets/lang-logo-b6c7c4b6a37e9c2425ca4d54561010c0719870ae325c849de398499f1ab098a9.png
+      I, [2024-12-23T00:27:21.083257 #1560]  INFO -- : Writing /workspace/public/assets/application-9ced36c9568ebfd1053e04ba411af767274dfcccd9807c0989f8bd17ca5e8f5b.js
+      I, [2024-12-23T00:27:21.083800 #1560]  INFO -- : Writing /workspace/public/assets/application-9ced36c9568ebfd1053e04ba411af767274dfcccd9807c0989f8bd17ca5e8f5b.js.gz
+      I, [2024-12-23T00:27:21.084024 #1560]  INFO -- : Writing /workspace/public/assets/welcome-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js
+      I, [2024-12-23T00:27:21.084287 #1560]  INFO -- : Writing /workspace/public/assets/welcome-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js.gz
+      I, [2024-12-23T00:27:21.084726 #1560]  INFO -- : Writing /workspace/public/assets/widgets-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js
+      I, [2024-12-23T00:27:21.084882 #1560]  INFO -- : Writing /workspace/public/assets/widgets-27cfb9694c5e92d25d972c2b4a2d2e222ad088aef866823f772241c1db423402.js.gz
+      I, [2024-12-23T00:27:21.085104 #1560]  INFO -- : Writing /workspace/public/assets/application-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css
+      I, [2024-12-23T00:27:21.085739 #1560]  INFO -- : Writing /workspace/public/assets/application-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css.gz
+      I, [2024-12-23T00:27:21.085916 #1560]  INFO -- : Writing /workspace/public/assets/scaffolds-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
+      I, [2024-12-23T00:27:21.086535 #1560]  INFO -- : Writing /workspace/public/assets/scaffolds-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
+      I, [2024-12-23T00:27:21.086862 #1560]  INFO -- : Writing /workspace/public/assets/theme-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css
+      I, [2024-12-23T00:27:21.087047 #1560]  INFO -- : Writing /workspace/public/assets/theme-776d900b9840362472b5b6b4afb9b798c78d53098a77b289b8bfc22c6d241913.css.gz
+      I, [2024-12-23T00:27:21.087755 #1560]  INFO -- : Writing /workspace/public/assets/welcome-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
+      I, [2024-12-23T00:27:21.088113 #1560]  INFO -- : Writing /workspace/public/assets/welcome-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
+      I, [2024-12-23T00:27:21.088430 #1560]  INFO -- : Writing /workspace/public/assets/widgets-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css
+      I, [2024-12-23T00:27:21.088574 #1560]  INFO -- : Writing /workspace/public/assets/widgets-04024382391bb910584145d8113cf35ef376b55d125bb4516cebeb14ce788597.css.gz
+      I, [2024-12-23T00:27:21.088920 #1560]  INFO -- : Writing /workspace/public/assets/actiontext-78de0ebeae470799f9ec25fd0e20ae2d931df88c2ff9315918d1054a2fca2596.js
+      I, [2024-12-23T00:27:21.089135 #1560]  INFO -- : Writing /workspace/public/assets/actiontext-78de0ebeae470799f9ec25fd0e20ae2d931df88c2ff9315918d1054a2fca2596.js.gz
+      I, [2024-12-23T00:27:21.089259 #1560]  INFO -- : Writing /workspace/public/assets/actiontext.esm-328ef022563f73c1b9b45ace742bd21330da0f6bd6c1c96d352d52fc8b8857e5.js
+      I, [2024-12-23T00:27:21.089346 #1560]  INFO -- : Writing /workspace/public/assets/actiontext.esm-328ef022563f73c1b9b45ace742bd21330da0f6bd6c1c96d352d52fc8b8857e5.js.gz
+      I, [2024-12-23T00:27:21.089454 #1560]  INFO -- : Writing /workspace/public/assets/trix-e17a480fcb4e30c8571f0fed42dc81de5faeef93755ca30fe9623eb3f5c709e5.js
+      I, [2024-12-23T00:27:21.089534 #1560]  INFO -- : Writing /workspace/public/assets/trix-e17a480fcb4e30c8571f0fed42dc81de5faeef93755ca30fe9623eb3f5c709e5.js.gz
+      I, [2024-12-23T00:27:21.089636 #1560]  INFO -- : Writing /workspace/public/assets/trix-5552afe828fe79c41e53b9cc3616e9d7b8c2de1979ea62cbd663b88426ec41de.css
+      I, [2024-12-23T00:27:21.089713 #1560]  INFO -- : Writing /workspace/public/assets/trix-5552afe828fe79c41e53b9cc3616e9d7b8c2de1979ea62cbd663b88426ec41de.css.gz
+      I, [2024-12-23T00:27:21.089816 #1560]  INFO -- : Writing /workspace/public/assets/activestorage-503a4fe23aabfbcb752dad255f01835904e6961d5f20d1de13987a691c27d9cd.js
+      I, [2024-12-23T00:27:21.089894 #1560]  INFO -- : Writing /workspace/public/assets/activestorage-503a4fe23aabfbcb752dad255f01835904e6961d5f20d1de13987a691c27d9cd.js.gz
+      I, [2024-12-23T00:27:21.089995 #1560]  INFO -- : Writing /workspace/public/assets/activestorage.esm-b3f7f0a5ef90530b509c5e681c4b3ef5d5046851e5b70d57fdb45e32b039c883.js
+      I, [2024-12-23T00:27:21.090087 #1560]  INFO -- : Writing /workspace/public/assets/activestorage.esm-b3f7f0a5ef90530b509c5e681c4b3ef5d5046851e5b70d57fdb45e32b039c883.js.gz
+      I, [2024-12-23T00:27:21.090199 #1560]  INFO -- : Writing /workspace/public/assets/actioncable-1c7f008c6deb7b55c6878be38700ff6bf56b75444a086fa1f46e3b781365a3ea.js
+      I, [2024-12-23T00:27:21.090274 #1560]  INFO -- : Writing /workspace/public/assets/actioncable-1c7f008c6deb7b55c6878be38700ff6bf56b75444a086fa1f46e3b781365a3ea.js.gz
+      I, [2024-12-23T00:27:21.090389 #1560]  INFO -- : Writing /workspace/public/assets/actioncable.esm-06609b0ecaffe2ab952021b9c8df8b6c68f65fc23bee728fc678a2605e1ce132.js
+      I, [2024-12-23T00:27:21.090487 #1560]  INFO -- : Writing /workspace/public/assets/actioncable.esm-06609b0ecaffe2ab952021b9c8df8b6c68f65fc23bee728fc678a2605e1ce132.js.gz
       ** Invoke assets:clean (first_time)
       ** Invoke assets:environment 
       ** Execute assets:clean
@@ -921,10 +924,13 @@ Installing application metrics scripts
   - Done (1.2s)
   - Storing cache for /workspace/public/assets
   - Storing cache for /workspace/tmp/cache/assets
-- Done (finished in 1m 31s)
+- Done (finished in 1m 30s)
 
-[Discovering process types]
-Procfile declares types -> web
+## Procfile Buildpack
+
+- Processes from `Procfile`
+  - web: `bundle exec puma -C config/puma.rb`
+- Done (finished in < 0.1s)
 ===> EXPORTING
 Adding layer 'heroku/python:python'
 Adding layer 'heroku/python:venv'
@@ -947,7 +953,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (0e9b4d26084e):
+*** Images (b895f859ed85):
       my-image-name
 Adding cache layer 'heroku/python:pip'
 Adding cache layer 'heroku/python:pip-cache'
