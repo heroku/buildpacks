@@ -9,7 +9,7 @@ In short, a builder is a delivery mechanism for buildpacks. A builder contains r
 You can view the contents of a builder via the command `pack builder inspect`. For example:
 
 ```
-:::>> $ pack builder inspect heroku/builder:24 | grep Buildpacks: -m1 -A10
+:::>> $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detection Order:/ {exit} flag'
 ```
 
 > [!NOTE]
