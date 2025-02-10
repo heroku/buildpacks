@@ -66,22 +66,22 @@ Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.0.3          https://github.com/heroku/buildpacks-deb-packages
   heroku/dotnet                     Heroku .NET                        0.1.10         https://github.com/heroku/buildpacks-dotnet
-  heroku/go                         Heroku Go                          0.5.2          https://github.com/heroku/buildpacks-go
+  heroku/go                         Heroku Go                          0.5.3          https://github.com/heroku/buildpacks-go
   heroku/gradle                     Heroku Gradle                      6.0.4          https://github.com/heroku/buildpacks-jvm
   heroku/java                       Heroku Java                        6.0.4          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     6.0.4          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       6.0.4          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm install        3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                3.4.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs                     Heroku Node.js                     3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm install        3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                3.4.5          https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         0.2.0          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.0.0          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      0.23.0         https://github.com/heroku/buildpacks-python
+  heroku/python                     Heroku Python                      0.24.0         https://github.com/heroku/buildpacks-python
   heroku/ruby                       Heroku Ruby                        5.0.1          https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         6.0.4          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       6.0.4          https://github.com/heroku/buildpacks-jvm
@@ -171,7 +171,7 @@ Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
 [info] loading global plugins from /layers/heroku_sbt/sbt-global/plugins
 [info] compiling 1 Scala source to /layers/heroku_sbt/sbt-global/plugins/target/scala-2.12/sbt-1.0/classes ...
 [info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.16. Compiling...
-[info]   Compilation completed in 8.374s.
+[info]   Compilation completed in 8.14s.
 [info] done compiling
 [info] loading settings for project workspace-build from plugins.sbt ...
 [info] loading project definition from /workspace/project
@@ -193,11 +193,11 @@ Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
 [info] 
 [info] compiling 8 Scala sources and 1 Java source to /workspace/target/scala-2.13/classes ...
 [info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.10. Compiling...
-[info]   Compilation completed in 7.893s.
+[info]   Compilation completed in 7.68s.
 [info] done compiling
-[success] Total time: 13 s, completed Feb 3, 2025, 12:33:51 AM
+[success] Total time: 13 s, completed Feb 10, 2025, 12:34:45 AM
 [info] Wrote /workspace/target/scala-2.13/scala-getting-started_2.13-1.0-SNAPSHOT.pom
-[success] Total time: 1 s, completed Feb 3, 2025, 12:33:51 AM
+[success] Total time: 1 s, completed Feb 10, 2025, 12:34:46 AM
 
 ## Procfile Buildpack
 
@@ -217,7 +217,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (3625af880126):
+*** Images (f0673ad1c0b9):
       my-image-name
 Adding cache layer 'heroku/jvm:openjdk'
 Adding cache layer 'heroku/sbt:coursier-home'
@@ -235,7 +235,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-3625af880126   my-image-name    latest
+f0673ad1c0b9   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -273,10 +273,10 @@ By default, images will be booted into a web server configuration. You can launc
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=80.0 -Dfile.encoding=UTF-8
-2025-02-03 00:34:03 [34mINFO [0;39m [36mplay.api.db.DefaultDBApi[0;39m [35m[0;39m Database [default] initialized
-2025-02-03 00:34:03 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Creating Pool for datasource 'default'
-2025-02-03 00:34:04 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Prod) (no global state)
-2025-02-03 00:34:04 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
+2025-02-10 00:34:58 [34mINFO [0;39m [36mplay.api.db.DefaultDBApi[0;39m [35m[0;39m Database [default] initialized
+2025-02-10 00:34:58 [34mINFO [0;39m [36mplay.api.db.HikariCPConnectionPool[0;39m [35m[0;39m Creating Pool for datasource 'default'
+2025-02-10 00:34:58 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Prod) (no global state)
+2025-02-10 00:34:59 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
