@@ -66,22 +66,22 @@ Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.0.3          https://github.com/heroku/buildpacks-deb-packages
   heroku/dotnet                     Heroku .NET                        0.1.10         https://github.com/heroku/buildpacks-dotnet
-  heroku/go                         Heroku Go                          0.5.2          https://github.com/heroku/buildpacks-go
+  heroku/go                         Heroku Go                          0.5.3          https://github.com/heroku/buildpacks-go
   heroku/gradle                     Heroku Gradle                      6.0.4          https://github.com/heroku/buildpacks-jvm
   heroku/java                       Heroku Java                        6.0.4          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     6.0.4          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       6.0.4          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm install        3.4.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                3.4.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs                     Heroku Node.js                     3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm install        3.4.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                3.4.5          https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         0.2.0          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.0.0          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      0.23.0         https://github.com/heroku/buildpacks-python
+  heroku/python                     Heroku Python                      0.24.0         https://github.com/heroku/buildpacks-python
   heroku/ruby                       Heroku Ruby                        5.0.1          https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         6.0.4          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       6.0.4          https://github.com/heroku/buildpacks-jvm
@@ -187,7 +187,6 @@ Package operations: 26 installs, 0 updates, 0 removals
   - Downloading heroku-sys/php (8.3.13)
   - Downloading heroku-sys/composer (2.8.2)
  0/2 [>---------------------------]   0%
- 1/2 [==============>-------------]  50%
  2/2 [============================] 100%
   - Installing heroku-sys/php (8.3.13)
   - Installing fig/http-message-util (1.1.5)
@@ -233,7 +232,6 @@ Package operations: 4 installs, 0 updates, 0 removals
   - Downloading heroku-sys/apache (2.4.62)
   - Downloading heroku-sys/nginx (1.26.2)
  0/2 [>---------------------------]   0%
- 1/2 [==============>-------------]  50%
  2/2 [============================] 100%
   - Installing heroku-sys/apache (2.4.62)
   - Installing heroku-sys/nginx (1.26.2)
@@ -318,7 +316,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (f4ccd6256992):
+*** Images (6b6b413c83ea):
       my-image-name
 Adding cache layer 'heroku/php:composer_cache'
 Adding cache layer 'heroku/php:platform_cache'
@@ -333,7 +331,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-f4ccd6256992   my-image-name    latest
+6b6b413c83ea   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
