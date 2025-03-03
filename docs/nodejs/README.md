@@ -64,27 +64,27 @@ You can view the contents of a builder via the command `pack builder inspect`. F
 $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detection Order:/ {exit} flag'
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
-  heroku/deb-packages               Heroku .deb Packages               0.0.3          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.2.2          https://github.com/heroku/buildpacks-dotnet
+  heroku/deb-packages               Heroku .deb Packages               0.1.0          https://github.com/heroku/buildpacks-deb-packages
+  heroku/dotnet                     Heroku .NET                        0.3.0          https://github.com/heroku/buildpacks-dotnet
   heroku/go                         Heroku Go                          0.5.4          https://github.com/heroku/buildpacks-go
-  heroku/gradle                     Heroku Gradle                      6.0.4          https://github.com/heroku/buildpacks-jvm
-  heroku/java                       Heroku Java                        6.0.4          https://github.com/heroku/buildpacks-jvm
-  heroku/jvm                        Heroku OpenJDK                     6.0.4          https://github.com/heroku/buildpacks-jvm
-  heroku/maven                      Heroku Maven                       6.0.4          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     3.4.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            3.4.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              3.4.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.4.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.4.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.4.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm install        3.4.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                3.4.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                        Heroku PHP                         0.2.0          https://github.com/heroku/buildpacks-php
-  heroku/procfile                   Heroku Procfile                    4.0.0          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      0.24.0         https://github.com/heroku/buildpacks-python
-  heroku/ruby                       Heroku Ruby                        5.0.1          https://github.com/heroku/buildpacks-ruby
-  heroku/sbt                        Heroku sbt                         6.0.4          https://github.com/heroku/buildpacks-jvm
-  heroku/scala                      Heroku Scala                       6.0.4          https://github.com/heroku/buildpacks-jvm
+  heroku/gradle                     Heroku Gradle                      6.1.0          https://github.com/heroku/buildpacks-jvm
+  heroku/java                       Heroku Java                        6.1.0          https://github.com/heroku/buildpacks-jvm
+  heroku/jvm                        Heroku OpenJDK                     6.1.0          https://github.com/heroku/buildpacks-jvm
+  heroku/maven                      Heroku Maven                       6.1.0          https://github.com/heroku/buildpacks-jvm
+  heroku/nodejs                     Heroku Node.js                     3.4.11         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.4.11         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.4.11         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.4.11         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.4.11         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.4.11         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm install        3.4.11         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                3.4.11         https://github.com/heroku/buildpacks-nodejs
+  heroku/php                        Heroku PHP                         0.2.1          https://github.com/heroku/buildpacks-php
+  heroku/procfile                   Heroku Procfile                    4.1.0          https://github.com/heroku/buildpacks-procfile
+  heroku/python                     Heroku Python                      0.24.1         https://github.com/heroku/buildpacks-python
+  heroku/ruby                       Heroku Ruby                        5.1.0          https://github.com/heroku/buildpacks-ruby
+  heroku/sbt                        Heroku sbt                         6.1.0          https://github.com/heroku/buildpacks-jvm
+  heroku/scala                      Heroku Scala                       6.1.0          https://github.com/heroku/buildpacks-jvm
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
@@ -142,25 +142,24 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 3 of 6 buildpacks participating
-heroku/nodejs-engine      3.4.9
-heroku/nodejs-npm-install 3.4.9
-heroku/procfile           4.0.0
+heroku/nodejs-engine      3.4.11
+heroku/nodejs-npm-install 3.4.11
+heroku/procfile           4.1.0
 ===> RESTORING
 Skipping buildpack layer analysis
 ===> BUILDING
 
-[Heroku Node.js Engine Buildpack]
+# Heroku Node.js Engine
 
-[Checking Node.js version]
-Detected Node.js version range: >=18.0.0 <19.0.0-0||>=20.0.0 <21.0.0-0||>=22.0.0 <23.0.0-0
-Resolved Node.js version: 22.14.0
-
-[Installing Node.js distribution]
-Downloading Node.js 22.14.0 (linux-amd64) from https://nodejs.org/download/release/v22.14.0/node-v22.14.0-linux-x64.tar.gz
-Verifying checksum
-Extracting Node.js 22.14.0 (linux-amd64)
-Installing Node.js 22.14.0 (linux-amd64)
-Installing application metrics scripts
+- Checking Node.js version
+  - Detected Node.js version range: `>=18.0.0 <19.0.0-0||>=20.0.0 <21.0.0-0||>=22.0.0 <23.0.0-0`
+  - Resolved Node.js version: `22.14.0`
+- Installing Node.js distribution
+  - Downloading Node.js `22.14.0 (linux-amd64)` from https://nodejs.org/download/release/v22.14.0/node-v22.14.0-linux-x64.tar.gz ... (0.4s)
+  - Verifying checksum
+  - Extracting Node.js `22.14.0 (linux-amd64)`
+  - Installing Node.js `22.14.0 (linux-amd64)` ... (< 0.1s)
+- Done (finished in < 0.1s)
 
 # Heroku Node.js npm Install Buildpack
 
@@ -193,7 +192,6 @@ Installing application metrics scripts
 - Done (finished in < 0.1s)
 ===> EXPORTING
 Adding layer 'heroku/nodejs-engine:dist'
-Adding layer 'heroku/nodejs-engine:node_runtime_metrics'
 Adding layer 'heroku/nodejs-engine:web_env'
 Adding layer 'heroku/nodejs-npm-install:npm_runtime_config'
 Adding layer 'buildpacksio/lifecycle:launch.sbom'
@@ -206,7 +204,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (7957af2b105b):
+*** Images (093d0e57da9e):
       my-image-name
 Adding cache layer 'heroku/nodejs-engine:dist'
 Adding cache layer 'heroku/nodejs-npm-install:npm_cache'
@@ -221,7 +219,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-7957af2b105b   my-image-name    latest
+093d0e57da9e   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -235,9 +233,9 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 3 of 6 buildpacks participating
-heroku/nodejs-engine      3.4.9
-heroku/nodejs-npm-install 3.4.9
-heroku/procfile           4.0.0
+heroku/nodejs-engine      3.4.11
+heroku/nodejs-npm-install 3.4.11
+heroku/procfile           4.1.0
 ===> RESTORING
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
