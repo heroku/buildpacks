@@ -4,8 +4,9 @@ on:
     branches:
       - main
     paths:
-      - "docs/src/**"
+      - ".github/**"
       - ".rundoc-workspace/**"
+      - "docs/src/**"
 
 permissions:
   contents: read
