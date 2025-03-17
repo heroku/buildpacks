@@ -6,6 +6,10 @@ on:
     paths:
       - "docs/src/**"
       - ".rundoc-workspace/**"
+
+permissions:
+  contents: read
+
 jobs:
   test-rundoc:
     runs-on: ubuntu-latest

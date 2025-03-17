@@ -5,6 +5,10 @@ on:
     # This schedule triggers the workflow at 00:00 every Monday
     - cron: "0 0 * * 1"
   workflow_dispatch:
+
+# Disable all GITHUB_TOKEN permissions, since the GitHub App token is used instead.
+permissions: {}
+
 jobs:
   run-rundoc:
     runs-on: pub-hk-ubuntu-24.04-ip
