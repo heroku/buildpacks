@@ -4,8 +4,9 @@ on:
     branches:
       - main
     paths:
-      - "docs/src/**"
+      - ".github/**"
       - ".rundoc-workspace/**"
+      - "docs/src/**"
 
 permissions:
   contents: read
@@ -28,7 +29,7 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true # do run 'bundle install' and cache
-      - uses: buildpacks/github-actions/setup-pack@v5.8.8
+      - uses: buildpacks/github-actions/setup-pack@0f05ba41fb74d56ab4cb27485f538a8d65b4122e # v5.8.9
 
       # [CONFIG] add different languages set up here
       - run: |
