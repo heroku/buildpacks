@@ -34,6 +34,7 @@ jobs:
       - uses: buildpacks/github-actions/setup-pack@d82294e03fd6b8e8484cde2ee166788876e366e3 # v5.8.10
 
       - name: Run rundoc for all languages
+        continue-on-error: true
         run: |
           langs=("ruby" "dotnet" "nodejs" "python" "php" "go" "java_maven" "java_gradle" "scala")
           for lang in "${langs[@]}"; do
@@ -42,7 +43,6 @@ jobs:
               --on-failure-dir docs/fail/$lang \
               --force
           done
-        continue-on-error: true
       - name: Create Pull Request
         id: pr
         uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
