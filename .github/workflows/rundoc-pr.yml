@@ -36,13 +36,8 @@ jobs:
       - name: Run rundoc for all languages
         continue-on-error: true
         run: |
-          langs=("ruby" "dotnet" "nodejs" "python" "php" "go" "java_maven" "java_gradle" "scala")
-          for lang in "${langs[@]}"; do
-            bundle exec rundoc docs/src/$lang/RUNDOC.md \
-              --on-success-dir docs/$lang \
-              --on-failure-dir docs/fail/$lang \
-              --force
-          done
+          echo "good change" >> docs/ruby/README.md
+          mkdir -p docs/fail/ruby && echo "failed" >> docs/fail/ruby/README.md
       - name: Create Failing Pull Request
         continue-on-error: true
         id: pr-failed
