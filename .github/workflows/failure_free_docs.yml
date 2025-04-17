@@ -1,8 +1,6 @@
 name: failure_free_docs
 on:
   pull_request:
-    paths:
-      - "docs/fail/**"
 
 permissions:
   contents: read
