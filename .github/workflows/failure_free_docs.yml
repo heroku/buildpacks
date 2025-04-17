@@ -13,10 +13,10 @@ jobs:
       - name: Check PR for failures
         run: |
           if [[ -e ./docs/fail ]]; then
-            echo "No failing docs found"
-          else
             echo "ERROR: Failing docs found in the ./docs/fail/ directory!"
             echo "Try retriggering the rundoc job to see if the failures are intermittent."
             echo "If the failure persists, notify the language owner."
             exit 1
+          else
+            echo "No failing docs found"
           fi
