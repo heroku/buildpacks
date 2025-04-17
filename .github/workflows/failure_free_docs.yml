@@ -8,22 +8,17 @@ permissions:
   contents: read
 
 jobs:
-  checks_docs_for_failures:
+  checks-docs-for-failures:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
       - name: Check PR for failures
         run: |
-          FAILING=$(find ./docs/fail -type f)
-          if [ -z "$FAILING" ]; then
+          if [[ -e ./docs/fail ]]; then
             echo "No failing docs found"
           else
-            echo "ERROR:"
-            echo "Failing docs found. Delete the files and retry generation."
-            echo "If the failure persists, notify the language owner"
-            echo
-            echo "$FAILING"
+            echo "ERROR: Failing docs found in the ./docs/fail/ directory!"
+            echo "Try retriggering the rundoc job to see if the failures are intermittent."
+            echo "If the failure persists, notify the language owner."
             exit 1
           fi
