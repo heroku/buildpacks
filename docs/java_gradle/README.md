@@ -65,24 +65,24 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.1.3          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.4.0          https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet                     Heroku .NET                        0.5.0          https://github.com/heroku/buildpacks-dotnet
   heroku/go                         Heroku Go                          0.5.8          https://github.com/heroku/buildpacks-go
   heroku/gradle                     Heroku Gradle                      6.1.2          https://github.com/heroku/buildpacks-jvm
   heroku/java                       Heroku Java                        6.1.2          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     6.1.2          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       6.1.2          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     3.5.3          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            3.5.3          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              3.5.3          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.5.3          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.5.3          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.5.3          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm install        3.5.3          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                3.5.3          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                        Heroku PHP                         0.2.2          https://github.com/heroku/buildpacks-php
+  heroku/nodejs                     Heroku Node.js                     3.6.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.6.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm install        3.6.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/php                        Heroku PHP                         0.2.4          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      0.25.0         https://github.com/heroku/buildpacks-python
-  heroku/ruby                       Heroku Ruby                        7.0.0          https://github.com/heroku/buildpacks-ruby
+  heroku/python                     Heroku Python                      0.26.1         https://github.com/heroku/buildpacks-python
+  heroku/ruby                       Heroku Ruby                        7.0.1          https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         6.1.2          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       6.1.2          https://github.com/heroku/buildpacks-jvm
 ```
@@ -198,7 +198,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (20d7d4beb30f):
+*** Images (7a2f080ab3a6):
       my-image-name
 Adding cache layer 'heroku/jvm:openjdk'
 Adding cache layer 'heroku/gradle:home'
@@ -213,7 +213,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-20d7d4beb30f   my-image-name    latest
+7a2f080ab3a6   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -260,16 +260,16 @@ Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=80.0 -Dfile.encoding=UTF-8
 
 :: Built with Spring Boot :: 3.4.1
 
-2025-04-07T00:35:01.029Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Starting GettingStartedApplication v1.0.0-SNAPSHOT using Java 17.0.13 with PID 1 (/workspace/build/libs/java-getting-started-gradle-1.0.0-SNAPSHOT.jar started by heroku in /workspace)
-2025-04-07T00:35:01.034Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : No active profile set, falling back to 1 default profile: "default"
-2025-04-07T00:35:02.046Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5006 (http)
-2025-04-07T00:35:02.058Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-07T00:35:02.058Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-04-07T00:35:02.085Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-07T00:35:02.087Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 986 ms
-2025-04-07T00:35:02.210Z  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2025-04-07T00:35:02.505Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5006 (http) with context path '/'
-2025-04-07T00:35:02.519Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Started GettingStartedApplication in 1.937 seconds (process running for 2.378)
+2025-04-22T07:37:02.811Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Starting GettingStartedApplication v1.0.0-SNAPSHOT using Java 17.0.13 with PID 1 (/workspace/build/libs/java-getting-started-gradle-1.0.0-SNAPSHOT.jar started by heroku in /workspace)
+2025-04-22T07:37:02.815Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : No active profile set, falling back to 1 default profile: "default"
+2025-04-22T07:37:03.810Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5006 (http)
+2025-04-22T07:37:03.823Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-22T07:37:03.824Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2025-04-22T07:37:03.857Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-22T07:37:03.858Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 984 ms
+2025-04-22T07:37:03.984Z  INFO 1 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2025-04-22T07:37:04.314Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5006 (http) with context path '/'
+2025-04-22T07:37:04.331Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Started GettingStartedApplication in 1.926 seconds (process running for 2.368)
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
