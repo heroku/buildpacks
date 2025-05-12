@@ -65,24 +65,24 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.1.3          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.5.0          https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet                     Heroku .NET                        0.5.1          https://github.com/heroku/buildpacks-dotnet
   heroku/go                         Heroku Go                          1.0.0          https://github.com/heroku/buildpacks-go
   heroku/gradle                     Heroku Gradle                      6.2.1          https://github.com/heroku/buildpacks-jvm
   heroku/java                       Heroku Java                        6.2.1          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     6.2.1          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       6.2.1          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     3.6.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              3.6.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs                     Heroku Node.js                     3.6.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.6.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.4          https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         1.0.1          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
   heroku/python                     Heroku Python                      1.0.0          https://github.com/heroku/buildpacks-python
-  heroku/ruby                       Heroku Ruby                        7.0.1          https://github.com/heroku/buildpacks-ruby
+  heroku/ruby                       Heroku Ruby                        8.0.0          https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         6.2.1          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       6.2.1          https://github.com/heroku/buildpacks-jvm
 ```
@@ -162,7 +162,7 @@ Installing pip 25.0.1
 Creating virtual environment
 Running 'pip install -r requirements.txt'
 Collecting django<5.3,>=5.2 (from -r requirements.txt (line 1))
-  Downloading Django-5.2-py3-none-any.whl.metadata (4.1 kB)
+  Downloading django-5.2.1-py3-none-any.whl.metadata (4.1 kB)
 Collecting gunicorn<24,>=23 (from -r requirements.txt (line 2))
   Downloading gunicorn-23.0.0-py3-none-any.whl.metadata (4.4 kB)
 Collecting dj-database-url<3,>=2 (from -r requirements.txt (line 3))
@@ -179,7 +179,7 @@ Collecting typing-extensions>=3.10.0.0 (from dj-database-url<3,>=2->-r requireme
   Downloading typing_extensions-4.13.2-py3-none-any.whl.metadata (3.0 kB)
 Collecting brotli (from whitenoise[brotli]<7,>=6->-r requirements.txt (line 4))
   Downloading Brotli-1.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.5 kB)
-Downloading Django-5.2-py3-none-any.whl (8.3 MB)
+Downloading django-5.2.1-py3-none-any.whl (8.3 MB)
 Downloading gunicorn-23.0.0-py3-none-any.whl (85 kB)
 Downloading dj_database_url-2.3.0-py3-none-any.whl (7.8 kB)
 Downloading whitenoise-6.9.0-py3-none-any.whl (20 kB)
@@ -189,7 +189,7 @@ Downloading typing_extensions-4.13.2-py3-none-any.whl (45 kB)
 Downloading Brotli-1.1.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.9 MB)
 Downloading packaging-25.0-py3-none-any.whl (66 kB)
 Installing collected packages: brotli, whitenoise, typing-extensions, sqlparse, packaging, asgiref, gunicorn, django, dj-database-url
-Successfully installed asgiref-3.8.1 brotli-1.1.0 dj-database-url-2.3.0 django-5.2 gunicorn-23.0.0 packaging-25.0 sqlparse-0.5.3 typing-extensions-4.13.2 whitenoise-6.9.0
+Successfully installed asgiref-3.8.1 brotli-1.1.0 dj-database-url-2.3.0 django-5.2.1 gunicorn-23.0.0 packaging-25.0 sqlparse-0.5.3 typing-extensions-4.13.2 whitenoise-6.9.0
 
 [Generating Django static files]
 Running 'manage.py collectstatic'
@@ -214,7 +214,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (72be912d6326):
+*** Images (d48971cc9582):
       my-image-name
 Adding cache layer 'heroku/python:pip'
 Adding cache layer 'heroku/python:pip-cache'
@@ -230,7 +230,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-72be912d6326   my-image-name    latest
+d48971cc9582   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -267,10 +267,10 @@ By default, images will be booted into a web server configuration. You can launc
 
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
-[2025-05-05 08:15:24 +0000] [1] [INFO] Starting gunicorn 23.0.0
-[2025-05-05 08:15:24 +0000] [1] [INFO] Listening at: http://[::]:5006 (1)
-[2025-05-05 08:15:24 +0000] [1] [INFO] Using worker: gthread
-[2025-05-05 08:15:24 +0000] [11] [INFO] Booting worker with pid: 11
+[2025-05-12 08:15:39 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2025-05-12 08:15:39 +0000] [1] [INFO] Listening at: http://[::]:5006 (1)
+[2025-05-12 08:15:39 +0000] [1] [INFO] Using worker: gthread
+[2025-05-12 08:15:39 +0000] [11] [INFO] Booting worker with pid: 11
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
