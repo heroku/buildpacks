@@ -71,18 +71,18 @@ Buildpacks:
   heroku/java                       Heroku Java                        6.2.1          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     6.2.1          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       6.2.1          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     3.6.5          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.5          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              3.6.5          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.5          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.5          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.5          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.5          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.5          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs                     Heroku Node.js                     3.6.6          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.6          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.6.6          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.6          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.6          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.6          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.6          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.6          https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         1.0.3          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      2.0.0          https://github.com/heroku/buildpacks-python
-  heroku/ruby                       Heroku Ruby                        8.0.0          https://github.com/heroku/buildpacks-ruby
+  heroku/python                     Heroku Python                      2.1.0          https://github.com/heroku/buildpacks-python
+  heroku/ruby                       Heroku Ruby                        9.0.0          https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         6.2.1          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       6.2.1          https://github.com/heroku/buildpacks-jvm
 ```
@@ -219,7 +219,7 @@ Skipping buildpack layer analysis
           0 [>---------------------------]    0 [->--------------------------]
       Generating autoload files
 
-  - Done (1.8s)
+  - Done (1.7s)
 - Installing web servers
   - Running `composer install --no-dev --no-interaction`
 
@@ -245,7 +245,7 @@ Skipping buildpack layer analysis
           0 [>---------------------------]    0 [->--------------------------]
       Generating autoload files
 
-  - Done (1.0s)
+  - Done (1.1s)
 - Installing dependencies
   - Running `composer install -vv --no-dev --no-progress --no-interaction --optimize-autoloader --prefer-dist`
 
@@ -304,10 +304,10 @@ Skipping buildpack layer analysis
       10 packages you are using are looking for funding.
       Use the `composer fund` command to find out more!
 
-  - Done (1.8s)
+  - Done (9.1s)
 - Preparing Composer runtime environment
   - Running `composer config --no-plugins bin-dir` ... (< 0.1s)
-- Done (finished in 6.5s)
+- Done (finished in 14.0s)
 
 ## Procfile Buildpack
 
@@ -328,7 +328,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (46f57b0c75e3):
+*** Images (21985c41714f):
       my-image-name
 Adding cache layer 'heroku/php:composer_cache'
 Adding cache layer 'heroku/php:platform_cache'
@@ -343,7 +343,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-46f57b0c75e3   my-image-name    latest
+21985c41714f   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
