@@ -65,26 +65,26 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.1.3          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.5.3          https://github.com/heroku/buildpacks-dotnet
-  heroku/go                         Heroku Go                          1.0.1          https://github.com/heroku/buildpacks-go
-  heroku/gradle                     Heroku Gradle                      6.2.1          https://github.com/heroku/buildpacks-jvm
-  heroku/java                       Heroku Java                        6.2.1          https://github.com/heroku/buildpacks-jvm
-  heroku/jvm                        Heroku OpenJDK                     6.2.1          https://github.com/heroku/buildpacks-jvm
-  heroku/maven                      Heroku Maven                       6.2.1          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     3.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              3.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.6          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                        Heroku PHP                         1.0.3          https://github.com/heroku/buildpacks-php
+  heroku/dotnet                     Heroku .NET                        0.5.4          https://github.com/heroku/buildpacks-dotnet
+  heroku/go                         Heroku Go                          1.0.2          https://github.com/heroku/buildpacks-go
+  heroku/gradle                     Heroku Gradle                      7.0.0          https://github.com/heroku/buildpacks-jvm
+  heroku/java                       Heroku Java                        7.0.0          https://github.com/heroku/buildpacks-jvm
+  heroku/jvm                        Heroku OpenJDK                     7.0.0          https://github.com/heroku/buildpacks-jvm
+  heroku/maven                      Heroku Maven                       7.0.0          https://github.com/heroku/buildpacks-jvm
+  heroku/nodejs                     Heroku Node.js                     3.6.7          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.7          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.6.7          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.7          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.7          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.7          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.7          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.7          https://github.com/heroku/buildpacks-nodejs
+  heroku/php                        Heroku PHP                         1.0.4          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      2.2.0          https://github.com/heroku/buildpacks-python
+  heroku/python                     Heroku Python                      2.2.1          https://github.com/heroku/buildpacks-python
   heroku/ruby                       Heroku Ruby                        10.0.1         https://github.com/heroku/buildpacks-ruby
-  heroku/sbt                        Heroku sbt                         6.2.1          https://github.com/heroku/buildpacks-jvm
-  heroku/scala                      Heroku Scala                       6.2.1          https://github.com/heroku/buildpacks-jvm
+  heroku/sbt                        Heroku sbt                         7.0.0          https://github.com/heroku/buildpacks-jvm
+  heroku/scala                      Heroku Scala                       7.0.0          https://github.com/heroku/buildpacks-jvm
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
@@ -142,8 +142,8 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 3 of 6 buildpacks participating
-heroku/nodejs-engine      3.6.6
-heroku/nodejs-npm-install 3.6.6
+heroku/nodejs-engine      3.6.7
+heroku/nodejs-npm-install 3.6.7
 heroku/procfile           4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -176,19 +176,19 @@ Skipping buildpack layer analysis
       45 packages are looking for funding
         run `npm fund` for details
 
-      1 moderate severity vulnerability
+      2 vulnerabilities (1 low, 1 moderate)
 
       To address all issues, run:
         npm audit fix
 
       Run `npm audit` for details.
 
-  - Done (2.5s)
+  - Done (2.6s)
 - Running scripts
   - No build scripts found
 - Configuring default processes
   - Skipping default web process (Procfile detected)
-- Done (finished in 3.0s)
+- Done (finished in 3.1s)
 
 ## Procfile Buildpack
 
@@ -210,7 +210,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (17baad26c7b1):
+*** Images (98b579c2c16c):
       my-image-name
 Adding cache layer 'heroku/nodejs-engine:dist'
 Adding cache layer 'heroku/nodejs-npm-install:npm_cache'
@@ -225,7 +225,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-17baad26c7b1   my-image-name    latest
+98b579c2c16c   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -239,8 +239,8 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 3 of 6 buildpacks participating
-heroku/nodejs-engine      3.6.6
-heroku/nodejs-npm-install 3.6.6
+heroku/nodejs-engine      3.6.7
+heroku/nodejs-npm-install 3.6.7
 heroku/procfile           4.2.1
 ===> RESTORING
 ```
