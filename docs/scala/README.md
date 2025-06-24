@@ -71,17 +71,17 @@ Buildpacks:
   heroku/java                       Heroku Java                        7.0.0          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     7.0.0          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     3.6.7          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.7          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              3.6.7          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.7          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.7          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.7          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.7          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.7          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs                     Heroku Node.js                     3.6.8          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.8          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.6.8          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.8          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.8          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.8          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.8          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.8          https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         1.0.4          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      2.2.1          https://github.com/heroku/buildpacks-python
+  heroku/python                     Heroku Python                      2.2.2          https://github.com/heroku/buildpacks-python
   heroku/ruby                       Heroku Ruby                        10.0.1         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         7.0.0          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       7.0.0          https://github.com/heroku/buildpacks-jvm
@@ -186,7 +186,7 @@ Skipping buildpack layer analysis
       [info] loading global plugins from /layers/heroku_sbt/sbt-global/plugins
       [info] compiling 1 Scala source to /layers/heroku_sbt/sbt-global/plugins/target/scala-2.12/sbt-1.0/classes ...
       [info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.16. Compiling...
-      [info]   Compilation completed in 8.353s.
+      [info]   Compilation completed in 8.606s.
       [info] done compiling
       [info] loading settings for project workspace-build from plugins.sbt ...
       [info] loading project definition from /workspace/project
@@ -208,14 +208,14 @@ Skipping buildpack layer analysis
       [info] 
       [info] compiling 8 Scala sources and 1 Java source to /workspace/target/scala-2.13/classes ...
       [info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.10. Compiling...
-      [info]   Compilation completed in 8.265s.
+      [info]   Compilation completed in 8.043s.
       [info] done compiling
-      [success] Total time: 13 s, completed Jun 16, 2025, 8:20:18 AM
+      [success] Total time: 13 s, completed Jun 23, 2025, 8:20:23 AM
       [info] Wrote /workspace/target/scala-2.13/scala-getting-started_2.13-1.0-SNAPSHOT.pom
-      [success] Total time: 1 s, completed Jun 16, 2025, 8:20:19 AM
+      [success] Total time: 1 s, completed Jun 23, 2025, 8:20:24 AM
 
-  - Done (42.5s)
-- Done (finished in 42.5s)
+  - Done (42.4s)
+- Done (finished in 42.4s)
 
 ## Procfile Buildpack
 
@@ -235,7 +235,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (c6b81bbd9927):
+*** Images (5fae0195d131):
       my-image-name
 Adding cache layer 'heroku/jvm:openjdk'
 Adding cache layer 'heroku/sbt:coursier-home'
@@ -253,7 +253,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-c6b81bbd9927   my-image-name    latest
+5fae0195d131   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -291,10 +291,10 @@ By default, images will be booted into a web server configuration. You can launc
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=80.0 -Dfile.encoding=UTF-8
-2025-06-16 08:20:30 INFO  play.api.db.DefaultDBApi  Database [default] initialized
-2025-06-16 08:20:30 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
-2025-06-16 08:20:31 INFO  play.api.Play  Application started (Prod) (no global state)
-2025-06-16 08:20:31 INFO  play.core.server.AkkaHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
+2025-06-23 08:20:35 INFO  play.api.db.DefaultDBApi  Database [default] initialized
+2025-06-23 08:20:35 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
+2025-06-23 08:20:36 INFO  play.api.Play  Application started (Prod) (no global state)
+2025-06-23 08:20:37 INFO  play.core.server.AkkaHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
