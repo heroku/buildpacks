@@ -65,20 +65,20 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.1.3          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.5.4          https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet                     Heroku .NET                        0.5.5          https://github.com/heroku/buildpacks-dotnet
   heroku/go                         Heroku Go                          1.0.2          https://github.com/heroku/buildpacks-go
   heroku/gradle                     Heroku Gradle                      7.0.0          https://github.com/heroku/buildpacks-jvm
   heroku/java                       Heroku Java                        7.0.0          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     7.0.0          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     3.6.8          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.8          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              3.6.8          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.8          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.8          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.8          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.8          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.8          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs                     Heroku Node.js                     3.6.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            3.6.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              3.6.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          3.6.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         3.6.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         3.6.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        3.6.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                3.6.10         https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         1.0.4          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
   heroku/python                     Heroku Python                      2.2.2          https://github.com/heroku/buildpacks-python
@@ -142,7 +142,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/dotnet   0.5.4
+heroku/dotnet   0.5.5
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -156,7 +156,7 @@ Skipping buildpack layer analysis
   - Detected version requirement: `^9.0`
   - Resolved .NET SDK version `9.0.301` (linux-amd64)
 - SDK installation
-  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.301/dotnet-sdk-9.0.301-linux-x64.tar.gz ... (0.9s)
+  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.301/dotnet-sdk-9.0.301-linux-x64.tar.gz .... (1.7s)
   - Verifying SDK checksum
   - Installing SDK
 - Restore .NET tools
@@ -167,12 +167,12 @@ Skipping buildpack layer analysis
 
       Restore was successful.
 
-  - Done (1.8s)
+  - Done (2.0s)
 - Publish app
   - Running `dotnet publish /workspace/GettingStarted.sln --runtime linux-x64 "-p:PublishDir=bin/publish" --artifacts-path /tmp/build_artifacts`
 
         Determining projects to restore...
-        Restored /workspace/Frontend/Frontend.csproj (in 12.92 sec).
+        Restored /workspace/Frontend/Frontend.csproj (in 5.73 sec).
         Frontend -> /tmp/build_artifacts/bin/Frontend/release_linux-x64/Frontend.dll
         Frontend -> /workspace/Frontend/bin/publish/
         Publishing executable database migration bundle
@@ -182,13 +182,13 @@ Skipping buildpack layer analysis
         Done. Migrations Bundle: /workspace/Frontend/bin/publish/efbundle
         Don't forget to copy appsettings.json alongside your bundle if you need it to apply migrations.
 
-  - Done (29.8s)
+  - Done (22.5s)
 - Process types
   - Detecting process types from published artifacts
   - Found `web`: bash -c cd Frontend/bin/publish; ./Frontend --urls http://*:$PORT
   - Procfile detected
   - Skipping process type registration (add process types to your Procfile as needed)
-- Done (finished in 36.1s)
+- Done (finished in 29.9s)
 
 ## Procfile Buildpack
 
@@ -207,7 +207,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (c76507baab38):
+*** Images (6bac27200bab):
       my-image-name
 Adding cache layer 'heroku/dotnet:nuget-cache'
 Adding cache layer 'heroku/dotnet:sdk'
@@ -222,7 +222,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-c76507baab38   my-image-name    latest
+6bac27200bab   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -236,7 +236,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/dotnet   0.5.4
+heroku/dotnet   0.5.5
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -262,7 +262,7 @@ $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 warn: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[60]
       Storing keys in a directory '/home/heroku/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
 warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
-      No XML encryptor configured. Key {3e5441bf-945d-4743-8f46-54028c34a630} may be persisted to storage in unencrypted form.
+      No XML encryptor configured. Key {920111cd-8901-4bf3-8a82-09dc66571ae3} may be persisted to storage in unencrypted form.
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://[::]:5006
 info: Microsoft.Hosting.Lifetime[0]
@@ -412,7 +412,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 heroku/python   2.2.2
-heroku/dotnet   0.5.4
+heroku/dotnet   0.5.5
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -441,7 +441,7 @@ Running 'pip install -r requirements.txt'
   - Detected version requirement: `^9.0`
   - Resolved .NET SDK version `9.0.301` (linux-amd64)
 - SDK installation
-  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.301/dotnet-sdk-9.0.301-linux-x64.tar.gz ... (0.6s)
+  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.301/dotnet-sdk-9.0.301-linux-x64.tar.gz .... (1.4s)
   - Verifying SDK checksum
   - Installing SDK
 - Restore .NET tools
@@ -457,7 +457,7 @@ Running 'pip install -r requirements.txt'
   - Running `dotnet publish /workspace/GettingStarted.sln --runtime linux-x64 "-p:PublishDir=bin/publish" --artifacts-path /tmp/build_artifacts`
 
         Determining projects to restore...
-        Restored /workspace/Frontend/Frontend.csproj (in 5.21 sec).
+        Restored /workspace/Frontend/Frontend.csproj (in 5.67 sec).
         Frontend -> /tmp/build_artifacts/bin/Frontend/release_linux-x64/Frontend.dll
         Frontend -> /workspace/Frontend/bin/publish/
         Publishing executable database migration bundle
@@ -467,13 +467,13 @@ Running 'pip install -r requirements.txt'
         Done. Migrations Bundle: /workspace/Frontend/bin/publish/efbundle
         Don't forget to copy appsettings.json alongside your bundle if you need it to apply migrations.
 
-  - Done (21.9s)
+  - Done (22.4s)
 - Process types
   - Detecting process types from published artifacts
   - Found `web`: bash -c cd Frontend/bin/publish; ./Frontend --urls http://*:$PORT
   - Procfile detected
   - Skipping process type registration (add process types to your Procfile as needed)
-- Done (finished in 27.9s)
+- Done (finished in 29.3s)
 
 ## Procfile Buildpack
 
@@ -494,7 +494,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (3df0645aa380):
+*** Images (5cdc2dc08352):
       my-image-name
 Adding cache layer 'heroku/python:pip'
 Adding cache layer 'heroku/python:pip-cache'
