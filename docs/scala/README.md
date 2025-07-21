@@ -65,26 +65,26 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.2.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.5.7          https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet                     Heroku .NET                        0.5.8          https://github.com/heroku/buildpacks-dotnet
   heroku/go                         Heroku Go                          1.0.4          https://github.com/heroku/buildpacks-go
-  heroku/gradle                     Heroku Gradle                      7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/java                       Heroku Java                        7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/jvm                        Heroku OpenJDK                     7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/maven                      Heroku Maven                       7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                4.0.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/gradle                     Heroku Gradle                      7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/java                       Heroku Java                        7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/jvm                        Heroku OpenJDK                     7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/maven                      Heroku Maven                       7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/nodejs                     Heroku Node.js                     4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                4.0.1          https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         1.0.5          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
   heroku/python                     Heroku Python                      2.2.3          https://github.com/heroku/buildpacks-python
-  heroku/ruby                       Heroku Ruby                        10.0.1         https://github.com/heroku/buildpacks-ruby
-  heroku/sbt                        Heroku sbt                         7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/scala                      Heroku Scala                       7.0.0          https://github.com/heroku/buildpacks-jvm
+  heroku/ruby                       Heroku Ruby                        10.1.0         https://github.com/heroku/buildpacks-ruby
+  heroku/sbt                        Heroku sbt                         7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/scala                      Heroku Scala                       7.0.1          https://github.com/heroku/buildpacks-jvm
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
@@ -146,8 +146,8 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 3 of 4 buildpacks participating
-heroku/jvm      7.0.0
-heroku/sbt      7.0.0
+heroku/jvm      7.0.1
+heroku/sbt      7.0.1
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -157,15 +157,15 @@ Skipping buildpack layer analysis
 
 - OpenJDK version resolution
   - Using version string provided in `system.properties`
-  - Selected major version `17` resolves to `17.0.15`
+  - Selected major version `17` resolves to `17.0.16`
 - OpenJDK Installation
   - Downloading and unpacking OpenJDK distribution
-  - Done (3.1s)
+  - Done (2.9s)
 - Applying JDK overlay
   - Skipping (directory `.jdk-overlay` not present)
 - Linking base image certificates as OpenJDK keystore
   - Done
-- Done (finished in 3.1s)
+- Done (finished in 2.9s)
 
 ## Heroku sbt Buildpack
 
@@ -182,11 +182,11 @@ Skipping buildpack layer analysis
       Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
       [info] [launcher] getting org.scala-sbt sbt 1.7.2  (this may take some time)...
       [info] [launcher] getting Scala 2.12.16 (for sbt)...
-      [info] welcome to sbt 1.7.2 (Azul Systems, Inc. Java 17.0.15)
+      [info] welcome to sbt 1.7.2 (Azul Systems, Inc. Java 17.0.16)
       [info] loading global plugins from /layers/heroku_sbt/sbt-global/plugins
       [info] compiling 1 Scala source to /layers/heroku_sbt/sbt-global/plugins/target/scala-2.12/sbt-1.0/classes ...
       [info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.16. Compiling...
-      [info]   Compilation completed in 8.322s.
+      [info]   Compilation completed in 8.533s.
       [info] done compiling
       [info] loading settings for project workspace-build from plugins.sbt ...
       [info] loading project definition from /workspace/project
@@ -198,7 +198,7 @@ Skipping buildpack layer analysis
       [info]   /_/  / .___//_/ \__,_/ \__, /
       [info]       /_/               /____/
       [info] 
-      [info] Version 2.8.19 running Java 17.0.15
+      [info] Version 2.8.19 running Java 17.0.16
       [info] 
       [info] Play is run entirely by the community. Please consider contributing and/or donating:
       [info] https://www.playframework.com/sponsors
@@ -208,14 +208,14 @@ Skipping buildpack layer analysis
       [info] 
       [info] compiling 8 Scala sources and 1 Java source to /workspace/target/scala-2.13/classes ...
       [info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.10. Compiling...
-      [info]   Compilation completed in 7.765s.
+      [info]   Compilation completed in 7.888s.
       [info] done compiling
-      [success] Total time: 13 s, completed Jul 14, 2025, 8:20:44 AM
+      [success] Total time: 13 s, completed Jul 21, 2025, 8:21:04 AM
       [info] Wrote /workspace/target/scala-2.13/scala-getting-started_2.13-1.0-SNAPSHOT.pom
-      [success] Total time: 1 s, completed Jul 14, 2025, 8:20:45 AM
+      [success] Total time: 1 s, completed Jul 21, 2025, 8:21:05 AM
 
-  - Done (41.7s)
-- Done (finished in 41.7s)
+  - Done (45.2s)
+- Done (finished in 45.2s)
 
 ## Procfile Buildpack
 
@@ -235,7 +235,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (ec65e2aa0c5d):
+*** Images (4ecb9b9d6679):
       my-image-name
 Adding cache layer 'heroku/jvm:openjdk'
 Adding cache layer 'heroku/sbt:coursier-home'
@@ -253,7 +253,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-ec65e2aa0c5d   my-image-name    latest
+4ecb9b9d6679   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -267,8 +267,8 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 3 of 4 buildpacks participating
-heroku/jvm      7.0.0
-heroku/sbt      7.0.0
+heroku/jvm      7.0.1
+heroku/sbt      7.0.1
 heroku/procfile 4.2.1
 ===> RESTORING
 ```
@@ -291,10 +291,10 @@ By default, images will be booted into a web server configuration. You can launc
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=80.0 -Dfile.encoding=UTF-8
-2025-07-14 08:20:56 INFO  play.api.db.DefaultDBApi  Database [default] initialized
-2025-07-14 08:20:56 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
-2025-07-14 08:20:57 INFO  play.api.Play  Application started (Prod) (no global state)
-2025-07-14 08:20:57 INFO  play.core.server.AkkaHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
+2025-07-21 08:21:16 INFO  play.api.db.DefaultDBApi  Database [default] initialized
+2025-07-21 08:21:16 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
+2025-07-21 08:21:17 INFO  play.api.Play  Application started (Prod) (no global state)
+2025-07-21 08:21:18 INFO  play.core.server.AkkaHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 

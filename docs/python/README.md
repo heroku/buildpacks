@@ -65,26 +65,26 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.2.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.5.7          https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet                     Heroku .NET                        0.5.8          https://github.com/heroku/buildpacks-dotnet
   heroku/go                         Heroku Go                          1.0.4          https://github.com/heroku/buildpacks-go
-  heroku/gradle                     Heroku Gradle                      7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/java                       Heroku Java                        7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/jvm                        Heroku OpenJDK                     7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/maven                      Heroku Maven                       7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.0.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                4.0.0          https://github.com/heroku/buildpacks-nodejs
+  heroku/gradle                     Heroku Gradle                      7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/java                       Heroku Java                        7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/jvm                        Heroku OpenJDK                     7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/maven                      Heroku Maven                       7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/nodejs                     Heroku Node.js                     4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.0.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                4.0.1          https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         1.0.5          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
   heroku/python                     Heroku Python                      2.2.3          https://github.com/heroku/buildpacks-python
-  heroku/ruby                       Heroku Ruby                        10.0.1         https://github.com/heroku/buildpacks-ruby
-  heroku/sbt                        Heroku sbt                         7.0.0          https://github.com/heroku/buildpacks-jvm
-  heroku/scala                      Heroku Scala                       7.0.0          https://github.com/heroku/buildpacks-jvm
+  heroku/ruby                       Heroku Ruby                        10.1.0         https://github.com/heroku/buildpacks-ruby
+  heroku/sbt                        Heroku sbt                         7.0.1          https://github.com/heroku/buildpacks-jvm
+  heroku/scala                      Heroku Scala                       7.0.1          https://github.com/heroku/buildpacks-jvm
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
@@ -209,7 +209,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (0c80742cb58b):
+*** Images (f4fc5718ba4b):
       my-image-name
 Adding cache layer 'heroku/python:pip'
 Adding cache layer 'heroku/python:pip-cache'
@@ -225,7 +225,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-0c80742cb58b   my-image-name    latest
+f4fc5718ba4b   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -262,10 +262,10 @@ By default, images will be booted into a web server configuration. You can launc
 
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
-[2025-07-14 08:16:43 +0000] [1] [INFO] Starting gunicorn 23.0.0
-[2025-07-14 08:16:43 +0000] [1] [INFO] Listening at: http://[::]:5006 (1)
-[2025-07-14 08:16:43 +0000] [1] [INFO] Using worker: gthread
-[2025-07-14 08:16:43 +0000] [11] [INFO] Booting worker with pid: 11
+[2025-07-21 08:16:57 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2025-07-21 08:16:57 +0000] [1] [INFO] Listening at: http://[::]:5006 (1)
+[2025-07-21 08:16:57 +0000] [1] [INFO] Using worker: gthread
+[2025-07-21 08:16:57 +0000] [11] [INFO] Booting worker with pid: 11
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
