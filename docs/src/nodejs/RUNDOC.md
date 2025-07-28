@@ -3,7 +3,7 @@
 :::-- print.erb
 <%
   setup(
-    app_url: "https://github.com/heroku/node-js-getting-started",
+    app_url: "https://github.com/heroku/nodejs-getting-started",
     which_binary: "npm", # Executable on disk after buildpack i.e. `which ruby`
     tutorial_type: "Node.js", # Type of app "Ruby on Rails" tutorial
     language_name: "Node.js", # Buildpack name Heroku "Ruby" buildpack
