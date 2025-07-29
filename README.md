@@ -37,19 +37,21 @@ We believe:
 
 ## Table of contents
 
-* [What are Heroku Buildpacks?](#what-are-heroku-cloud-native-buildpacks)
-  * [Philosophy](#philosophy)
-* [See it in action](#see-it-in-action)
-  * [Prerequisites](#prerequisites)
-    * [Docker](#docker)
-    * [pack](#pack)
-  * [Create the app image](#create-the-app-image)
-* [Discussions](#discussions)
-* [Supported Languages](#supported-languages)
-* [Associated Projects](#associated-projects)
-  * [libcnb.rs](#libcnbrs)
-  * [Builder images](#builder-images)
-  * [Procfile buildpack](#procfile-buildpack)
+- [Heroku Cloud Native Buildpacks](#heroku-cloud-native-buildpacks)
+  - [What is a Cloud Native Buildpack?](#what-is-a-cloud-native-buildpack)
+    - [Philosophy](#philosophy)
+  - [Table of contents](#table-of-contents)
+  - [See it in action](#see-it-in-action)
+    - [Prerequisites](#prerequisites)
+      - [Docker](#docker)
+      - [pack](#pack)
+    - [Create the app image](#create-the-app-image)
+  - [Discussions](#discussions)
+  - [Supported Languages](#supported-languages)
+  - [Additional Buildpacks](#additional-buildpacks)
+  - [Associated Projects](#associated-projects)
+    - [libcnb.rs](#libcnbrs)
+    - [Builder Images](#builder-images)
 
 ## See it in action
 
@@ -70,16 +72,16 @@ To run our buildpack locally, we will use `pack`, a tool maintained by the Cloud
 > [!NOTE]
 > For a full hands-on getting started experience [follow our getting started tutorials](docs/README.md).
 
-First, we need an application to produce an image. We will use [Heroku's getting started app for Node.js](https://github.com/heroku/node-js-getting-started), but any other app that uses a supported ecosystem will work. Clone the application:
+First, we need an application to produce an image. We will use [Heroku's getting started app for Node.js](https://github.com/heroku/nodejs-getting-started), but any other app that uses a supported ecosystem will work. Clone the application:
 
 ```
-$ git clone https://github.com/heroku/node-js-getting-started.git
+$ git clone https://github.com/heroku/nodejs-getting-started.git
 ```
 
 In your application directory, run the `pack build` command. No additional steps are needed! The required buildpacks for your app will be detected automatically:
 
 ```
-$ pack build my-app-image --builder heroku/builder:24 --path node-js-getting-started
+$ pack build my-app-image --builder heroku/builder:24 --path nodejs-getting-started
 ```
 
 Once the image is built, you can run it with the tools you're already comfortable with, like the `docker` CLI, for a demonstration of how [read out getting started tutorials](docs/README.md).
