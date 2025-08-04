@@ -71,17 +71,17 @@ Buildpacks:
   heroku/java                       Heroku Java                        7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       7.0.2          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                        Heroku PHP                         1.0.5          https://github.com/heroku/buildpacks-php
+  heroku/nodejs                     Heroku Node.js                     4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/php                        Heroku PHP                         1.0.6          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      2.2.3          https://github.com/heroku/buildpacks-python
+  heroku/python                     Heroku Python                      2.3.0          https://github.com/heroku/buildpacks-python
   heroku/ruby                       Heroku Ruby                        10.1.0         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       7.0.2          https://github.com/heroku/buildpacks-jvm
@@ -139,7 +139,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/php      1.0.5
+heroku/php      1.0.6
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -157,8 +157,8 @@ Skipping buildpack layer analysis
       Updating dependencies
       Lock file operations: 26 installs, 0 updates, 0 removals
         - Locking fig/http-message-util (1.1.5)
-        - Locking heroku-sys/composer (2.8.9)
-        - Locking heroku-sys/php (8.4.10)
+        - Locking heroku-sys/composer (2.8.10)
+        - Locking heroku-sys/php (8.4.11)
         - Locking heroku/installer-plugin (1.8.0)
         - Locking laravel/serializable-closure (v2.0.4)
         - Locking monolog/monolog (3.9.0)
@@ -186,13 +186,13 @@ Skipping buildpack layer analysis
       Installing dependencies from lock file
       Package operations: 26 installs, 0 updates, 0 removals
         - Installing heroku/installer-plugin (1.8.0): Mirroring from /layers/heroku_php/bootstrap_installer/support/installer
-        - Downloading heroku-sys/php (8.4.10)
-        - Downloading heroku-sys/composer (2.8.9)
+        - Downloading heroku-sys/php (8.4.11)
+        - Downloading heroku-sys/composer (2.8.10)
        0/2 [>---------------------------]   0%
        2/2 [============================] 100%
-        - Installing heroku-sys/php (8.4.10)
+        - Installing heroku-sys/php (8.4.11)
         - Installing fig/http-message-util (1.1.5)
-        - Installing heroku-sys/composer (2.8.9)
+        - Installing heroku-sys/composer (2.8.10)
         - Installing laravel/serializable-closure (v2.0.4)
         - Installing monolog/monolog (3.9.0)
         - Installing nikic/fast-route (v1.3.0)
@@ -226,7 +226,7 @@ Skipping buildpack layer analysis
       Loading composer repositories with package information
       Updating dependencies
       Lock file operations: 4 installs, 0 updates, 0 removals
-        - Locking heroku-sys/apache (2.4.63)
+        - Locking heroku-sys/apache (2.4.65)
         - Locking heroku-sys/nginx (1.28.0)
         - Locking heroku/heroku-buildpack-php (dev-bundled)
         - Locking heroku/installer-plugin (1.8.0)
@@ -234,17 +234,18 @@ Skipping buildpack layer analysis
       Installing dependencies from lock file
       Package operations: 4 installs, 0 updates, 0 removals
         - Installing heroku/installer-plugin (1.8.0): Mirroring from /layers/heroku_php/bootstrap_installer/support/installer
-        - Downloading heroku-sys/apache (2.4.63)
+        - Downloading heroku-sys/apache (2.4.65)
         - Downloading heroku-sys/nginx (1.28.0)
        0/2 [>---------------------------]   0%
+       1/2 [==============>-------------]  50%
        2/2 [============================] 100%
-        - Installing heroku-sys/apache (2.4.63)
+        - Installing heroku-sys/apache (2.4.65)
         - Installing heroku-sys/nginx (1.28.0)
         - Installing heroku/heroku-buildpack-php (dev-bundled): Mirroring from /layers/heroku_php/bootstrap_installer
           0 [>---------------------------]    0 [->--------------------------]
       Generating autoload files
 
-  - Done (1.1s)
+  - Done (1.2s)
 - Installing dependencies
   - Running `composer install -vv --no-dev --no-progress --no-interaction --optimize-autoloader --prefer-dist`
 
@@ -303,10 +304,10 @@ Skipping buildpack layer analysis
       10 packages you are using are looking for funding.
       Use the `composer fund` command to find out more!
 
-  - Done (1.8s)
+  - Done (2.6s)
 - Preparing Composer runtime environment
   - Running `composer config --no-plugins bin-dir` ... (< 0.1s)
-- Done (finished in 6.7s)
+- Done (finished in 7.5s)
 
 ## Procfile Buildpack
 
@@ -327,7 +328,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (37a5defa8d44):
+*** Images (2c40dc5adb99):
       my-image-name
 Adding cache layer 'heroku/php:composer_cache'
 Adding cache layer 'heroku/php:platform_cache'
@@ -342,7 +343,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-37a5defa8d44   my-image-name    latest
+2c40dc5adb99   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -356,7 +357,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/php      1.0.5
+heroku/php      1.0.6
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis

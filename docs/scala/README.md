@@ -71,17 +71,17 @@ Buildpacks:
   heroku/java                       Heroku Java                        7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       7.0.2          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                4.1.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                        Heroku PHP                         1.0.5          https://github.com/heroku/buildpacks-php
+  heroku/nodejs                     Heroku Node.js                     4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                4.1.1          https://github.com/heroku/buildpacks-nodejs
+  heroku/php                        Heroku PHP                         1.0.6          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      2.2.3          https://github.com/heroku/buildpacks-python
+  heroku/python                     Heroku Python                      2.3.0          https://github.com/heroku/buildpacks-python
   heroku/ruby                       Heroku Ruby                        10.1.0         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       7.0.2          https://github.com/heroku/buildpacks-jvm
@@ -160,12 +160,12 @@ Skipping buildpack layer analysis
   - Selected major version `17` resolves to `17.0.16`
 - OpenJDK Installation
   - Downloading and unpacking OpenJDK distribution
-  - Done (3.0s)
+  - Done (2.9s)
 - Applying JDK overlay
   - Skipping (directory `.jdk-overlay` not present)
 - Linking base image certificates as OpenJDK keystore
   - Done
-- Done (finished in 3.0s)
+- Done (finished in 2.9s)
 
 ## Heroku sbt Buildpack
 
@@ -186,7 +186,7 @@ Skipping buildpack layer analysis
       [info] loading global plugins from /layers/heroku_sbt/sbt-global/plugins
       [info] compiling 1 Scala source to /layers/heroku_sbt/sbt-global/plugins/target/scala-2.12/sbt-1.0/classes ...
       [info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.16. Compiling...
-      [info]   Compilation completed in 8.252s.
+      [info]   Compilation completed in 8.396s.
       [info] done compiling
       [info] loading settings for project workspace-build from plugins.sbt ...
       [info] loading project definition from /workspace/project
@@ -208,14 +208,14 @@ Skipping buildpack layer analysis
       [info] 
       [info] compiling 8 Scala sources and 1 Java source to /workspace/target/scala-2.13/classes ...
       [info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.10. Compiling...
-      [info]   Compilation completed in 7.891s.
+      [info]   Compilation completed in 7.678s.
       [info] done compiling
-      [success] Total time: 13 s, completed Jul 28, 2025, 8:20:35 AM
+      [success] Total time: 12 s, completed Aug 4, 2025, 8:20:34 AM
       [info] Wrote /workspace/target/scala-2.13/scala-getting-started_2.13-1.0-SNAPSHOT.pom
-      [success] Total time: 1 s, completed Jul 28, 2025, 8:20:36 AM
+      [success] Total time: 1 s, completed Aug 4, 2025, 8:20:35 AM
 
-  - Done (41.8s)
-- Done (finished in 41.8s)
+  - Done (41.2s)
+- Done (finished in 41.2s)
 
 ## Procfile Buildpack
 
@@ -235,7 +235,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (a806ae7dde90):
+*** Images (2f56aa9453ed):
       my-image-name
 Adding cache layer 'heroku/jvm:openjdk'
 Adding cache layer 'heroku/sbt:coursier-home'
@@ -253,7 +253,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-a806ae7dde90   my-image-name    latest
+2f56aa9453ed   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -291,10 +291,10 @@ By default, images will be booted into a web server configuration. You can launc
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=80.0 -Dfile.encoding=UTF-8
-2025-07-28 08:20:47 INFO  play.api.db.DefaultDBApi  Database [default] initialized
-2025-07-28 08:20:47 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
-2025-07-28 08:20:48 INFO  play.api.Play  Application started (Prod) (no global state)
-2025-07-28 08:20:48 INFO  play.core.server.AkkaHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
+2025-08-04 08:20:46 INFO  play.api.db.DefaultDBApi  Database [default] initialized
+2025-08-04 08:20:46 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
+2025-08-04 08:20:46 INFO  play.api.Play  Application started (Prod) (no global state)
+2025-08-04 08:20:47 INFO  play.core.server.AkkaHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
