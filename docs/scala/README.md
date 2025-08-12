@@ -65,8 +65,8 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.2.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.5.8          https://github.com/heroku/buildpacks-dotnet
-  heroku/go                         Heroku Go                          1.0.4          https://github.com/heroku/buildpacks-go
+  heroku/dotnet                     Heroku .NET                        0.6.0          https://github.com/heroku/buildpacks-dotnet
+  heroku/go                         Heroku Go                          2.1.0          https://github.com/heroku/buildpacks-go
   heroku/gradle                     Heroku Gradle                      7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/java                       Heroku Java                        7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     7.0.2          https://github.com/heroku/buildpacks-jvm
@@ -81,8 +81,8 @@ Buildpacks:
   heroku/nodejs-yarn                Heroku Node.js Yarn                4.1.1          https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         1.0.6          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      2.3.0          https://github.com/heroku/buildpacks-python
-  heroku/ruby                       Heroku Ruby                        10.1.0         https://github.com/heroku/buildpacks-ruby
+  heroku/python                     Heroku Python                      2.4.1          https://github.com/heroku/buildpacks-python
+  heroku/ruby                       Heroku Ruby                        11.0.0         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       7.0.2          https://github.com/heroku/buildpacks-jvm
 ```
@@ -160,12 +160,12 @@ Skipping buildpack layer analysis
   - Selected major version `17` resolves to `17.0.16`
 - OpenJDK Installation
   - Downloading and unpacking OpenJDK distribution
-  - Done (2.9s)
+  - Done (3.1s)
 - Applying JDK overlay
   - Skipping (directory `.jdk-overlay` not present)
 - Linking base image certificates as OpenJDK keystore
   - Done
-- Done (finished in 2.9s)
+- Done (finished in 3.1s)
 
 ## Heroku sbt Buildpack
 
@@ -186,7 +186,7 @@ Skipping buildpack layer analysis
       [info] loading global plugins from /layers/heroku_sbt/sbt-global/plugins
       [info] compiling 1 Scala source to /layers/heroku_sbt/sbt-global/plugins/target/scala-2.12/sbt-1.0/classes ...
       [info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.16. Compiling...
-      [info]   Compilation completed in 8.396s.
+      [info]   Compilation completed in 8.174s.
       [info] done compiling
       [info] loading settings for project workspace-build from plugins.sbt ...
       [info] loading project definition from /workspace/project
@@ -208,14 +208,14 @@ Skipping buildpack layer analysis
       [info] 
       [info] compiling 8 Scala sources and 1 Java source to /workspace/target/scala-2.13/classes ...
       [info] Non-compiled module 'compiler-bridge_2.13' for Scala 2.13.10. Compiling...
-      [info]   Compilation completed in 7.678s.
+      [info]   Compilation completed in 7.522s.
       [info] done compiling
-      [success] Total time: 12 s, completed Aug 4, 2025, 8:20:34 AM
+      [success] Total time: 12 s, completed Aug 11, 2025, 8:20:45 AM
       [info] Wrote /workspace/target/scala-2.13/scala-getting-started_2.13-1.0-SNAPSHOT.pom
-      [success] Total time: 1 s, completed Aug 4, 2025, 8:20:35 AM
+      [success] Total time: 1 s, completed Aug 11, 2025, 8:20:46 AM
 
-  - Done (41.2s)
-- Done (finished in 41.2s)
+  - Done (41.0s)
+- Done (finished in 41.0s)
 
 ## Procfile Buildpack
 
@@ -235,7 +235,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (2f56aa9453ed):
+*** Images (16bf61b588b1):
       my-image-name
 Adding cache layer 'heroku/jvm:openjdk'
 Adding cache layer 'heroku/sbt:coursier-home'
@@ -253,7 +253,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-2f56aa9453ed   my-image-name    latest
+16bf61b588b1   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -291,10 +291,10 @@ By default, images will be booted into a web server configuration. You can launc
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=80.0 -Dfile.encoding=UTF-8
-2025-08-04 08:20:46 INFO  play.api.db.DefaultDBApi  Database [default] initialized
-2025-08-04 08:20:46 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
-2025-08-04 08:20:46 INFO  play.api.Play  Application started (Prod) (no global state)
-2025-08-04 08:20:47 INFO  play.core.server.AkkaHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
+2025-08-11 08:20:57 INFO  play.api.db.DefaultDBApi  Database [default] initialized
+2025-08-11 08:20:57 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
+2025-08-11 08:20:58 INFO  play.api.Play  Application started (Prod) (no global state)
+2025-08-11 08:20:58 INFO  play.core.server.AkkaHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
