@@ -65,23 +65,23 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                                NAME                               VERSION        HOMEPAGE
   heroku/deb-packages               Heroku .deb Packages               0.2.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet                     Heroku .NET                        0.6.0          https://github.com/heroku/buildpacks-dotnet
-  heroku/go                         Heroku Go                          2.1.0          https://github.com/heroku/buildpacks-go
+  heroku/dotnet                     Heroku .NET                        0.6.1          https://github.com/heroku/buildpacks-dotnet
+  heroku/go                         Heroku Go                          2.1.1          https://github.com/heroku/buildpacks-go
   heroku/gradle                     Heroku Gradle                      7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/java                       Heroku Java                        7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       7.0.2          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     4.1.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            4.1.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              4.1.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.1.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.1.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.1.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.1.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                4.1.1          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                        Heroku PHP                         1.0.6          https://github.com/heroku/buildpacks-php
+  heroku/nodejs                     Heroku Node.js                     4.1.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            4.1.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              4.1.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.1.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.1.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.1.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.1.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                4.1.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/php                        Heroku PHP                         1.0.7          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python                     Heroku Python                      2.4.1          https://github.com/heroku/buildpacks-python
+  heroku/python                     Heroku Python                      2.4.3          https://github.com/heroku/buildpacks-python
   heroku/ruby                       Heroku Ruby                        11.0.0         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                        Heroku sbt                         7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/scala                      Heroku Scala                       7.0.2          https://github.com/heroku/buildpacks-jvm
@@ -139,7 +139,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/php      1.0.6
+heroku/php      1.0.7
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -219,7 +219,7 @@ Skipping buildpack layer analysis
           0 [>---------------------------]    0 [->--------------------------]
       Generating autoload files
 
-  - Done (1.8s)
+  - Done (1.9s)
 - Installing web servers
   - Running `composer install --no-dev --no-interaction`
 
@@ -304,10 +304,10 @@ Skipping buildpack layer analysis
       10 packages you are using are looking for funding.
       Use the `composer fund` command to find out more!
 
-  - Done (2.0s)
+  - Done (1.8s)
 - Preparing Composer runtime environment
   - Running `composer config --no-plugins bin-dir` ... (< 0.1s)
-- Done (finished in 7.0s)
+- Done (finished in 6.9s)
 
 ## Procfile Buildpack
 
@@ -328,7 +328,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (c647bf589d62):
+*** Images (b1cc16abf5d1):
       my-image-name
 Adding cache layer 'heroku/php:composer_cache'
 Adding cache layer 'heroku/php:platform_cache'
@@ -343,7 +343,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-c647bf589d62   my-image-name    latest
+b1cc16abf5d1   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -357,7 +357,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/php      1.0.6
+heroku/php      1.0.7
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
