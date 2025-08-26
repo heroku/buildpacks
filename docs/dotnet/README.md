@@ -71,14 +71,14 @@ Buildpacks:
   heroku/java                       Heroku Java                        7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                        Heroku OpenJDK                     7.0.2          https://github.com/heroku/buildpacks-jvm
   heroku/maven                      Heroku Maven                       7.0.2          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs                     Heroku Node.js                     4.1.2          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-corepack            Heroku Node.js Corepack            4.1.2          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-engine              Heroku Node.js Engine              4.1.2          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.1.2          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.1.2          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.1.2          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.1.2          https://github.com/heroku/buildpacks-nodejs
-  heroku/nodejs-yarn                Heroku Node.js Yarn                4.1.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs                     Heroku Node.js                     4.1.3          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-corepack            Heroku Node.js Corepack            4.1.3          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-engine              Heroku Node.js Engine              4.1.3          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-engine          Heroku Node.js npm Engine          4.1.3          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-npm-install         Heroku Node.js npm Install         4.1.3          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-engine         Heroku Node.js pnpm Engine         4.1.3          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-pnpm-install        Heroku Node.js pnpm Install        4.1.3          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs-yarn                Heroku Node.js Yarn                4.1.3          https://github.com/heroku/buildpacks-nodejs
   heroku/php                        Heroku PHP                         1.0.7          https://github.com/heroku/buildpacks-php
   heroku/procfile                   Heroku Procfile                    4.2.1          https://github.com/heroku/buildpacks-procfile
   heroku/python                     Heroku Python                      2.4.3          https://github.com/heroku/buildpacks-python
@@ -156,7 +156,7 @@ Skipping buildpack layer analysis
   - Detected version requirement: `^9.0`
   - Resolved .NET SDK version `9.0.304` (linux-amd64)
 - SDK installation
-  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.304/dotnet-sdk-9.0.304-linux-x64.tar.gz ..... (2.1s)
+  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.304/dotnet-sdk-9.0.304-linux-x64.tar.gz ... (0.8s)
   - Verifying SDK checksum
   - Installing SDK
 - Restore .NET tools
@@ -167,12 +167,12 @@ Skipping buildpack layer analysis
 
       Restore was successful.
 
-  - Done (2.0s)
+  - Done (2.3s)
 - Publish app
   - Running `dotnet publish /workspace/GettingStarted.sln --runtime linux-x64 "-p:PublishDir=bin/publish" --artifacts-path /tmp/build_artifacts`
 
         Determining projects to restore...
-        Restored /workspace/Frontend/Frontend.csproj (in 8.31 sec).
+        Restored /workspace/Frontend/Frontend.csproj (in 7.48 sec).
         Frontend -> /tmp/build_artifacts/bin/Frontend/release_linux-x64/Frontend.dll
         Frontend -> /workspace/Frontend/bin/publish/
         Publishing executable database migration bundle
@@ -182,13 +182,13 @@ Skipping buildpack layer analysis
         Done. Migrations Bundle: /workspace/Frontend/bin/publish/efbundle
         Don't forget to copy appsettings.json alongside your bundle if you need it to apply migrations.
 
-  - Done (24.7s)
+  - Done (31.9s)
 - Process types
   - Detecting process types from published artifacts
   - Found `web`: bash -c cd Frontend/bin/publish; ./Frontend --urls http://*:$PORT
   - Procfile detected
   - Skipping process type registration (add process types to your Procfile as needed)
-- Done (finished in 32.3s)
+- Done (finished in 38.5s)
 
 ## Procfile Buildpack
 
@@ -207,7 +207,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (827907405e5e):
+*** Images (769b5ff8c1f2):
       my-image-name
 Adding cache layer 'heroku/dotnet:nuget-cache'
 Adding cache layer 'heroku/dotnet:sdk'
@@ -222,7 +222,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-827907405e5e   my-image-name    latest
+769b5ff8c1f2   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -262,7 +262,7 @@ $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 warn: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[60]
       Storing keys in a directory '/home/heroku/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
 warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
-      No XML encryptor configured. Key {a16e4b56-ab46-4afc-a07d-0c045be1d0bf} may be persisted to storage in unencrypted form.
+      No XML encryptor configured. Key {56eb3ac3-fb3e-4806-92a5-e4f646e68b76} may be persisted to storage in unencrypted form.
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://[::]:5006
 info: Microsoft.Hosting.Lifetime[0]
@@ -441,7 +441,7 @@ Running 'pip install -r requirements.txt'
   - Detected version requirement: `^9.0`
   - Resolved .NET SDK version `9.0.304` (linux-amd64)
 - SDK installation
-  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.304/dotnet-sdk-9.0.304-linux-x64.tar.gz ....... (4.7s)
+  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/9.0.304/dotnet-sdk-9.0.304-linux-x64.tar.gz ...... (3.9s)
   - Verifying SDK checksum
   - Installing SDK
 - Restore .NET tools
@@ -452,12 +452,12 @@ Running 'pip install -r requirements.txt'
 
       Restore was successful.
 
-  - Done (1.8s)
+  - Done (2.1s)
 - Publish app
   - Running `dotnet publish /workspace/GettingStarted.sln --runtime linux-x64 "-p:PublishDir=bin/publish" --artifacts-path /tmp/build_artifacts`
 
         Determining projects to restore...
-        Restored /workspace/Frontend/Frontend.csproj (in 8.37 sec).
+        Restored /workspace/Frontend/Frontend.csproj (in 6.55 sec).
         Frontend -> /tmp/build_artifacts/bin/Frontend/release_linux-x64/Frontend.dll
         Frontend -> /workspace/Frontend/bin/publish/
         Publishing executable database migration bundle
@@ -467,13 +467,13 @@ Running 'pip install -r requirements.txt'
         Done. Migrations Bundle: /workspace/Frontend/bin/publish/efbundle
         Don't forget to copy appsettings.json alongside your bundle if you need it to apply migrations.
 
-  - Done (25.0s)
+  - Done (23.5s)
 - Process types
   - Detecting process types from published artifacts
   - Found `web`: bash -c cd Frontend/bin/publish; ./Frontend --urls http://*:$PORT
   - Procfile detected
   - Skipping process type registration (add process types to your Procfile as needed)
-- Done (finished in 35.0s)
+- Done (finished in 33.1s)
 
 ## Procfile Buildpack
 
@@ -494,7 +494,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (70db2826dba6):
+*** Images (738d5a474163):
       my-image-name
 Adding cache layer 'heroku/python:pip'
 Adding cache layer 'heroku/python:pip-cache'
