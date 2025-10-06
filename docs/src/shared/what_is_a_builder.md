@@ -15,4 +15,4 @@ You can view the contents of a builder via the command `pack builder inspect`. F
 > [!NOTE]
 > Your output version numbers may differ.
 
-This output shows the various buildpacks that represent the different languages that are supported by this builder such as `heroku/go` and `heroku/nodejs-engine`.
+This output shows the various buildpacks that represent the different languages that are supported by this builder such as `heroku/go` and `heroku/nodejs`.
