@@ -66,7 +66,7 @@ Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
   heroku/deb-packages        Heroku .deb Packages        0.2.0          https://github.com/heroku/buildpacks-deb-packages
   heroku/dotnet              Heroku .NET                 0.9.1          https://github.com/heroku/buildpacks-dotnet
-  heroku/go                  Heroku Go                   2.1.2          https://github.com/heroku/buildpacks-go
+  heroku/go                  Heroku Go                   2.1.3          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.5          https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.5          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.5          https://github.com/heroku/buildpacks-jvm
@@ -105,20 +105,20 @@ $ ls -A
 .git
 .github
 .gitignore
+Gemfile
+Gemfile.lock
+Procfile
+README.md
+Rakefile
 app
 app.json
 bin
 config
 config.ru
 db
-Gemfile
-Gemfile.lock
 lib
 log
-Procfile
 public
-Rakefile
-README.md
 test
 vendor
 ```
@@ -151,9 +151,9 @@ Skipping buildpack layer analysis
 ## Heroku Ruby Buildpack
 
 - Ruby version `3.4.6` from `Gemfile.lock`
-  - Installing ..... (2.6s)
+  - Installing .... (1.6s)
 - Bundler version `2.7.2` from `Gemfile.lock`
-  - Running `gem install bundler --version 2.7.2 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.4s)
+  - Running `gem install bundler --version 2.7.2 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.3s)
 - Bundle install gems
   - Running `BUNDLE_FROZEN="1" BUNDLE_GEMFILE="/workspace/Gemfile" BUNDLE_WITHOUT="development:test" bundle install`
 
@@ -164,147 +164,147 @@ Skipping buildpack layer analysis
       Fetching benchmark 0.4.1
       Fetching bigdecimal 3.2.3
       Fetching concurrent-ruby 1.3.5
+      Installing base64 0.3.0
       Fetching connection_pool 2.5.4
+      Installing benchmark 0.4.1
       Fetching drb 2.2.3
+      Installing bigdecimal 3.2.3 with native extensions
+      Installing connection_pool 2.5.4
+      Installing drb 2.2.3
       Fetching logger 1.7.0
       Fetching minitest 5.25.5
+      Installing concurrent-ruby 1.3.5
+      Installing logger 1.7.0
+      Installing minitest 5.25.5
       Fetching securerandom 0.4.1
+      Installing securerandom 0.4.1
       Fetching uri 1.0.3
       Fetching builder 3.3.0
-      Fetching erubi 1.13.1
-      Installing base64 0.3.0
-      Fetching racc 1.8.1
-      Installing benchmark 0.4.1
-      Fetching crass 1.0.6
-      Installing bigdecimal 3.2.3 with native extensions
-      Installing concurrent-ruby 1.3.5
-      Fetching rack 3.2.1
-      Installing connection_pool 2.5.4
-      Fetching useragent 0.16.11
-      Installing drb 2.2.3
-      Fetching nio4r 2.7.4
-      Installing logger 1.7.0
-      Fetching websocket-extensions 0.1.5
-      Installing minitest 5.25.5
-      Fetching zeitwerk 2.7.3
-      Installing securerandom 0.4.1
-      Fetching timeout 0.4.3
       Installing uri 1.0.3
-      Fetching marcel 1.1.0
       Installing builder 3.3.0
-      Fetching mini_mime 1.1.5
+      Fetching erubi 1.13.1
       Installing erubi 1.13.1
-      Fetching date 3.4.1
+      Fetching racc 1.8.1
+      Fetching crass 1.0.6
       Installing racc 1.8.1 with native extensions
       Installing crass 1.0.6
-      Fetching msgpack 1.8.0
-      Installing rack 3.2.1
-      Fetching erb 5.0.2
+      Fetching rack 3.2.1
+      Fetching useragent 0.16.11
       Installing useragent 0.16.11
-      Fetching ffi 1.17.2 (aarch64-linux-gnu)
+      Installing rack 3.2.1
+      Fetching nio4r 2.7.4
       Installing nio4r 2.7.4 with native extensions
+      Fetching websocket-extensions 0.1.5
       Installing websocket-extensions 0.1.5
-      Fetching prettyprint 0.2.0
+      Fetching zeitwerk 2.7.3
       Installing zeitwerk 2.7.3
-      Fetching stringio 3.1.7
+      Fetching timeout 0.4.3
       Installing timeout 0.4.3
-      Fetching io-console 0.8.1
+      Fetching marcel 1.1.0
       Installing marcel 1.1.0
-      Fetching thor 1.4.0
+      Fetching mini_mime 1.1.5
       Installing mini_mime 1.1.5
-      Fetching tsort 0.2.0
+      Fetching date 3.4.1
       Installing date 3.4.1 with native extensions
+      Fetching msgpack 1.8.0
       Installing msgpack 1.8.0 with native extensions
+      Fetching erb 5.0.2
       Installing erb 5.0.2 with native extensions
-      Fetching rb-fsevent 0.11.2
-      Installing ffi 1.17.2 (aarch64-linux-gnu)
+      Fetching ffi 1.17.2 (x86_64-linux-gnu)
+      Installing ffi 1.17.2 (x86_64-linux-gnu)
+      Fetching prettyprint 0.2.0
       Installing prettyprint 0.2.0
-      Fetching pg 1.6.2 (aarch64-linux)
+      Fetching stringio 3.1.7
       Installing stringio 3.1.7 with native extensions
-      Fetching rack-timeout 0.7.0
+      Fetching io-console 0.8.1
       Installing io-console 0.8.1 with native extensions
+      Fetching thor 1.4.0
       Installing thor 1.4.0
-      Fetching i18n 1.14.7
+      Fetching tsort 0.2.0
       Installing tsort 0.2.0
-      Fetching tzinfo 2.0.6
+      Fetching rb-fsevent 0.11.2
       Installing rb-fsevent 0.11.2
-      Fetching rack-session 2.1.1
-      Fetching rack-test 2.2.0
+      Fetching pg 1.6.2 (x86_64-linux)
+      Installing pg 1.6.2 (x86_64-linux)
+      Fetching rack-timeout 0.7.0
       Installing rack-timeout 0.7.0
-      Fetching rackup 2.2.1
+      Fetching i18n 1.14.7
       Installing i18n 1.14.7
-      Installing rack-session 2.1.1
+      Fetching tzinfo 2.0.6
       Installing tzinfo 2.0.6
+      Fetching rack-session 2.1.1
+      Installing rack-session 2.1.1
+      Fetching rack-test 2.2.0
       Installing rack-test 2.2.0
+      Fetching rackup 2.2.1
       Installing rackup 2.2.1
-      Installing pg 1.6.2 (aarch64-linux)
       Fetching websocket-driver 0.8.0
-      Fetching net-protocol 0.2.2
-      Fetching nokogiri 1.18.10 (aarch64-linux-gnu)
       Installing websocket-driver 0.8.0 with native extensions
+      Fetching net-protocol 0.2.2
       Installing net-protocol 0.2.2
-      Fetching pp 0.6.2
-      Fetching rb-inotify 0.11.1
-      Fetching net-pop 0.1.2
-      Fetching net-smtp 0.5.1
-      Installing pp 0.6.2
-      Installing rb-inotify 0.11.1
-      Installing net-pop 0.1.2
-      Installing net-smtp 0.5.1
-      Fetching listen 3.9.0
-      Installing nokogiri 1.18.10 (aarch64-linux-gnu)
-      Installing listen 3.9.0
-      Fetching reline 0.6.2
-      Installing reline 0.6.2
+      Fetching nokogiri 1.18.10 (x86_64-linux-gnu)
+      Installing nokogiri 1.18.10 (x86_64-linux-gnu)
       Fetching puma 7.0.4
-      Fetching loofah 2.24.1
       Installing puma 7.0.4 with native extensions
+      Fetching rb-inotify 0.11.1
+      Installing rb-inotify 0.11.1
+      Fetching pp 0.6.2
+      Installing pp 0.6.2
+      Fetching bootsnap 1.18.6
+      Installing bootsnap 1.18.6 with native extensions
+      Fetching net-pop 0.1.2
+      Installing net-pop 0.1.2
+      Fetching net-smtp 0.5.1
+      Installing net-smtp 0.5.1
+      Fetching loofah 2.24.1
       Installing loofah 2.24.1
-      Fetching rails-html-sanitizer 1.6.2
-      Installing rails-html-sanitizer 1.6.2
+      Fetching net-imap 0.5.11
+      Installing net-imap 0.5.11
+      Fetching psych 5.2.6
+      Installing psych 5.2.6 with native extensions
+      Fetching listen 3.9.0
+      Installing listen 3.9.0
       Fetching activesupport 8.0.3
       Installing activesupport 8.0.3
+      Fetching rails-html-sanitizer 1.6.2
+      Installing rails-html-sanitizer 1.6.2
+      Fetching mail 2.8.1
+      Installing mail 2.8.1
+      Fetching reline 0.6.2
+      Installing reline 0.6.2
       Fetching rails-dom-testing 2.3.0
-      Fetching globalid 1.3.0
-      Fetching activemodel 8.0.3
       Installing rails-dom-testing 2.3.0
-      Fetching actionview 8.0.3
-      Fetching bootsnap 1.18.6
+      Fetching globalid 1.3.0
       Installing globalid 1.3.0
-      Fetching activejob 8.0.3
+      Fetching activemodel 8.0.3
       Installing activemodel 8.0.3
-      Fetching activerecord 8.0.3
+      Fetching actionview 8.0.3
       Installing actionview 8.0.3
-      Fetching actionpack 8.0.3
-      Installing bootsnap 1.18.6 with native extensions
+      Fetching activejob 8.0.3
       Installing activejob 8.0.3
+      Fetching activerecord 8.0.3
       Installing activerecord 8.0.3
+      Fetching actionpack 8.0.3
       Installing actionpack 8.0.3
       Fetching actioncable 8.0.3
-      Fetching activestorage 8.0.3
-      Fetching propshaft 1.3.1
       Installing actioncable 8.0.3
+      Fetching activestorage 8.0.3
       Installing activestorage 8.0.3
-      Fetching actiontext 8.0.3
-      Installing propshaft 1.3.1
-      Installing actiontext 8.0.3
-      Fetching net-imap 0.5.11
-      Fetching psych 5.2.6
-      Installing net-imap 0.5.11
-      Fetching mail 2.8.1
-      Installing psych 5.2.6 with native extensions
-      Installing mail 2.8.1
-      Fetching actionmailbox 8.0.3
       Fetching actionmailer 8.0.3
-      Installing actionmailbox 8.0.3
       Installing actionmailer 8.0.3
+      Fetching propshaft 1.3.1
+      Fetching actionmailbox 8.0.3
+      Installing propshaft 1.3.1
+      Installing actionmailbox 8.0.3
+      Fetching actiontext 8.0.3
+      Installing actiontext 8.0.3
       Fetching rdoc 6.14.2
       Installing rdoc 6.14.2
       Fetching irb 1.15.2
       Fetching sdoc 2.6.4
       Installing irb 1.15.2
-      Fetching railties 8.0.3
       Installing sdoc 2.6.4
+      Fetching railties 8.0.3
       Installing railties 8.0.3
       Fetching importmap-rails 2.2.2
       Fetching rails 8.0.3
@@ -314,14 +314,14 @@ Skipping buildpack layer analysis
       Gems in the groups 'development' and 'test' were not installed.
       Use `bundle info [gemname]` to see where a bundled gem is installed.
 
-  - Done (11.0s)
-  - Running `bundle clean --force` ... (0.1s)
+  - Done (15.3s)
+  - Running `bundle clean --force` ... (0.2s)
 - Default process detection
-  - Running `bundle list` ... (< 0.1s)
+  - Running `bundle list` ... (0.1s)
   - Detected rails app (`rails` gem found)
 - Rake assets install
   - Detected rake (`rake` gem found, `Rakefile` found at `/workspace/Rakefile`)
-  - Running `rake -P --trace` ... (0.9s)
+  - Running `rake -P --trace` .... (1.5s)
   - Compiling assets with cache (detected `rake assets:precompile` and `rake assets:clean` via `rake -P`)
   - Creating cache for /workspace/public/assets
   - Creating cache for /workspace/tmp/cache/assets
@@ -337,21 +337,21 @@ Skipping buildpack layer analysis
       Writing lang-logo-27c62977.png
       Writing application-f5e7b2f6.css
       Writing actiontext.esm-f1c04d34.js
-      Writing actiontext-a4ee937e.js
       Writing trix-4b540cb5.js
+      Writing actiontext-a4ee937e.js
       Writing trix-65afdb1d.css
-      Writing actioncable.esm-e0ec9819.js
       Writing action_cable-5212cfee.js
       Writing actioncable-ac25813f.js
-      Writing activestorage-32201f68.js
+      Writing actioncable.esm-e0ec9819.js
       Writing activestorage.esm-f2909226.js
-      Writing rails-ujs.esm-e925103b.js
+      Writing activestorage-32201f68.js
       Writing rails-ujs-20eaf715.js
+      Writing rails-ujs.esm-e925103b.js
 
-  - Done (0.3s)
+  - Done (0.7s)
   - Storing cache for /workspace/public/assets
   - Storing cache for (empty) /workspace/tmp/cache/assets
-- Done (finished in 15.7s)
+- Done (finished in 20.2s)
 
 ## Procfile Buildpack
 
@@ -376,7 +376,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (e7a41d05a178):
+*** Images (d703eabe1d3a):
       my-image-name
 Adding cache layer 'heroku/ruby:binruby'
 Adding cache layer 'heroku/ruby:bundler'
@@ -394,7 +394,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-e7a41d05a178   my-image-name           latest
+d703eabe1d3a   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -433,7 +433,7 @@ By default, images will be booted into a web server configuration. You can launc
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 [1] Puma starting in cluster mode...
 [1] * Puma version: 7.0.4 ("Romantic Warrior")
-[1] * Ruby version: ruby 3.4.6 (2025-09-16 revision dbd83256b1) +PRISM [aarch64-linux]
+[1] * Ruby version: ruby 3.4.6 (2025-09-16 revision dbd83256b1) +PRISM [x86_64-linux]
 [1] *  Min threads: 3
 [1] *  Max threads: 3
 [1] *  Environment: production
@@ -443,8 +443,8 @@ $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 [1] * Preloading application
 [1] * Listening on http://[::]:5006
 [1] Use Ctrl-C to stop
-[1] - Worker 0 (PID: 16) booted in 0.0s, phase: 0
-[1] - Worker 1 (PID: 19) booted in 0.0s, phase: 0
+[1] - Worker 0 (PID: 16) booted in 0.01s, phase: 0
+[1] - Worker 1 (PID: 19) booted in 0.01s, phase: 0
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
@@ -608,19 +608,19 @@ Skipping buildpack layer analysis
   - Node.js version not specified, using `22.x`
   - Resolved Node.js version: `22.20.0`
 - Installing Node.js distribution
-  - GET https://nodejs.org/download/release/v22.20.0/node-v22.20.0-linux-arm64.tar.gz ... (OK)
-  - Downloading ......... (6.4s)
+  - GET https://nodejs.org/download/release/v22.20.0/node-v22.20.0-linux-x64.tar.gz ... (OK)
+  - Downloading .... (1.1s)
   - Verifying checksum
-  - Extracting Node.js `22.20.0 (linux-arm64)`
-  - Installing Node.js `22.20.0 (linux-arm64)` ... (< 0.1s)
-- Done (finished in 7.5s)
+  - Extracting Node.js `22.20.0 (linux-amd64)`
+  - Installing Node.js `22.20.0 (linux-amd64)` ... (< 0.1s)
+- Done (finished in 2.5s)
 
 ## Heroku Ruby Buildpack
 
 - Ruby version `3.4.6` from `Gemfile.lock`
-  - Installing ...... (3.3s)
+  - Installing .... (1.6s)
 - Bundler version `2.7.2` from `Gemfile.lock`
-  - Running `gem install bundler --version 2.7.2 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.4s)
+  - Running `gem install bundler --version 2.7.2 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.3s)
 - Bundle install gems
   - Running `BUNDLE_FROZEN="1" BUNDLE_GEMFILE="/workspace/Gemfile" BUNDLE_WITHOUT="development:test" bundle install`
 
@@ -631,147 +631,147 @@ Skipping buildpack layer analysis
       Fetching benchmark 0.4.1
       Fetching bigdecimal 3.2.3
       Fetching concurrent-ruby 1.3.5
+      Installing base64 0.3.0
       Fetching connection_pool 2.5.4
+      Installing benchmark 0.4.1
       Fetching drb 2.2.3
+      Installing bigdecimal 3.2.3 with native extensions
+      Installing connection_pool 2.5.4
+      Installing drb 2.2.3
       Fetching logger 1.7.0
       Fetching minitest 5.25.5
+      Installing logger 1.7.0
+      Installing concurrent-ruby 1.3.5
+      Installing minitest 5.25.5
       Fetching securerandom 0.4.1
+      Installing securerandom 0.4.1
       Fetching uri 1.0.3
       Fetching builder 3.3.0
-      Fetching erubi 1.13.1
-      Installing base64 0.3.0
-      Fetching racc 1.8.1
-      Installing benchmark 0.4.1
-      Fetching crass 1.0.6
-      Installing bigdecimal 3.2.3 with native extensions
-      Installing concurrent-ruby 1.3.5
-      Installing connection_pool 2.5.4
-      Fetching rack 3.2.1
-      Fetching useragent 0.16.11
-      Installing drb 2.2.3
-      Fetching nio4r 2.7.4
-      Installing logger 1.7.0
-      Fetching websocket-extensions 0.1.5
-      Installing minitest 5.25.5
-      Fetching zeitwerk 2.7.3
-      Installing securerandom 0.4.1
-      Fetching timeout 0.4.3
       Installing uri 1.0.3
-      Fetching marcel 1.1.0
       Installing builder 3.3.0
-      Fetching mini_mime 1.1.5
+      Fetching erubi 1.13.1
       Installing erubi 1.13.1
-      Fetching date 3.4.1
+      Fetching racc 1.8.1
+      Fetching crass 1.0.6
       Installing racc 1.8.1 with native extensions
       Installing crass 1.0.6
-      Fetching msgpack 1.8.0
-      Installing rack 3.2.1
-      Fetching erb 5.0.2
+      Fetching rack 3.2.1
+      Fetching useragent 0.16.11
       Installing useragent 0.16.11
-      Fetching ffi 1.17.2 (aarch64-linux-gnu)
+      Installing rack 3.2.1
+      Fetching nio4r 2.7.4
       Installing nio4r 2.7.4 with native extensions
+      Fetching websocket-extensions 0.1.5
       Installing websocket-extensions 0.1.5
-      Fetching prettyprint 0.2.0
+      Fetching zeitwerk 2.7.3
       Installing zeitwerk 2.7.3
-      Fetching stringio 3.1.7
+      Fetching timeout 0.4.3
       Installing timeout 0.4.3
-      Fetching io-console 0.8.1
+      Fetching marcel 1.1.0
       Installing marcel 1.1.0
-      Fetching thor 1.4.0
+      Fetching mini_mime 1.1.5
       Installing mini_mime 1.1.5
-      Fetching tsort 0.2.0
+      Fetching date 3.4.1
       Installing date 3.4.1 with native extensions
+      Fetching msgpack 1.8.0
       Installing msgpack 1.8.0 with native extensions
+      Fetching erb 5.0.2
       Installing erb 5.0.2 with native extensions
-      Fetching rb-fsevent 0.11.2
+      Fetching ffi 1.17.2 (x86_64-linux-gnu)
+      Installing ffi 1.17.2 (x86_64-linux-gnu)
+      Fetching prettyprint 0.2.0
       Installing prettyprint 0.2.0
-      Fetching pg 1.6.2 (aarch64-linux)
+      Fetching stringio 3.1.7
       Installing stringio 3.1.7 with native extensions
+      Fetching io-console 0.8.1
       Installing io-console 0.8.1 with native extensions
-      Installing ffi 1.17.2 (aarch64-linux-gnu)
+      Fetching thor 1.4.0
       Installing thor 1.4.0
+      Fetching tsort 0.2.0
       Installing tsort 0.2.0
+      Fetching rb-fsevent 0.11.2
       Installing rb-fsevent 0.11.2
+      Fetching pg 1.6.2 (x86_64-linux)
+      Installing pg 1.6.2 (x86_64-linux)
       Fetching rack-timeout 0.7.0
-      Fetching i18n 1.14.7
-      Fetching tzinfo 2.0.6
-      Fetching rack-session 2.1.1
-      Fetching rack-test 2.2.0
       Installing rack-timeout 0.7.0
+      Fetching i18n 1.14.7
       Installing i18n 1.14.7
-      Installing pg 1.6.2 (aarch64-linux)
-      Fetching rackup 2.2.1
-      Installing rack-session 2.1.1
+      Fetching tzinfo 2.0.6
       Installing tzinfo 2.0.6
+      Fetching rack-session 2.1.1
+      Installing rack-session 2.1.1
+      Fetching rack-test 2.2.0
       Installing rack-test 2.2.0
+      Fetching rackup 2.2.1
       Installing rackup 2.2.1
       Fetching websocket-driver 0.8.0
-      Fetching net-protocol 0.2.2
-      Fetching nokogiri 1.18.10 (aarch64-linux-gnu)
-      Fetching pp 0.6.2
       Installing websocket-driver 0.8.0 with native extensions
+      Fetching net-protocol 0.2.2
       Installing net-protocol 0.2.2
-      Fetching rb-inotify 0.11.1
-      Fetching net-pop 0.1.2
-      Fetching net-smtp 0.5.1
-      Installing pp 0.6.2
-      Installing rb-inotify 0.11.1
-      Fetching listen 3.9.0
-      Installing net-pop 0.1.2
-      Installing net-smtp 0.5.1
-      Installing listen 3.9.0
-      Installing nokogiri 1.18.10 (aarch64-linux-gnu)
-      Fetching loofah 2.24.1
-      Installing loofah 2.24.1
-      Fetching rails-html-sanitizer 1.6.2
-      Installing rails-html-sanitizer 1.6.2
-      Fetching reline 0.6.2
-      Installing reline 0.6.2
+      Fetching nokogiri 1.18.10 (x86_64-linux-gnu)
+      Installing nokogiri 1.18.10 (x86_64-linux-gnu)
       Fetching puma 7.0.4
       Installing puma 7.0.4 with native extensions
+      Fetching rb-inotify 0.11.1
+      Fetching pp 0.6.2
+      Installing rb-inotify 0.11.1
+      Installing pp 0.6.2
       Fetching bootsnap 1.18.6
+      Fetching net-pop 0.1.2
       Installing bootsnap 1.18.6 with native extensions
+      Installing net-pop 0.1.2
+      Fetching net-smtp 0.5.1
+      Installing net-smtp 0.5.1
+      Fetching loofah 2.24.1
+      Fetching reline 0.6.2
+      Installing loofah 2.24.1
+      Installing reline 0.6.2
       Fetching activesupport 8.0.3
+      Fetching listen 3.9.0
+      Installing listen 3.9.0
       Installing activesupport 8.0.3
+      Fetching net-imap 0.5.11
+      Installing net-imap 0.5.11
+      Fetching psych 5.2.6
+      Installing psych 5.2.6 with native extensions
+      Fetching rails-html-sanitizer 1.6.2
+      Installing rails-html-sanitizer 1.6.2
+      Fetching mail 2.8.1
+      Installing mail 2.8.1
       Fetching rails-dom-testing 2.3.0
-      Fetching globalid 1.3.0
-      Fetching activemodel 8.0.3
       Installing rails-dom-testing 2.3.0
-      Fetching actionview 8.0.3
+      Fetching globalid 1.3.0
       Installing globalid 1.3.0
-      Fetching activejob 8.0.3
+      Fetching activemodel 8.0.3
       Installing activemodel 8.0.3
-      Fetching activerecord 8.0.3
+      Fetching actionview 8.0.3
       Installing actionview 8.0.3
-      Fetching actionpack 8.0.3
+      Fetching activejob 8.0.3
       Installing activejob 8.0.3
+      Fetching activerecord 8.0.3
       Installing activerecord 8.0.3
+      Fetching actionpack 8.0.3
       Installing actionpack 8.0.3
       Fetching actioncable 8.0.3
-      Fetching activestorage 8.0.3
-      Fetching propshaft 1.3.1
       Installing actioncable 8.0.3
+      Fetching activestorage 8.0.3
       Installing activestorage 8.0.3
-      Fetching actiontext 8.0.3
-      Installing propshaft 1.3.1
-      Installing actiontext 8.0.3
-      Fetching net-imap 0.5.11
-      Fetching psych 5.2.6
-      Installing net-imap 0.5.11
-      Fetching mail 2.8.1
-      Installing psych 5.2.6 with native extensions
-      Installing mail 2.8.1
-      Fetching actionmailbox 8.0.3
       Fetching actionmailer 8.0.3
-      Installing actionmailbox 8.0.3
       Installing actionmailer 8.0.3
+      Fetching propshaft 1.3.1
+      Installing propshaft 1.3.1
+      Fetching actionmailbox 8.0.3
+      Installing actionmailbox 8.0.3
+      Fetching actiontext 8.0.3
+      Installing actiontext 8.0.3
       Fetching rdoc 6.14.2
       Installing rdoc 6.14.2
       Fetching irb 1.15.2
       Fetching sdoc 2.6.4
       Installing irb 1.15.2
-      Fetching railties 8.0.3
       Installing sdoc 2.6.4
+      Fetching railties 8.0.3
       Installing railties 8.0.3
       Fetching importmap-rails 2.2.2
       Fetching rails 8.0.3
@@ -781,14 +781,14 @@ Skipping buildpack layer analysis
       Gems in the groups 'development' and 'test' were not installed.
       Use `bundle info [gemname]` to see where a bundled gem is installed.
 
-  - Done (10.8s)
-  - Running `bundle clean --force` ... (0.1s)
+  - Done (15.3s)
+  - Running `bundle clean --force` ... (0.2s)
 - Default process detection
-  - Running `bundle list` ... (< 0.1s)
+  - Running `bundle list` ... (0.1s)
   - Detected rails app (`rails` gem found)
 - Rake assets install
   - Detected rake (`rake` gem found, `Rakefile` found at `/workspace/Rakefile`)
-  - Running `rake -P --trace` ... (0.8s)
+  - Running `rake -P --trace` .... (1.5s)
   - Compiling assets with cache (detected `rake assets:precompile` and `rake assets:clean` via `rake -P`)
   - Creating cache for /workspace/public/assets
   - Creating cache for /workspace/tmp/cache/assets
@@ -804,21 +804,21 @@ Skipping buildpack layer analysis
       Writing lang-logo-27c62977.png
       Writing application-f5e7b2f6.css
       Writing actiontext.esm-f1c04d34.js
-      Writing actiontext-a4ee937e.js
       Writing trix-4b540cb5.js
+      Writing actiontext-a4ee937e.js
       Writing trix-65afdb1d.css
-      Writing actioncable.esm-e0ec9819.js
       Writing action_cable-5212cfee.js
       Writing actioncable-ac25813f.js
-      Writing activestorage-32201f68.js
+      Writing actioncable.esm-e0ec9819.js
       Writing activestorage.esm-f2909226.js
-      Writing rails-ujs.esm-e925103b.js
+      Writing activestorage-32201f68.js
       Writing rails-ujs-20eaf715.js
+      Writing rails-ujs.esm-e925103b.js
 
-  - Done (0.4s)
+  - Done (0.7s)
   - Storing cache for /workspace/public/assets
   - Storing cache for (empty) /workspace/tmp/cache/assets
-- Done (finished in 16.2s)
+- Done (finished in 20.1s)
 
 ## Procfile Buildpack
 
@@ -846,7 +846,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (b44d30605d14):
+*** Images (68158ac1ff79):
       my-image-name
 Adding cache layer 'heroku/nodejs:dist'
 Adding cache layer 'heroku/ruby:binruby'
