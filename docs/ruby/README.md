@@ -65,8 +65,8 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
   heroku/deb-packages        Heroku .deb Packages        0.2.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet              Heroku .NET                 0.9.1          https://github.com/heroku/buildpacks-dotnet
-  heroku/go                  Heroku Go                   2.1.3          https://github.com/heroku/buildpacks-go
+  heroku/dotnet              Heroku .NET                 0.9.2          https://github.com/heroku/buildpacks-dotnet
+  heroku/go                  Heroku Go                   2.1.4          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.5          https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.5          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.5          https://github.com/heroku/buildpacks-jvm
@@ -74,7 +74,7 @@ Buildpacks:
   heroku/nodejs              Heroku Node.js              5.1.3          https://github.com/heroku/buildpacks-nodejs
   heroku/php                 Heroku PHP                  1.0.9          https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               2.7.0          https://github.com/heroku/buildpacks-python
+  heroku/python              Heroku Python               2.7.1          https://github.com/heroku/buildpacks-python
   heroku/ruby                Heroku Ruby                 12.1.0         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.5          https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.5          https://github.com/heroku/buildpacks-jvm
@@ -165,18 +165,18 @@ Skipping buildpack layer analysis
       Fetching bigdecimal 3.2.3
       Fetching concurrent-ruby 1.3.5
       Installing base64 0.3.0
-      Fetching connection_pool 2.5.4
       Installing benchmark 0.4.1
+      Fetching connection_pool 2.5.4
       Fetching drb 2.2.3
       Installing bigdecimal 3.2.3 with native extensions
       Installing connection_pool 2.5.4
       Installing drb 2.2.3
       Fetching logger 1.7.0
       Fetching minitest 5.25.5
-      Installing logger 1.7.0
       Installing concurrent-ruby 1.3.5
-      Installing minitest 5.25.5
+      Installing logger 1.7.0
       Fetching securerandom 0.4.1
+      Installing minitest 5.25.5
       Installing securerandom 0.4.1
       Fetching uri 1.0.3
       Installing uri 1.0.3
@@ -190,11 +190,11 @@ Skipping buildpack layer analysis
       Installing crass 1.0.6
       Fetching rack 3.2.3
       Fetching useragent 0.16.11
-      Installing rack 3.2.3
       Installing useragent 0.16.11
+      Installing rack 3.2.3
       Fetching nio4r 2.7.4
-      Fetching websocket-extensions 0.1.5
       Installing nio4r 2.7.4 with native extensions
+      Fetching websocket-extensions 0.1.5
       Installing websocket-extensions 0.1.5
       Fetching zeitwerk 2.7.3
       Installing zeitwerk 2.7.3
@@ -257,46 +257,46 @@ Skipping buildpack layer analysis
       Fetching net-smtp 0.5.1
       Installing net-smtp 0.5.1
       Fetching loofah 2.24.1
-      Installing loofah 2.24.1
       Fetching net-imap 0.5.11
-      Installing net-imap 0.5.11
+      Installing loofah 2.24.1
       Fetching psych 5.2.6
+      Installing net-imap 0.5.11
       Installing psych 5.2.6 with native extensions
       Fetching listen 3.9.0
       Installing listen 3.9.0
       Fetching reline 0.6.2
       Installing reline 0.6.2
+      Fetching activesupport 8.0.3
+      Installing activesupport 8.0.3
       Fetching rails-html-sanitizer 1.6.2
       Installing rails-html-sanitizer 1.6.2
       Fetching mail 2.8.1
       Installing mail 2.8.1
-      Fetching activesupport 8.0.3
-      Installing activesupport 8.0.3
       Fetching rails-dom-testing 2.3.0
       Installing rails-dom-testing 2.3.0
       Fetching globalid 1.3.0
-      Installing globalid 1.3.0
       Fetching activemodel 8.0.3
+      Installing globalid 1.3.0
       Installing activemodel 8.0.3
       Fetching actionview 8.0.3
       Installing actionview 8.0.3
       Fetching activejob 8.0.3
       Installing activejob 8.0.3
       Fetching activerecord 8.0.3
-      Installing activerecord 8.0.3
       Fetching actionpack 8.0.3
       Installing actionpack 8.0.3
+      Installing activerecord 8.0.3
       Fetching actioncable 8.0.3
       Installing actioncable 8.0.3
-      Fetching activestorage 8.0.3
-      Installing activestorage 8.0.3
       Fetching actionmailer 8.0.3
       Installing actionmailer 8.0.3
       Fetching propshaft 1.3.1
       Installing propshaft 1.3.1
+      Fetching activestorage 8.0.3
+      Installing activestorage 8.0.3
       Fetching actionmailbox 8.0.3
-      Installing actionmailbox 8.0.3
       Fetching actiontext 8.0.3
+      Installing actionmailbox 8.0.3
       Installing actiontext 8.0.3
       Fetching rdoc 6.14.2
       Installing rdoc 6.14.2
@@ -314,14 +314,14 @@ Skipping buildpack layer analysis
       Gems in the groups 'development' and 'test' were not installed.
       Use `bundle info [gemname]` to see where a bundled gem is installed.
 
-  - Done (15.2s)
+  - Done (15.6s)
   - Running `bundle clean --force` ... (0.2s)
 - Default process detection
   - Running `bundle list` ... (0.1s)
   - Detected rails app (`rails` gem found)
 - Rake assets install
   - Detected rake (`rake` gem found, `Rakefile` found at `/workspace/Rakefile`)
-  - Running `rake -P --trace` .... (1.4s)
+  - Running `rake -P --trace` .... (1.5s)
   - Compiling assets with cache (detected `rake assets:precompile` and `rake assets:clean` via `rake -P`)
   - Creating cache for /workspace/public/assets
   - Creating cache for /workspace/tmp/cache/assets
@@ -351,7 +351,7 @@ Skipping buildpack layer analysis
   - Done (0.7s)
   - Storing cache for /workspace/public/assets
   - Storing cache for (empty) /workspace/tmp/cache/assets
-- Done (finished in 19.9s)
+- Done (finished in 20.4s)
 
 ## Procfile Buildpack
 
@@ -376,7 +376,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (c9b756b5b3c9):
+*** Images (a00fe27c732c):
       my-image-name
 Adding cache layer 'heroku/ruby:binruby'
 Adding cache layer 'heroku/ruby:bundler'
@@ -394,7 +394,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-c9b756b5b3c9   my-image-name    latest
+a00fe27c732c   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -443,7 +443,7 @@ $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 [1] * Preloading application
 [1] * Listening on http://[::]:5006
 [1] Use Ctrl-C to stop
-[1] - Worker 0 (PID: 16) booted in 0.0s, phase: 0
+[1] - Worker 0 (PID: 16) booted in 0.01s, phase: 0
 [1] - Worker 1 (PID: 19) booted in 0.01s, phase: 0
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
@@ -609,18 +609,18 @@ Skipping buildpack layer analysis
   - Resolved Node.js version: `22.20.0`
 - Installing Node.js distribution
   - GET https://nodejs.org/download/release/v22.20.0/node-v22.20.0-linux-x64.tar.gz ... (OK)
-  - Downloading .... (1.0s)
+  - Downloading ... (0.5s)
   - Verifying checksum
   - Extracting Node.js `22.20.0 (linux-amd64)`
   - Installing Node.js `22.20.0 (linux-amd64)` ... (< 0.1s)
-- Done (finished in 2.4s)
+- Done (finished in 1.9s)
 
 ## Heroku Ruby Buildpack
 
 - Ruby version `3.4.6` from `Gemfile.lock`
-  - Installing .... (1.6s)
+  - Installing .... (1.7s)
 - Bundler version `2.7.2` from `Gemfile.lock`
-  - Running `gem install bundler --version 2.7.2 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.4s)
+  - Running `gem install bundler --version 2.7.2 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.3s)
 - Bundle install gems
   - Running `BUNDLE_FROZEN="1" BUNDLE_GEMFILE="/workspace/Gemfile" BUNDLE_WITHOUT="development:test" bundle install`
 
@@ -634,9 +634,9 @@ Skipping buildpack layer analysis
       Installing base64 0.3.0
       Fetching connection_pool 2.5.4
       Installing benchmark 0.4.1
+      Fetching drb 2.2.3
       Installing bigdecimal 3.2.3 with native extensions
       Installing connection_pool 2.5.4
-      Fetching drb 2.2.3
       Installing drb 2.2.3
       Fetching logger 1.7.0
       Installing logger 1.7.0
@@ -648,21 +648,21 @@ Skipping buildpack layer analysis
       Fetching uri 1.0.3
       Installing uri 1.0.3
       Fetching builder 3.3.0
-      Installing builder 3.3.0
       Fetching erubi 1.13.1
-      Fetching racc 1.8.1
+      Installing builder 3.3.0
       Installing erubi 1.13.1
+      Fetching racc 1.8.1
       Fetching crass 1.0.6
       Installing racc 1.8.1 with native extensions
       Installing crass 1.0.6
       Fetching rack 3.2.3
       Fetching useragent 0.16.11
-      Installing rack 3.2.3
       Installing useragent 0.16.11
+      Installing rack 3.2.3
       Fetching nio4r 2.7.4
       Fetching websocket-extensions 0.1.5
-      Installing websocket-extensions 0.1.5
       Installing nio4r 2.7.4 with native extensions
+      Installing websocket-extensions 0.1.5
       Fetching zeitwerk 2.7.3
       Installing zeitwerk 2.7.3
       Fetching timeout 0.4.3
@@ -716,35 +716,35 @@ Skipping buildpack layer analysis
       Fetching rb-inotify 0.11.1
       Fetching pp 0.6.2
       Installing rb-inotify 0.11.1
-      Fetching bootsnap 1.18.6
       Installing pp 0.6.2
+      Fetching bootsnap 1.18.6
       Fetching net-pop 0.1.2
+      Fetching net-smtp 0.5.1
       Installing bootsnap 1.18.6 with native extensions
       Installing net-pop 0.1.2
-      Fetching net-smtp 0.5.1
       Installing net-smtp 0.5.1
       Fetching loofah 2.24.1
-      Installing loofah 2.24.1
-      Fetching activesupport 8.0.3
-      Installing activesupport 8.0.3
       Fetching reline 0.6.2
+      Installing loofah 2.24.1
       Installing reline 0.6.2
+      Fetching activesupport 8.0.3
+      Fetching net-imap 0.5.11
+      Installing activesupport 8.0.3
+      Installing net-imap 0.5.11
+      Fetching psych 5.2.6
+      Installing psych 5.2.6 with native extensions
       Fetching listen 3.9.0
       Installing listen 3.9.0
       Fetching rails-html-sanitizer 1.6.2
       Installing rails-html-sanitizer 1.6.2
-      Fetching net-imap 0.5.11
-      Fetching psych 5.2.6
-      Installing psych 5.2.6 with native extensions
-      Installing net-imap 0.5.11
+      Fetching mail 2.8.1
+      Installing mail 2.8.1
       Fetching rails-dom-testing 2.3.0
       Installing rails-dom-testing 2.3.0
       Fetching globalid 1.3.0
       Installing globalid 1.3.0
       Fetching activemodel 8.0.3
       Installing activemodel 8.0.3
-      Fetching mail 2.8.1
-      Installing mail 2.8.1
       Fetching actionview 8.0.3
       Installing actionview 8.0.3
       Fetching activejob 8.0.3
@@ -781,7 +781,7 @@ Skipping buildpack layer analysis
       Gems in the groups 'development' and 'test' were not installed.
       Use `bundle info [gemname]` to see where a bundled gem is installed.
 
-  - Done (15.2s)
+  - Done (15.1s)
   - Running `bundle clean --force` ... (0.2s)
 - Default process detection
   - Running `bundle list` ... (0.1s)
@@ -846,7 +846,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (e9e1e98b5793):
+*** Images (b52c05ae5596):
       my-image-name
 Adding cache layer 'heroku/nodejs:dist'
 Adding cache layer 'heroku/ruby:binruby'
