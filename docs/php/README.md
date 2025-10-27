@@ -72,7 +72,7 @@ Buildpacks:
   heroku/jvm                 Heroku OpenJDK              7.0.6          https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.6          https://github.com/heroku/buildpacks-jvm
   heroku/nodejs              Heroku Node.js              5.1.4          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                 Heroku PHP                  1.0.10         https://github.com/heroku/buildpacks-php
+  heroku/php                 Heroku PHP                  1.1.0          https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.1          https://github.com/heroku/buildpacks-procfile
   heroku/python              Heroku Python               2.7.2          https://github.com/heroku/buildpacks-python
   heroku/ruby                Heroku Ruby                 12.1.0         https://github.com/heroku/buildpacks-ruby
@@ -132,7 +132,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/php      1.0.10
+heroku/php      1.1.0
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -143,164 +143,67 @@ Skipping buildpack layer analysis
 - Bootstrapping
 - Preparing platform packages installation
 - Installing platform packages
-  - Running `composer install --no-dev --no-interaction`
-
-      No composer.lock file present. Updating dependencies to latest instead of installing from lock file. See https://getcomposer.org/install for more information.
-      Loading composer repositories with package information
-      Updating dependencies
-      Lock file operations: 26 installs, 0 updates, 0 removals
-        - Locking fig/http-message-util (1.1.5)
-        - Locking heroku-sys/composer (2.8.12)
-        - Locking heroku-sys/php (8.4.14)
-        - Locking heroku/installer-plugin (1.8.0)
-        - Locking laravel/serializable-closure (v2.0.4)
-        - Locking monolog/monolog (3.9.0)
-        - Locking nikic/fast-route (v1.3.0)
-        - Locking php-di/invoker (2.3.7)
-        - Locking php-di/php-di (7.1.1)
-        - Locking php-di/slim-bridge (3.4.1)
-        - Locking psr/container (2.0.2)
-        - Locking psr/http-factory (1.1.0)
-        - Locking psr/http-message (2.0)
-        - Locking psr/http-server-handler (1.0.2)
-        - Locking psr/http-server-middleware (1.0.2)
-        - Locking psr/log (3.0.2)
-        - Locking ralouphie/getallheaders (3.0.3)
-        - Locking slim/psr7 (1.7.1)
-        - Locking slim/slim (4.15.0)
-        - Locking slim/twig-view (3.4.1)
-        - Locking symfony/deprecation-contracts (v3.6.0)
-        - Locking symfony/polyfill-ctype (v1.32.0)
-        - Locking symfony/polyfill-mbstring (v1.32.0)
-        - Locking symfony/polyfill-php80 (v1.32.0)
-        - Locking symfony/polyfill-php81 (v1.32.0)
-        - Locking twig/twig (v3.21.1)
-      Writing lock file
-      Installing dependencies from lock file
-      Package operations: 26 installs, 0 updates, 0 removals
-        - Installing heroku/installer-plugin (1.8.0): Mirroring from /layers/heroku_php/bootstrap_installer/support/installer
-        - Downloading heroku-sys/php (8.4.14)
-        - Downloading heroku-sys/composer (2.8.12)
-       0/2 [>---------------------------]   0%
-       1/2 [==============>-------------]  50%
-       2/2 [============================] 100%
-        - Installing heroku-sys/php (8.4.14)
-        - Installing fig/http-message-util (1.1.5)
-        - Installing heroku-sys/composer (2.8.12)
-        - Installing laravel/serializable-closure (v2.0.4)
-        - Installing monolog/monolog (3.9.0)
-        - Installing nikic/fast-route (v1.3.0)
-        - Installing php-di/invoker (2.3.7)
-        - Installing php-di/php-di (7.1.1)
-        - Installing php-di/slim-bridge (3.4.1)
-        - Installing psr/container (2.0.2)
-        - Installing psr/http-factory (1.1.0)
-        - Installing psr/http-message (2.0)
-        - Installing psr/http-server-handler (1.0.2)
-        - Installing psr/http-server-middleware (1.0.2)
-        - Installing psr/log (3.0.2)
-        - Installing ralouphie/getallheaders (3.0.3)
-        - Installing slim/psr7 (1.7.1)
-        - Installing slim/slim (4.15.0)
-        - Installing slim/twig-view (3.4.1)
-        - Installing symfony/deprecation-contracts (v3.6.0)
-        - Installing symfony/polyfill-ctype (v1.32.0)
-        - Installing symfony/polyfill-mbstring (v1.32.0)
-        - Installing symfony/polyfill-php80 (v1.32.0)
-        - Installing symfony/polyfill-php81 (v1.32.0)
-        - Installing twig/twig (v3.21.1)
-          0 [>---------------------------]    0 [->--------------------------]
-      Generating autoload files
-
-  - Done (1.8s)
+  - php (8.4.14)
+  - composer (2.8.12)
 - Installing web servers
-  - Running `composer install --no-dev --no-interaction`
-
-      No composer.lock file present. Updating dependencies to latest instead of installing from lock file. See https://getcomposer.org/install for more information.
-      Loading composer repositories with package information
-      Updating dependencies
-      Lock file operations: 4 installs, 0 updates, 0 removals
-        - Locking heroku-sys/apache (2.4.65)
-        - Locking heroku-sys/nginx (1.28.0)
-        - Locking heroku/heroku-buildpack-php (dev-bundled)
-        - Locking heroku/installer-plugin (1.8.0)
-      Writing lock file
-      Installing dependencies from lock file
-      Package operations: 4 installs, 0 updates, 0 removals
-        - Installing heroku/installer-plugin (1.8.0): Mirroring from /layers/heroku_php/bootstrap_installer/support/installer
-        - Downloading heroku-sys/apache (2.4.65)
-        - Downloading heroku-sys/nginx (1.28.0)
-       0/2 [>---------------------------]   0%
-       2/2 [============================] 100%
-        - Installing heroku-sys/apache (2.4.65)
-        - Installing heroku-sys/nginx (1.28.0)
-        - Installing heroku/heroku-buildpack-php (dev-bundled): Mirroring from /layers/heroku_php/bootstrap_installer
-          0 [>---------------------------]    0 [->--------------------------]
-      Generating autoload files
-
-  - Done (1.1s)
+  - nginx (1.28.0)
+  - apache (2.4.65)
+  - boot-scripts (1.276.0)
 - Installing dependencies
-  - Running `composer install -vv --no-dev --no-progress --no-interaction --optimize-autoloader --prefer-dist`
-
-      Installing dependencies from lock file
-      Verifying lock file contents can be installed on current platform.
-      Dependency resolution completed in 0.000 seconds
-      Package operations: 23 installs, 0 updates, 0 removals
-      Installs: laravel/serializable-closure:v2.0.4, psr/log:3.0.2, monolog/monolog:3.9.0, nikic/fast-route:v1.3.0, psr/http-message:2.0, psr/http-server-handler:1.0.2, psr/http-server-middleware:1.0.2, psr/http-factory:1.1.0, psr/container:2.0.2, slim/slim:4.15.0, php-di/invoker:2.3.7, php-di/php-di:7.1.1, php-di/slim-bridge:3.4.1, symfony/polyfill-php80:v1.32.0, ralouphie/getallheaders:3.0.3, fig/http-message-util:1.1.5, slim/psr7:1.7.1, symfony/polyfill-mbstring:v1.32.0, symfony/polyfill-ctype:v1.32.0, symfony/deprecation-contracts:v3.6.0, twig/twig:v3.21.1, symfony/polyfill-php81:v1.32.0, slim/twig-view:3.4.1
-        - Downloading laravel/serializable-closure (v2.0.4)
-        - Downloading psr/log (3.0.2)
-        - Downloading monolog/monolog (3.9.0)
-        - Downloading nikic/fast-route (v1.3.0)
-        - Downloading psr/http-message (2.0)
-        - Downloading psr/http-server-handler (1.0.2)
-        - Downloading psr/http-server-middleware (1.0.2)
-        - Downloading psr/http-factory (1.1.0)
-        - Downloading psr/container (2.0.2)
-        - Downloading slim/slim (4.15.0)
-        - Downloading php-di/invoker (2.3.7)
-        - Downloading php-di/php-di (7.1.1)
-        - Downloading php-di/slim-bridge (3.4.1)
-        - Downloading symfony/polyfill-php80 (v1.32.0)
-        - Downloading ralouphie/getallheaders (3.0.3)
-        - Downloading fig/http-message-util (1.1.5)
-        - Downloading slim/psr7 (1.7.1)
-        - Downloading symfony/polyfill-mbstring (v1.32.0)
-        - Downloading symfony/polyfill-ctype (v1.32.0)
-        - Downloading symfony/deprecation-contracts (v3.6.0)
-        - Downloading twig/twig (v3.21.1)
-        - Downloading symfony/polyfill-php81 (v1.32.0)
-        - Downloading slim/twig-view (3.4.1)
-        - Installing laravel/serializable-closure (v2.0.4): Extracting archive
-        - Installing psr/log (3.0.2): Extracting archive
-        - Installing monolog/monolog (3.9.0): Extracting archive
-        - Installing nikic/fast-route (v1.3.0): Extracting archive
-        - Installing psr/http-message (2.0): Extracting archive
-        - Installing psr/http-server-handler (1.0.2): Extracting archive
-        - Installing psr/http-server-middleware (1.0.2): Extracting archive
-        - Installing psr/http-factory (1.1.0): Extracting archive
-        - Installing psr/container (2.0.2): Extracting archive
-        - Installing slim/slim (4.15.0): Extracting archive
-        - Installing php-di/invoker (2.3.7): Extracting archive
-        - Installing php-di/php-di (7.1.1): Extracting archive
-        - Installing php-di/slim-bridge (3.4.1): Extracting archive
-        - Installing symfony/polyfill-php80 (v1.32.0): Extracting archive
-        - Installing ralouphie/getallheaders (3.0.3): Extracting archive
-        - Installing fig/http-message-util (1.1.5): Extracting archive
-        - Installing slim/psr7 (1.7.1): Extracting archive
-        - Installing symfony/polyfill-mbstring (v1.32.0): Extracting archive
-        - Installing symfony/polyfill-ctype (v1.32.0): Extracting archive
-        - Installing symfony/deprecation-contracts (v3.6.0): Extracting archive
-        - Installing twig/twig (v3.21.1): Extracting archive
-        - Installing symfony/polyfill-php81 (v1.32.0): Extracting archive
-        - Installing slim/twig-view (3.4.1): Extracting archive
-      Generating optimized autoload files
-      10 packages you are using are looking for funding.
-      Use the `composer fund` command to find out more!
-
-  - Done (1.9s)
+  Installing dependencies from lock file
+  Verifying lock file contents can be installed on current platform.
+  Package operations: 23 installs, 0 updates, 0 removals
+    - Downloading laravel/serializable-closure (v2.0.4)
+    - Downloading psr/log (3.0.2)
+    - Downloading monolog/monolog (3.9.0)
+    - Downloading nikic/fast-route (v1.3.0)
+    - Downloading psr/http-message (2.0)
+    - Downloading psr/http-server-handler (1.0.2)
+    - Downloading psr/http-server-middleware (1.0.2)
+    - Downloading psr/http-factory (1.1.0)
+    - Downloading psr/container (2.0.2)
+    - Downloading slim/slim (4.15.0)
+    - Downloading php-di/invoker (2.3.7)
+    - Downloading php-di/php-di (7.1.1)
+    - Downloading php-di/slim-bridge (3.4.1)
+    - Downloading symfony/polyfill-php80 (v1.32.0)
+    - Downloading ralouphie/getallheaders (3.0.3)
+    - Downloading fig/http-message-util (1.1.5)
+    - Downloading slim/psr7 (1.7.1)
+    - Downloading symfony/polyfill-mbstring (v1.32.0)
+    - Downloading symfony/polyfill-ctype (v1.32.0)
+    - Downloading symfony/deprecation-contracts (v3.6.0)
+    - Downloading twig/twig (v3.21.1)
+    - Downloading symfony/polyfill-php81 (v1.32.0)
+    - Downloading slim/twig-view (3.4.1)
+    - Installing laravel/serializable-closure (v2.0.4): Extracting archive
+    - Installing psr/log (3.0.2): Extracting archive
+    - Installing monolog/monolog (3.9.0): Extracting archive
+    - Installing nikic/fast-route (v1.3.0): Extracting archive
+    - Installing psr/http-message (2.0): Extracting archive
+    - Installing psr/http-server-handler (1.0.2): Extracting archive
+    - Installing psr/http-server-middleware (1.0.2): Extracting archive
+    - Installing psr/http-factory (1.1.0): Extracting archive
+    - Installing psr/container (2.0.2): Extracting archive
+    - Installing slim/slim (4.15.0): Extracting archive
+    - Installing php-di/invoker (2.3.7): Extracting archive
+    - Installing php-di/php-di (7.1.1): Extracting archive
+    - Installing php-di/slim-bridge (3.4.1): Extracting archive
+    - Installing symfony/polyfill-php80 (v1.32.0): Extracting archive
+    - Installing ralouphie/getallheaders (3.0.3): Extracting archive
+    - Installing fig/http-message-util (1.1.5): Extracting archive
+    - Installing slim/psr7 (1.7.1): Extracting archive
+    - Installing symfony/polyfill-mbstring (v1.32.0): Extracting archive
+    - Installing symfony/polyfill-ctype (v1.32.0): Extracting archive
+    - Installing symfony/deprecation-contracts (v3.6.0): Extracting archive
+    - Installing twig/twig (v3.21.1): Extracting archive
+    - Installing symfony/polyfill-php81 (v1.32.0): Extracting archive
+    - Installing slim/twig-view (3.4.1): Extracting archive
+  Generating optimized autoload files
+  10 packages you are using are looking for funding.
+  Use the `composer fund` command to find out more!
 - Preparing Composer runtime environment
-  - Running `composer config --no-plugins bin-dir` ... (< 0.1s)
-- Done (finished in 6.7s)
+- Done (finished in 3.4s)
 
 ## Procfile Buildpack
 
@@ -321,7 +224,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (7ecf60bba29b):
+*** Images (2a5548a7689f):
       my-image-name
 Adding cache layer 'heroku/php:composer_cache'
 Adding cache layer 'heroku/php:platform_cache'
@@ -336,7 +239,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-7ecf60bba29b   my-image-name    latest
+2a5548a7689f   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -350,7 +253,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/php      1.0.10
+heroku/php      1.1.0
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -360,7 +263,7 @@ Skipping buildpack layer analysis
 After the detect phase, each buildpack will execute. Buildpacks can inspect your project, install files to disk, run commands, write environment variables, [and more](https://buildpacks.io/docs/for-buildpack-authors/). You can see some examples of that in the output above. For example, the PHP buildpack installs dependencies from the `composer.json` automatically:
 
 ```
-  - Running `composer install -vv --no-dev --no-progress --no-interaction --optimize-autoloader --prefer-dist`
+  Installing dependencies from lock file
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
