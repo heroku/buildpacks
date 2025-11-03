@@ -71,7 +71,7 @@ Buildpacks:
   heroku/java                Heroku Java                 7.0.6          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.6          https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.6          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.1.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs              Heroku Node.js              5.2.2          https://github.com/heroku/buildpacks-nodejs
   heroku/php                 Heroku PHP                  1.1.0          https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.1          https://github.com/heroku/buildpacks-procfile
   heroku/python              Heroku Python               2.7.2          https://github.com/heroku/buildpacks-python
@@ -151,7 +151,7 @@ Skipping buildpack layer analysis
 ## Heroku Ruby Buildpack
 
 - Ruby version `3.4.6` from `Gemfile.lock`
-  - Installing ... (0.9s)
+  - Installing .... (1.5s)
 - Bundler version `2.7.2` from `Gemfile.lock`
   - Running `gem install bundler --version 2.7.2 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.3s)
 - Bundle install gems
@@ -165,26 +165,26 @@ Skipping buildpack layer analysis
       Fetching bigdecimal 3.2.3
       Fetching concurrent-ruby 1.3.5
       Installing base64 0.3.0
-      Installing benchmark 0.4.1
       Fetching connection_pool 2.5.4
+      Installing benchmark 0.4.1
+      Fetching drb 2.2.3
       Installing bigdecimal 3.2.3 with native extensions
       Installing connection_pool 2.5.4
-      Fetching drb 2.2.3
       Installing drb 2.2.3
       Fetching logger 1.7.0
+      Fetching minitest 5.25.5
       Installing logger 1.7.0
       Installing concurrent-ruby 1.3.5
-      Fetching minitest 5.25.5
+      Installing minitest 5.25.5
       Fetching securerandom 0.4.1
       Installing securerandom 0.4.1
-      Installing minitest 5.25.5
       Fetching uri 1.0.3
-      Installing uri 1.0.3
       Fetching builder 3.3.0
-      Fetching erubi 1.13.1
-      Installing erubi 1.13.1
+      Installing uri 1.0.3
       Installing builder 3.3.0
+      Fetching erubi 1.13.1
       Fetching racc 1.8.1
+      Installing erubi 1.13.1
       Installing racc 1.8.1 with native extensions
       Fetching crass 1.0.6
       Installing crass 1.0.6
@@ -249,21 +249,21 @@ Skipping buildpack layer analysis
       Fetching rb-inotify 0.11.1
       Installing rb-inotify 0.11.1
       Fetching pp 0.6.2
-      Installing pp 0.6.2
       Fetching bootsnap 1.18.6
-      Installing bootsnap 1.18.6 with native extensions
+      Installing pp 0.6.2
       Fetching net-pop 0.1.2
-      Installing net-pop 0.1.2
       Fetching net-smtp 0.5.1
+      Installing bootsnap 1.18.6 with native extensions
+      Installing net-pop 0.1.2
       Installing net-smtp 0.5.1
       Fetching loofah 2.24.1
       Fetching activesupport 8.0.3
       Installing loofah 2.24.1
-      Fetching listen 3.9.0
-      Installing activesupport 8.0.3
-      Installing listen 3.9.0
       Fetching reline 0.6.2
       Installing reline 0.6.2
+      Installing activesupport 8.0.3
+      Fetching listen 3.9.0
+      Installing listen 3.9.0
       Fetching net-imap 0.5.11
       Installing net-imap 0.5.11
       Fetching psych 5.2.6
@@ -315,13 +315,13 @@ Skipping buildpack layer analysis
       Use `bundle info [gemname]` to see where a bundled gem is installed.
 
   - Done (14.9s)
-  - Running `bundle clean --force` ... (0.2s)
+  - Running `bundle clean --force` ... (0.1s)
 - Default process detection
   - Running `bundle list` ... (0.1s)
   - Detected rails app (`rails` gem found)
 - Rake assets install
   - Detected rake (`rake` gem found, `Rakefile` found at `/workspace/Rakefile`)
-  - Running `rake -P --trace` .... (1.5s)
+  - Running `rake -P --trace` .... (1.4s)
   - Compiling assets with cache (detected `rake assets:precompile` and `rake assets:clean` via `rake -P`)
   - Creating cache for /workspace/public/assets
   - Creating cache for /workspace/tmp/cache/assets
@@ -351,7 +351,7 @@ Skipping buildpack layer analysis
   - Done (0.7s)
   - Storing cache for /workspace/public/assets
   - Storing cache for (empty) /workspace/tmp/cache/assets
-- Done (finished in 18.9s)
+- Done (finished in 19.5s)
 
 ## Procfile Buildpack
 
@@ -376,7 +376,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (973541d99930):
+*** Images (00edb421336e):
       my-image-name
 Adding cache layer 'heroku/ruby:binruby'
 Adding cache layer 'heroku/ruby:bundler'
@@ -394,7 +394,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-973541d99930   my-image-name    latest
+00edb421336e   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -443,8 +443,8 @@ $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 [1] * Preloading application
 [1] * Listening on http://[::]:5006
 [1] Use Ctrl-C to stop
-[1] - Worker 0 (PID: 17) booted in 0.01s, phase: 0
-[1] - Worker 1 (PID: 20) booted in 0.01s, phase: 0
+[1] - Worker 0 (PID: 16) booted in 0.0s, phase: 0
+[1] - Worker 1 (PID: 19) booted in 0.01s, phase: 0
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
@@ -595,7 +595,7 @@ $ pack build my-image-name --path .
 ===> ANALYZING
 Image with name "my-image-name" not found
 ===> DETECTING
-heroku/nodejs   5.1.4
+heroku/nodejs   5.2.2
 heroku/ruby     12.1.0
 heroku/procfile 4.2.1
 ===> RESTORING
@@ -606,19 +606,19 @@ Skipping buildpack layer analysis
 
 - Checking Node.js version
   - Node.js version not specified, using `22.x`
-  - Resolved Node.js version: `22.21.0`
+  - Resolved Node.js version: `22.21.1`
 - Installing Node.js distribution
-  - GET https://nodejs.org/download/release/v22.21.0/node-v22.21.0-linux-x64.tar.gz ... (OK)
-  - Downloading .... (1.3s)
+  - GET https://nodejs.org/download/release/v22.21.1/node-v22.21.1-linux-x64.tar.gz ... (OK)
+  - Downloading ..... (2.2s)
   - Verifying checksum
-  - Extracting Node.js `22.21.0 (linux-amd64)`
-  - Installing Node.js `22.21.0 (linux-amd64)` ... (< 0.1s)
-- Done (finished in 2.8s)
+  - Extracting Node.js `22.21.1 (linux-amd64)`
+  - Installing Node.js `22.21.1 (linux-amd64)` ... (< 0.1s)
+- Done (finished in 2.5s)
 
 ## Heroku Ruby Buildpack
 
 - Ruby version `3.4.6` from `Gemfile.lock`
-  - Installing ... (0.8s)
+  - Installing .... (1.6s)
 - Bundler version `2.7.2` from `Gemfile.lock`
   - Running `gem install bundler --version 2.7.2 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.3s)
 - Bundle install gems
@@ -632,15 +632,15 @@ Skipping buildpack layer analysis
       Fetching bigdecimal 3.2.3
       Fetching concurrent-ruby 1.3.5
       Installing base64 0.3.0
-      Installing benchmark 0.4.1
       Fetching connection_pool 2.5.4
+      Installing benchmark 0.4.1
+      Fetching drb 2.2.3
       Installing bigdecimal 3.2.3 with native extensions
       Installing connection_pool 2.5.4
-      Fetching drb 2.2.3
-      Installing drb 2.2.3
       Fetching logger 1.7.0
-      Installing logger 1.7.0
+      Installing drb 2.2.3
       Installing concurrent-ruby 1.3.5
+      Installing logger 1.7.0
       Fetching minitest 5.25.5
       Fetching securerandom 0.4.1
       Installing securerandom 0.4.1
@@ -649,11 +649,11 @@ Skipping buildpack layer analysis
       Installing uri 1.0.3
       Fetching builder 3.3.0
       Fetching erubi 1.13.1
-      Installing erubi 1.13.1
       Installing builder 3.3.0
+      Installing erubi 1.13.1
       Fetching racc 1.8.1
-      Installing racc 1.8.1 with native extensions
       Fetching crass 1.0.6
+      Installing racc 1.8.1 with native extensions
       Installing crass 1.0.6
       Fetching rack 3.2.3
       Fetching useragent 0.16.11
@@ -725,20 +725,20 @@ Skipping buildpack layer analysis
       Installing net-smtp 0.5.1
       Fetching loofah 2.24.1
       Installing loofah 2.24.1
-      Fetching activesupport 8.0.3
-      Fetching listen 3.9.0
-      Installing listen 3.9.0
-      Installing activesupport 8.0.3
-      Fetching reline 0.6.2
-      Installing reline 0.6.2
       Fetching net-imap 0.5.11
       Installing net-imap 0.5.11
       Fetching psych 5.2.6
       Installing psych 5.2.6 with native extensions
+      Fetching listen 3.9.0
+      Installing listen 3.9.0
+      Fetching activesupport 8.0.3
+      Installing activesupport 8.0.3
       Fetching rails-html-sanitizer 1.6.2
       Installing rails-html-sanitizer 1.6.2
       Fetching mail 2.8.1
       Installing mail 2.8.1
+      Fetching reline 0.6.2
+      Installing reline 0.6.2
       Fetching rails-dom-testing 2.3.0
       Installing rails-dom-testing 2.3.0
       Fetching globalid 1.3.0
@@ -754,12 +754,12 @@ Skipping buildpack layer analysis
       Fetching actionpack 8.0.3
       Installing actionpack 8.0.3
       Fetching actioncable 8.0.3
-      Installing actioncable 8.0.3
       Fetching activestorage 8.0.3
+      Installing actioncable 8.0.3
       Installing activestorage 8.0.3
       Fetching actionmailer 8.0.3
-      Installing actionmailer 8.0.3
       Fetching propshaft 1.3.1
+      Installing actionmailer 8.0.3
       Installing propshaft 1.3.1
       Fetching actionmailbox 8.0.3
       Fetching actiontext 8.0.3
@@ -782,13 +782,13 @@ Skipping buildpack layer analysis
       Use `bundle info [gemname]` to see where a bundled gem is installed.
 
   - Done (15.4s)
-  - Running `bundle clean --force` ... (0.2s)
+  - Running `bundle clean --force` ... (0.1s)
 - Default process detection
   - Running `bundle list` ... (0.1s)
   - Detected rails app (`rails` gem found)
 - Rake assets install
   - Detected rake (`rake` gem found, `Rakefile` found at `/workspace/Rakefile`)
-  - Running `rake -P --trace` .... (1.5s)
+  - Running `rake -P --trace` .... (1.4s)
   - Compiling assets with cache (detected `rake assets:precompile` and `rake assets:clean` via `rake -P`)
   - Creating cache for /workspace/public/assets
   - Creating cache for /workspace/tmp/cache/assets
@@ -818,7 +818,7 @@ Skipping buildpack layer analysis
   - Done (0.7s)
   - Storing cache for /workspace/public/assets
   - Storing cache for (empty) /workspace/tmp/cache/assets
-- Done (finished in 19.4s)
+- Done (finished in 20.1s)
 
 ## Procfile Buildpack
 
@@ -846,7 +846,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (7b3973d8a340):
+*** Images (a667f492af09):
       my-image-name
 Adding cache layer 'heroku/nodejs:dist'
 Adding cache layer 'heroku/ruby:binruby'
