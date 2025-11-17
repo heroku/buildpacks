@@ -65,16 +65,16 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
   heroku/deb-packages        Heroku .deb Packages        0.2.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet              Heroku .NET                 0.10.0         https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet              Heroku .NET                 0.11.1         https://github.com/heroku/buildpacks-dotnet
   heroku/go                  Heroku Go                   2.1.5          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.6          https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.6          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.6          https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.6          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.2.4          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs              Heroku Node.js              5.2.7          https://github.com/heroku/buildpacks-nodejs
   heroku/php                 Heroku PHP                  1.1.0          https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               2.7.3          https://github.com/heroku/buildpacks-python
+  heroku/python              Heroku Python               2.7.4          https://github.com/heroku/buildpacks-python
   heroku/ruby                Heroku Ruby                 12.1.0         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.6          https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.6          https://github.com/heroku/buildpacks-jvm
@@ -135,7 +135,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/nodejs   5.2.4
+heroku/nodejs   5.2.7
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -144,16 +144,16 @@ Skipping buildpack layer analysis
 ## Heroku Node.js
 
 - Checking Node.js version
-  - Detected Node.js version range: `>=20.0.0 <21.0.0-0||>=22.0.0 <23.0.0-0||>=24.0.0 <25.0.0-0`
-  - Resolved Node.js version: `24.11.0`
+  - Detected Node.js version range: `20.x || 22.x || 24.x`
+  - Resolved Node.js version: `24.11.1`
 - Installing Node.js distribution
-  - GET https://nodejs.org/download/release/v24.11.0/node-v24.11.0-linux-x64.tar.gz ... (OK)
-  - Downloading ..... (2.3s)
+  - GET https://nodejs.org/download/release/v24.11.1/node-v24.11.1-linux-x64.tar.gz ... (OK)
+  - Downloading ..... (2.1s)
   - Verifying checksum
-  - Extracting Node.js `24.11.0 (linux-amd64)`
-  - Installing Node.js `24.11.0 (linux-amd64)` ... (< 0.1s)
+  - Extracting Node.js `24.11.1 (linux-amd64)`
+  - Installing Node.js `24.11.1 (linux-amd64)` ... (< 0.1s)
 - Installing node modules
-  - Using npm version `11.6.1`
+  - Using npm version `11.6.2`
   - Creating npm cache
   - Configuring npm cache directory
   - Running `npm ci`
@@ -161,31 +161,47 @@ Skipping buildpack layer analysis
       npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
       npm warn deprecated glob@7.2.3: Glob versions prior to v9 are no longer supported
 
-      added 390 packages, and audited 391 packages in 3s
+      added 366 packages, and audited 367 packages in 4s
 
       58 packages are looking for funding
         run `npm fund` for details
 
-      found 0 vulnerabilities
+      17 moderate severity vulnerabilities
 
-  - Done (3.3s)
+      To address issues that do not require attention, run:
+        npm audit fix
+
+      To address all issues (including breaking changes), run:
+        npm audit fix --force
+
+      Run `npm audit` for details.
+
+  - Done (4.2s)
 - Running scripts
   - No build scripts found
 - Pruning dev dependencies
   - Running `npm prune`
 
 
-      up to date, audited 391 packages in 628ms
+      up to date, audited 367 packages in 920ms
 
       58 packages are looking for funding
         run `npm fund` for details
 
-      found 0 vulnerabilities
+      17 moderate severity vulnerabilities
 
-  - Done (0.6s)
+      To address issues that do not require attention, run:
+        npm audit fix
+
+      To address all issues (including breaking changes), run:
+        npm audit fix --force
+
+      Run `npm audit` for details.
+
+  - Done (1.0s)
 - Configuring default processes
   - Skipping default web process (Procfile detected)
-- Done (finished in 6.9s)
+- Done (finished in 8.0s)
 
 ## Procfile Buildpack
 
@@ -207,7 +223,7 @@ Adding label 'io.buildpacks.build.metadata'
 Adding label 'io.buildpacks.project.metadata'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (ebbd26f888a2):
+*** Images (fd0b5121fed9):
       my-image-name
 Adding cache layer 'heroku/nodejs:dist'
 Adding cache layer 'heroku/nodejs:npm_cache'
@@ -222,7 +238,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-ebbd26f888a2   my-image-name    latest
+fd0b5121fed9   my-image-name    latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -236,7 +252,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/nodejs   5.2.4
+heroku/nodejs   5.2.7
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
