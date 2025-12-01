@@ -9,7 +9,7 @@ jobs:
   checks-docs-for-failures:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Check PR for failures
         run: |
           if [[ -e ./docs/fail ]]; then

@@ -21,7 +21,7 @@ jobs:
         lang: ["ruby", "dotnet", "nodejs", "python", "php", "go", "java_maven", "java_gradle", "scala"]
       fail-fast: false
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.head_ref }}
 
