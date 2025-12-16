@@ -1,0 +1,46 @@
+version: 0.14.0
+name: dotnet
+category: integration-delivery
+displayName: Heroku .NET Buildpack
+createdAt: 2025-12-13T23:03:09.241Z
+description: Heroku's buildpack for .NET applications.
+logoPath: ../assets/images/heroku.png
+digest: sha256:32cae746f3f9f65b5dc02d2874f1246188d3fe878de5aaa564cbf7a1aa47e191
+license: BSD-3-Clause
+homeURL: github.com/heroku/buildpacks-dotnet
+appVersion: 0.10
+containersImages:
+  - image: registry-1.docker.io/heroku/buildpack-dotnet:0.14.0
+    platforms:
+      - linux/amd64
+      - linux/arm64
+keywords:
+  - dotnet
+  - .NET
+  - heroku
+links:
+  - name: Heroku .NET Buildpacks
+    url: https://github.com/heroku/buildpacks
+install:
+  pack build sample-app --builder heroku/builder:24
+changes:
+  - kind: added
+    description: Support for configuring the target framework using `Directory.Build.props`. 
+    links:
+      - name: GitHub PR
+        url: https://github.com/heroku/buildpacks-dotnet/pull/362
+  - kind: added
+    description: Support for configuring the `AssemblyName` property in file-based apps.
+    links:
+      - name: GitHub PR
+        url: https://github.com/heroku/buildpacks-dotnet/pull/359
+  - kind: fixed
+    description: Fixed an issue where leading whitespace in file-based app configuration values was incorrectly included.
+    links:
+      - name: GitHub PR
+        url: https://github.com/heroku/buildpacks-dotnet/pull/359
+provider:
+  name: Heroku
+recommendations:
+  - url: https://artifacthub.io/packages/cnb-builder/heroku/builder-22
+  - url: https://artifacthub.io/packages/cnb-builder/heroku/builder-24

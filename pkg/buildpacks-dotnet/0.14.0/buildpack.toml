@@ -1,0 +1,23 @@
+api = "0.10"
+
+[buildpack]
+id = "heroku/dotnet"
+version = "0.14.0"
+name = "Heroku .NET"
+homepage = "https://github.com/heroku/buildpacks-dotnet"
+description = "Heroku's buildpack for .NET applications."
+keywords = ["dotnet", ".NET", "heroku"]
+
+[[buildpack.licenses]]
+type = "BSD-3-Clause"
+
+[[targets]]
+os = "linux"
+arch = "arm64"
+
+[[targets]]
+os = "linux"
+arch = "amd64"
+
+[metadata.release]
+image = { repository = "docker.io/heroku/buildpack-dotnet" }
