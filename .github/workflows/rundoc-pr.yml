@@ -31,7 +31,7 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true # do run 'bundle install' and cache
-      - uses: buildpacks/github-actions/setup-pack@04ab0323472d0da53769093d940a4956477636a2 # v5.10.0
+      - uses: buildpacks/github-actions/setup-pack@f3ec16c6d708761c6e87bbc8fe7f97375f80e7cd # v5.10.1
 
       - name: Run rundoc for all languages
         run: |
@@ -45,7 +45,7 @@ jobs:
         continue-on-error: true
       - name: Create Pull Request
         id: pr
-        uses: peter-evans/create-pull-request@98357b18bf14b5342f975ff684046ec3b2a07725 # v8.0.0
+        uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
         with:
           token: ${{ steps.generate-token.outputs.token }}
           branch: rundoc-update
