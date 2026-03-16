@@ -65,16 +65,16 @@ $ pack builder inspect heroku/builder:24 | awk '/^Buildpacks:/ {flag=1} /^Detect
 Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
   heroku/deb-packages        Heroku .deb Packages        0.3.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet              Heroku .NET                 1.0.3          https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet              Heroku .NET                 1.0.5          https://github.com/heroku/buildpacks-dotnet
   heroku/go                  Heroku Go                   2.2.1          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.9          https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.9          https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.9          https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.9          https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.5.3          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs              Heroku Node.js              5.5.4          https://github.com/heroku/buildpacks-nodejs
   heroku/php                 Heroku PHP                  1.4.0          https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.1          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               6.0.1          https://github.com/heroku/buildpacks-python
+  heroku/python              Heroku Python               6.1.0          https://github.com/heroku/buildpacks-python
   heroku/ruby                Heroku Ruby                 12.3.0         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.9          https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.9          https://github.com/heroku/buildpacks-jvm
@@ -136,7 +136,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/dotnet   1.0.3
+heroku/dotnet   1.0.5
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -148,9 +148,9 @@ Skipping buildpack layer analysis
   - Detected .NET solution: `/workspace/GettingStarted.slnx`
   - Inferring version requirement from `/workspace/GettingStarted.slnx`
   - Detected version requirement: `^10.0`
-  - Resolved .NET SDK version `10.0.103` (linux-amd64)
+  - Resolved .NET SDK version `10.0.201` (linux-amd64)
 - SDK installation
-  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.103/dotnet-sdk-10.0.103-linux-x64.tar.gz ... (0.9s)
+  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.201/dotnet-sdk-10.0.201-linux-x64.tar.gz .... (1.7s)
   - Verifying SDK checksum
   - Installing SDK
 - Restore .NET tools
@@ -161,12 +161,12 @@ Skipping buildpack layer analysis
 
       Restore was successful.
 
-  - Done (1.6s)
+  - Done (2.1s)
 - Publish app
   - Running `dotnet publish /workspace/GettingStarted.slnx --runtime linux-x64 "-p:PublishDir=bin/publish" --artifacts-path /tmp/build_artifacts`
 
         Determining projects to restore...
-        Restored /workspace/Frontend/Frontend.csproj (in 22.77 sec).
+        Restored /workspace/Frontend/Frontend.csproj (in 4.65 sec).
         Frontend -> /tmp/build_artifacts/bin/Frontend/release_linux-x64/Frontend.dll
         Frontend -> /workspace/Frontend/bin/publish/
         Publishing executable database migration bundle
@@ -176,13 +176,13 @@ Skipping buildpack layer analysis
         Done. Migrations Bundle: /workspace/Frontend/bin/publish/efbundle
         Don't forget to copy appsettings.json alongside your bundle if you need it to apply migrations.
 
-  - Done (40.5s)
+  - Done (24.1s)
 - Process types
   - Detecting process types from published artifacts
   - Found `web`: bash -c cd Frontend/bin/publish; ./Frontend --urls http://*:$PORT
   - Procfile detected
   - Skipping process type registration (add process types to your Procfile as needed)
-- Done (finished in 46.4s)
+- Done (finished in 31.6s)
 
 ## Procfile Buildpack
 
@@ -202,7 +202,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (ec77e9c31203):
+*** Images (c875f864f05c):
       my-image-name
 Adding cache layer 'heroku/dotnet:nuget-cache'
 Adding cache layer 'heroku/dotnet:sdk'
@@ -217,7 +217,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-ec77e9c31203   my-image-name                                latest
+c875f864f05c   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -231,7 +231,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/dotnet   1.0.3
+heroku/dotnet   1.0.5
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -257,7 +257,7 @@ $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 warn: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[60]
       Storing keys in a directory '/home/heroku/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
 warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
-      No XML encryptor configured. Key {d901772a-0ffb-4fc8-ac5a-bdc27554a9d5} may be persisted to storage in unencrypted form.
+      No XML encryptor configured. Key {c98efdf1-73f8-4351-aada-8d424b48a1fb} may be persisted to storage in unencrypted form.
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://[::]:5006
 info: Microsoft.Hosting.Lifetime[0]
@@ -407,8 +407,8 @@ $ pack build my-image-name --path .
 ===> ANALYZING
 Image with name "my-image-name" not found
 ===> DETECTING
-heroku/python   6.0.1
-heroku/dotnet   1.0.3
+heroku/python   6.1.0
+heroku/dotnet   1.0.5
 heroku/procfile 4.2.1
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -435,9 +435,9 @@ Running 'pip install -r requirements.txt'
   - Detected .NET solution: `/workspace/GettingStarted.slnx`
   - Inferring version requirement from `/workspace/GettingStarted.slnx`
   - Detected version requirement: `^10.0`
-  - Resolved .NET SDK version `10.0.103` (linux-amd64)
+  - Resolved .NET SDK version `10.0.201` (linux-amd64)
 - SDK installation
-  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.103/dotnet-sdk-10.0.103-linux-x64.tar.gz ... (0.8s)
+  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.201/dotnet-sdk-10.0.201-linux-x64.tar.gz .... (1.3s)
   - Verifying SDK checksum
   - Installing SDK
 - Restore .NET tools
@@ -448,12 +448,12 @@ Running 'pip install -r requirements.txt'
 
       Restore was successful.
 
-  - Done (1.8s)
+  - Done (2.0s)
 - Publish app
   - Running `dotnet publish /workspace/GettingStarted.slnx --runtime linux-x64 "-p:PublishDir=bin/publish" --artifacts-path /tmp/build_artifacts`
 
         Determining projects to restore...
-        Restored /workspace/Frontend/Frontend.csproj (in 4.31 sec).
+        Restored /workspace/Frontend/Frontend.csproj (in 4.89 sec).
         Frontend -> /tmp/build_artifacts/bin/Frontend/release_linux-x64/Frontend.dll
         Frontend -> /workspace/Frontend/bin/publish/
         Publishing executable database migration bundle
@@ -463,13 +463,13 @@ Running 'pip install -r requirements.txt'
         Done. Migrations Bundle: /workspace/Frontend/bin/publish/efbundle
         Don't forget to copy appsettings.json alongside your bundle if you need it to apply migrations.
 
-  - Done (21.8s)
+  - Done (23.6s)
 - Process types
   - Detecting process types from published artifacts
   - Found `web`: bash -c cd Frontend/bin/publish; ./Frontend --urls http://*:$PORT
   - Procfile detected
   - Skipping process type registration (add process types to your Procfile as needed)
-- Done (finished in 27.8s)
+- Done (finished in 30.7s)
 
 ## Procfile Buildpack
 
@@ -491,7 +491,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (3fec64c96009):
+*** Images (e2faea0ee87b):
       my-image-name
 Adding cache layer 'heroku/python:pip'
 Adding cache layer 'heroku/python:pip-cache'
