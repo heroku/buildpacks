@@ -66,15 +66,15 @@ Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
   heroku/deb-packages        Heroku .deb Packages        0.3.0          https://github.com/heroku/buildpacks-deb-packages
   heroku/dotnet              Heroku .NET                 1.0.5          https://github.com/heroku/buildpacks-dotnet
-  heroku/go                  Heroku Go                   2.2.1          https://github.com/heroku/buildpacks-go
+  heroku/go                  Heroku Go                   2.2.2          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.10         https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.10         https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.10         https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.10         https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.5.6          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs              Heroku Node.js              5.5.7          https://github.com/heroku/buildpacks-nodejs
   heroku/php                 Heroku PHP                  1.5.1          https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.2          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               6.2.0          https://github.com/heroku/buildpacks-python
+  heroku/python              Heroku Python               6.4.0          https://github.com/heroku/buildpacks-python
   heroku/ruby                Heroku Ruby                 12.3.0         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.10         https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.10         https://github.com/heroku/buildpacks-jvm
@@ -137,7 +137,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/python   6.2.0
+heroku/python   6.4.0
 heroku/procfile 4.2.2
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -147,7 +147,7 @@ Skipping buildpack layer analysis
 Using Python version 3.14 specified in .python-version
 
 [Installing Python]
-Installing Python 3.14.3
+Installing Python 3.14.4
 
 [Installing pip]
 Installing pip 26.0.1
@@ -156,7 +156,7 @@ Installing pip 26.0.1
 Creating virtual environment
 Running 'pip install -r requirements.txt'
 Collecting django<6.1,>=6.0 (from -r requirements.txt (line 1))
-  Downloading django-6.0.3-py3-none-any.whl.metadata (3.9 kB)
+  Downloading django-6.0.4-py3-none-any.whl.metadata (3.9 kB)
 Collecting gunicorn<26,>=25 (from -r requirements.txt (line 2))
   Downloading gunicorn-25.3.0-py3-none-any.whl.metadata (5.5 kB)
 Collecting dj-database-url<4,>=3 (from -r requirements.txt (line 3))
@@ -169,7 +169,7 @@ Collecting sqlparse>=0.5.0 (from django<6.1,>=6.0->-r requirements.txt (line 1))
   Downloading sqlparse-0.5.5-py3-none-any.whl.metadata (4.7 kB)
 Collecting packaging (from gunicorn<26,>=25->-r requirements.txt (line 2))
   Downloading packaging-26.0-py3-none-any.whl.metadata (3.3 kB)
-Downloading django-6.0.3-py3-none-any.whl (8.4 MB)
+Downloading django-6.0.4-py3-none-any.whl (8.4 MB)
 Downloading gunicorn-25.3.0-py3-none-any.whl (208 kB)
 Downloading dj_database_url-3.1.2-py3-none-any.whl (9.0 kB)
 Downloading whitenoise-6.12.0-py3-none-any.whl (20 kB)
@@ -177,7 +177,7 @@ Downloading asgiref-3.11.1-py3-none-any.whl (24 kB)
 Downloading sqlparse-0.5.5-py3-none-any.whl (46 kB)
 Downloading packaging-26.0-py3-none-any.whl (74 kB)
 Installing collected packages: whitenoise, sqlparse, packaging, asgiref, gunicorn, django, dj-database-url
-Successfully installed asgiref-3.11.1 dj-database-url-3.1.2 django-6.0.3 gunicorn-25.3.0 packaging-26.0 sqlparse-0.5.5 whitenoise-6.12.0
+Successfully installed asgiref-3.11.1 dj-database-url-3.1.2 django-6.0.4 gunicorn-25.3.0 packaging-26.0 sqlparse-0.5.5 whitenoise-6.12.0
 
 [Generating Django static files]
 Running 'manage.py collectstatic'
@@ -203,7 +203,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (811a307bbda1):
+*** Images (225c40338abd):
       my-image-name
 Adding cache layer 'heroku/python:pip'
 Adding cache layer 'heroku/python:pip-cache'
@@ -219,7 +219,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-811a307bbda1   my-image-name                                latest
+225c40338abd   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -233,7 +233,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/python   6.2.0
+heroku/python   6.4.0
 heroku/procfile 4.2.2
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -256,11 +256,11 @@ By default, images will be booted into a web server configuration. You can launc
 
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
-[2026-04-06 08:42:57 +0000] [1] [INFO] Starting gunicorn 25.3.0
-[2026-04-06 08:42:57 +0000] [1] [INFO] Listening at:  (1)
-[2026-04-06 08:42:57 +0000] [1] [INFO] Using worker: gthread
-[2026-04-06 08:42:57 +0000] [11] [INFO] Booting worker with pid: 11
-[2026-04-06 08:42:57 +0000] [1] [INFO] Control socket listening at /home/heroku/.gunicorn/gunicorn.ctl
+[2026-04-13 08:53:49 +0000] [1] [INFO] Starting gunicorn 25.3.0
+[2026-04-13 08:53:49 +0000] [1] [INFO] Listening at:  (1)
+[2026-04-13 08:53:49 +0000] [1] [INFO] Using worker: gthread
+[2026-04-13 08:53:49 +0000] [10] [INFO] Booting worker with pid: 10
+[2026-04-13 08:53:49 +0000] [1] [INFO] Control socket listening at /home/heroku/.gunicorn/gunicorn.ctl
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
