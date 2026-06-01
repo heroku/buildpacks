@@ -3,4 +3,4 @@
 source 'https://rubygems.org'
 ruby '~> 3.3'
 
-gem 'rundoc', '~> 5.0'
+gem 'rundoc', '~> 6.0'
