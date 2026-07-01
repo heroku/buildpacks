@@ -22,5 +22,5 @@ Verify you're in the correct directory:
 This tutorial was built using the following commit SHA:
 
 ```
-:::>> $ git log --oneline | head -n1
+:::>> $ git log --oneline -n1
 ```
