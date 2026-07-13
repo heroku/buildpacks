@@ -64,18 +64,18 @@ You can view the contents of a builder via the command `pack builder inspect`. F
 $ pack builder inspect heroku/builder:26 | awk '/^Buildpacks:/ && !seen {flag=1} /^Detection Order:/ {flag=0; seen=1} flag'
 Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
-  heroku/deb-packages        Heroku .deb Packages        1.0.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet              Heroku .NET                 1.0.12         https://github.com/heroku/buildpacks-dotnet
-  heroku/go                  Heroku Go                   2.2.4          https://github.com/heroku/buildpacks-go
+  heroku/deb-packages        Heroku .deb Packages        1.0.1          https://github.com/heroku/buildpacks-deb-packages
+  heroku/dotnet              Heroku .NET                 1.0.13         https://github.com/heroku/buildpacks-dotnet
+  heroku/go                  Heroku Go                   3.0.0          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.11         https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.7.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                 Heroku PHP                  1.6.4          https://github.com/heroku/buildpacks-php
-  heroku/procfile            Heroku Procfile             4.2.2          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               6.5.3          https://github.com/heroku/buildpacks-python
-  heroku/ruby                Heroku Ruby                 12.4.0         https://github.com/heroku/buildpacks-ruby
+  heroku/nodejs              Heroku Node.js              5.7.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/php                 Heroku PHP                  1.6.6          https://github.com/heroku/buildpacks-php
+  heroku/procfile            Heroku Procfile             4.2.3          https://github.com/heroku/buildpacks-procfile
+  heroku/python              Heroku Python               6.5.4          https://github.com/heroku/buildpacks-python
+  heroku/ruby                Heroku Ruby                 12.4.1         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.11         https://github.com/heroku/buildpacks-jvm
 ```
@@ -137,8 +137,8 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/python   6.5.3
-heroku/procfile 4.2.2
+heroku/python   6.5.4
+heroku/procfile 4.2.3
 ===> RESTORING
 Skipping buildpack layer analysis
 ===> BUILDING
@@ -156,7 +156,7 @@ Installing pip 26.1.2
 Creating virtual environment
 Running 'pip install -r requirements.txt'
 Collecting django<6.1,>=6.0 (from -r requirements.txt (line 1))
-  Downloading django-6.0.6-py3-none-any.whl.metadata (3.9 kB)
+  Downloading django-6.0.7-py3-none-any.whl.metadata (3.9 kB)
 Collecting gunicorn<27,>=26 (from -r requirements.txt (line 2))
   Downloading gunicorn-26.0.0-py3-none-any.whl.metadata (5.4 kB)
 Collecting dj-database-url<4,>=3 (from -r requirements.txt (line 3))
@@ -169,7 +169,7 @@ Collecting sqlparse>=0.5.0 (from django<6.1,>=6.0->-r requirements.txt (line 1))
   Downloading sqlparse-0.5.5-py3-none-any.whl.metadata (4.7 kB)
 Collecting packaging (from gunicorn<27,>=26->-r requirements.txt (line 2))
   Downloading packaging-26.2-py3-none-any.whl.metadata (3.5 kB)
-Downloading django-6.0.6-py3-none-any.whl (8.4 MB)
+Downloading django-6.0.7-py3-none-any.whl (8.4 MB)
 Downloading gunicorn-26.0.0-py3-none-any.whl (212 kB)
 Downloading dj_database_url-3.1.2-py3-none-any.whl (9.0 kB)
 Downloading whitenoise-6.12.0-py3-none-any.whl (20 kB)
@@ -177,7 +177,7 @@ Downloading asgiref-3.11.1-py3-none-any.whl (24 kB)
 Downloading sqlparse-0.5.5-py3-none-any.whl (46 kB)
 Downloading packaging-26.2-py3-none-any.whl (100 kB)
 Installing collected packages: whitenoise, sqlparse, packaging, asgiref, gunicorn, django, dj-database-url
-Successfully installed asgiref-3.11.1 dj-database-url-3.1.2 django-6.0.6 gunicorn-26.0.0 packaging-26.2 sqlparse-0.5.5 whitenoise-6.12.0
+Successfully installed asgiref-3.11.1 dj-database-url-3.1.2 django-6.0.7 gunicorn-26.0.0 packaging-26.2 sqlparse-0.5.5 whitenoise-6.12.0
 
 [Generating Django static files]
 Running 'manage.py collectstatic'
@@ -203,7 +203,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (5ccad043b875):
+*** Images (1d88742e915f):
       my-image-name
 Adding cache layer 'heroku/python:pip'
 Adding cache layer 'heroku/python:pip-cache'
@@ -219,7 +219,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-5ccad043b875   my-image-name                                latest
+1d88742e915f   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -233,8 +233,8 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/python   6.5.3
-heroku/procfile 4.2.2
+heroku/python   6.5.4
+heroku/procfile 4.2.3
 ===> RESTORING
 Skipping buildpack layer analysis
 ```
@@ -256,11 +256,11 @@ By default, images will be booted into a web server configuration. You can launc
 
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
-[2026-07-06 09:33:05 +0000] [1] [INFO] Starting gunicorn 26.0.0
-[2026-07-06 09:33:05 +0000] [1] [INFO] Listening at:  (1)
-[2026-07-06 09:33:05 +0000] [1] [INFO] Using worker: gthread
-[2026-07-06 09:33:05 +0000] [11] [INFO] Booting worker with pid: 11
-[2026-07-06 09:33:05 +0000] [1] [INFO] Control socket listening at /home/heroku/.gunicorn/gunicorn.ctl
+[2026-07-13 09:15:54 +0000] [1] [INFO] Starting gunicorn 26.0.0
+[2026-07-13 09:15:54 +0000] [1] [INFO] Listening at:  (1)
+[2026-07-13 09:15:54 +0000] [1] [INFO] Using worker: gthread
+[2026-07-13 09:15:54 +0000] [12] [INFO] Booting worker with pid: 12
+[2026-07-13 09:15:54 +0000] [1] [INFO] Control socket listening at /home/heroku/.gunicorn/gunicorn.ctl
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 

@@ -64,18 +64,18 @@ You can view the contents of a builder via the command `pack builder inspect`. F
 $ pack builder inspect heroku/builder:26 | awk '/^Buildpacks:/ && !seen {flag=1} /^Detection Order:/ {flag=0; seen=1} flag'
 Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
-  heroku/deb-packages        Heroku .deb Packages        1.0.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet              Heroku .NET                 1.0.12         https://github.com/heroku/buildpacks-dotnet
-  heroku/go                  Heroku Go                   2.2.4          https://github.com/heroku/buildpacks-go
+  heroku/deb-packages        Heroku .deb Packages        1.0.1          https://github.com/heroku/buildpacks-deb-packages
+  heroku/dotnet              Heroku .NET                 1.0.13         https://github.com/heroku/buildpacks-dotnet
+  heroku/go                  Heroku Go                   3.0.0          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.11         https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.7.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                 Heroku PHP                  1.6.4          https://github.com/heroku/buildpacks-php
-  heroku/procfile            Heroku Procfile             4.2.2          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               6.5.3          https://github.com/heroku/buildpacks-python
-  heroku/ruby                Heroku Ruby                 12.4.0         https://github.com/heroku/buildpacks-ruby
+  heroku/nodejs              Heroku Node.js              5.7.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/php                 Heroku PHP                  1.6.6          https://github.com/heroku/buildpacks-php
+  heroku/procfile            Heroku Procfile             4.2.3          https://github.com/heroku/buildpacks-procfile
+  heroku/python              Heroku Python               6.5.4          https://github.com/heroku/buildpacks-python
+  heroku/ruby                Heroku Ruby                 12.4.1         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.11         https://github.com/heroku/buildpacks-jvm
 ```
@@ -139,7 +139,7 @@ Image with name "my-image-name" not found
 3 of 4 buildpacks participating
 heroku/jvm      7.0.11
 heroku/gradle   7.0.11
-heroku/procfile 4.2.2
+heroku/procfile 4.2.3
 ===> RESTORING
 Skipping buildpack layer analysis
 ===> BUILDING
@@ -151,12 +151,12 @@ Skipping buildpack layer analysis
   - Selected major version `25` resolves to `25.0.3`
 - OpenJDK Installation
   - Downloading and unpacking OpenJDK distribution
-  - Done (2.3s)
+  - Done (4.2s)
 - Applying JDK overlay
   - Skipping (directory `.jdk-overlay` not present)
 - Linking base image certificates as OpenJDK keystore
   - Done
-- Done (finished in 2.3s)
+- Done (finished in 4.3s)
 
 ## Heroku Gradle Buildpack
 
@@ -170,14 +170,14 @@ Skipping buildpack layer analysis
       Starting a Gradle Daemon (subsequent builds will be faster)
       > Task :heroku_buildpack_start_daemon UP-TO-DATE
       
-      BUILD SUCCESSFUL in 30s
+      BUILD SUCCESSFUL in 29s
       Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.6.1/userguide/configuration_cache_enabling.html
 
-  - Done (30.6s)
+  - Done (29.9s)
   - Querying tasks
   - Done (1.2s)
   - Querying dependency report
-  - Done (5.2s)
+  - Done (6.5s)
   - Running `./gradlew build -x check`
 
       Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
@@ -194,8 +194,8 @@ Skipping buildpack layer analysis
       5 actionable tasks: 5 executed
       Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.6.1/userguide/configuration_cache_enabling.html
 
-  - Done (7.3s)
-- Done (finished in 45.2s)
+  - Done (7.7s)
+- Done (finished in 46.1s)
 
 ## Procfile Buildpack
 
@@ -216,7 +216,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (0cc14787bb9e):
+*** Images (681348fc1347):
       my-image-name
 Adding cache layer 'heroku/jvm:openjdk'
 Adding cache layer 'heroku/gradle:home'
@@ -231,7 +231,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-0cc14787bb9e   my-image-name                                latest
+681348fc1347   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -247,7 +247,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 3 of 4 buildpacks participating
 heroku/jvm      7.0.11
 heroku/gradle   7.0.11
-heroku/procfile 4.2.2
+heroku/procfile 4.2.3
 ===> RESTORING
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
@@ -278,15 +278,15 @@ Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=80.0 -Dfile.encoding=UTF-8
 
 :: Built with Spring Boot :: 4.1.0
 
-2026-07-06T09:36:30.216Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Starting GettingStartedApplication v1.0.0-SNAPSHOT using Java 25.0.3 with PID 1 (/workspace/build/libs/java-getting-started-gradle-1.0.0-SNAPSHOT.jar started by heroku in /workspace)
-2026-07-06T09:36:30.220Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : No active profile set, falling back to 1 default profile: "default"
-2026-07-06T09:36:31.323Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 5006 (http)
-2026-07-06T09:36:31.342Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-07-06T09:36:31.343Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-07-06T09:36:31.376Z  INFO 1 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1091 ms
-2026-07-06T09:36:31.545Z  INFO 1 --- [           main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
-2026-07-06T09:36:31.931Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 5006 (http) with context path '/'
-2026-07-06T09:36:31.945Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Started GettingStartedApplication in 2.203 seconds (process running for 2.737)
+2026-07-13T09:19:40.855Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Starting GettingStartedApplication v1.0.0-SNAPSHOT using Java 25.0.3 with PID 1 (/workspace/build/libs/java-getting-started-gradle-1.0.0-SNAPSHOT.jar started by heroku in /workspace)
+2026-07-13T09:19:40.860Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-07-13T09:19:41.881Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 5006 (http)
+2026-07-13T09:19:41.894Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-13T09:19:41.894Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-07-13T09:19:41.915Z  INFO 1 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 959 ms
+2026-07-13T09:19:42.053Z  INFO 1 --- [           main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-07-13T09:19:42.320Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 5006 (http) with context path '/'
+2026-07-13T09:19:42.331Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Started GettingStartedApplication in 1.961 seconds (process running for 2.481)
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 

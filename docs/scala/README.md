@@ -64,18 +64,18 @@ You can view the contents of a builder via the command `pack builder inspect`. F
 $ pack builder inspect heroku/builder:26 | awk '/^Buildpacks:/ && !seen {flag=1} /^Detection Order:/ {flag=0; seen=1} flag'
 Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
-  heroku/deb-packages        Heroku .deb Packages        1.0.0          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet              Heroku .NET                 1.0.12         https://github.com/heroku/buildpacks-dotnet
-  heroku/go                  Heroku Go                   2.2.4          https://github.com/heroku/buildpacks-go
+  heroku/deb-packages        Heroku .deb Packages        1.0.1          https://github.com/heroku/buildpacks-deb-packages
+  heroku/dotnet              Heroku .NET                 1.0.13         https://github.com/heroku/buildpacks-dotnet
+  heroku/go                  Heroku Go                   3.0.0          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.11         https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.7.9          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                 Heroku PHP                  1.6.4          https://github.com/heroku/buildpacks-php
-  heroku/procfile            Heroku Procfile             4.2.2          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               6.5.3          https://github.com/heroku/buildpacks-python
-  heroku/ruby                Heroku Ruby                 12.4.0         https://github.com/heroku/buildpacks-ruby
+  heroku/nodejs              Heroku Node.js              5.7.10         https://github.com/heroku/buildpacks-nodejs
+  heroku/php                 Heroku PHP                  1.6.6          https://github.com/heroku/buildpacks-php
+  heroku/procfile            Heroku Procfile             4.2.3          https://github.com/heroku/buildpacks-procfile
+  heroku/python              Heroku Python               6.5.4          https://github.com/heroku/buildpacks-python
+  heroku/ruby                Heroku Ruby                 12.4.1         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.11         https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.11         https://github.com/heroku/buildpacks-jvm
 ```
@@ -140,7 +140,7 @@ Image with name "my-image-name" not found
 3 of 4 buildpacks participating
 heroku/jvm      7.0.11
 heroku/sbt      7.0.11
-heroku/procfile 4.2.2
+heroku/procfile 4.2.3
 ===> RESTORING
 Skipping buildpack layer analysis
 ===> BUILDING
@@ -152,12 +152,12 @@ Skipping buildpack layer analysis
   - Selected major version `25` resolves to `25.0.3`
 - OpenJDK Installation
   - Downloading and unpacking OpenJDK distribution
-  - Done (2.4s)
+  - Done (4.0s)
 - Applying JDK overlay
   - Skipping (directory `.jdk-overlay` not present)
 - Linking base image certificates as OpenJDK keystore
   - Done
-- Done (finished in 2.4s)
+- Done (finished in 4.0s)
 
 ## Heroku sbt Buildpack
 
@@ -187,7 +187,7 @@ Skipping buildpack layer analysis
       [info] loading global plugins from /layers/heroku_sbt/sbt-global/plugins
       [info] compiling 1 Scala source to /layers/heroku_sbt/sbt-global/plugins/target/scala-2.12/sbt-1.0/classes ...
       [info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.20. Compiling...
-      [info]   Compilation completed in 9.01s.
+      [info]   Compilation completed in 8.027s.
       [info] done compiling
       [info] loading settings for project workspace-build from plugins.sbt...
       [info] loading project definition from /workspace/project
@@ -206,12 +206,12 @@ Skipping buildpack layer analysis
       [info] 
       [info] compiling 8 Scala sources and 1 Java source to /workspace/target/scala-2.13/classes ...
       [info] done compiling
-      [success] Total time: 8 s, completed Jul 6, 2026, 9:37:18 AM
+      [success] Total time: 8 s, completed Jul 13, 2026, 9:20:31 AM
       [info] Wrote /workspace/target/scala-2.13/scala-getting-started_2.13-1.0-SNAPSHOT.pom
-      [success] Total time: 1 s, completed Jul 6, 2026, 9:37:18 AM
+      [success] Total time: 1 s, completed Jul 13, 2026, 9:20:31 AM
 
-  - Done (33.5s)
-- Done (finished in 33.5s)
+  - Done (32.1s)
+- Done (finished in 32.1s)
 
 ## Procfile Buildpack
 
@@ -232,7 +232,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (9b56e13579fb):
+*** Images (76ba89bf3863):
       my-image-name
 Adding cache layer 'heroku/jvm:openjdk'
 Adding cache layer 'heroku/sbt:coursier-home'
@@ -250,7 +250,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-9b56e13579fb   my-image-name                                latest
+76ba89bf3863   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -266,7 +266,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 3 of 4 buildpacks participating
 heroku/jvm      7.0.11
 heroku/sbt      7.0.11
-heroku/procfile 4.2.2
+heroku/procfile 4.2.3
 ===> RESTORING
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
@@ -288,15 +288,15 @@ By default, images will be booted into a web server configuration. You can launc
 ```
 $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=80.0 -Dfile.encoding=UTF-8
-2026-07-06 09:37:31 INFO  p.a.http.HttpErrorHandlerExceptions  Registering exception handler: guice-provision-exception-handler
+2026-07-13 09:20:43 INFO  p.a.http.HttpErrorHandlerExceptions  Registering exception handler: guice-provision-exception-handler
 WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
 WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/workspace/target/universal/stage/lib/com.google.guava.guava-32.1.3-jre.jar)
 WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
 WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
-2026-07-06 09:37:31 INFO  play.api.db.DefaultDBApi  Database [default] initialized
-2026-07-06 09:37:31 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
-2026-07-06 09:37:32 INFO  play.api.Play  Application started (Prod) (no global state)
-2026-07-06 09:37:32 INFO  play.core.server.PekkoHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
+2026-07-13 09:20:44 INFO  play.api.db.DefaultDBApi  Database [default] initialized
+2026-07-13 09:20:44 INFO  play.api.db.HikariCPConnectionPool  Creating Pool for datasource 'default'
+2026-07-13 09:20:44 INFO  play.api.Play  Application started (Prod) (no global state)
+2026-07-13 09:20:45 INFO  play.core.server.PekkoHttpServer  Listening for HTTP on /[0:0:0:0:0:0:0:0]:5006
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
