@@ -44,13 +44,13 @@ include:
 Examples of unacceptable behavior by participants include:
 
 * The use of sexualized language or imagery and unwelcome sexual attention or
-  advances
+advances
 * Personal attacks, insulting/derogatory comments, or trolling
 * Public or private harassment
 * Publishing, or threatening to publish, others' private information—such as
-  a physical or electronic address—without explicit permission
+a physical or electronic address—without explicit permission
 * Other conduct which could reasonably be considered inappropriate in a
-  professional setting
+professional setting
 * Advocating for or encouraging any of the above behaviors
 
 ## Our Responsibilities
@@ -93,12 +93,12 @@ Committee.
 
 This Code of Conduct is adapted from the [Contributor Covenant][contributor-covenant-home],
 version 1.4, available at https://www.contributor-covenant.org/version/1/4/code-of-conduct.html.
-It includes adaptions and additions from [Go Community Code of Conduct][golang-coc],
+It includes adaptations and additions from [Go Community Code of Conduct][golang-coc],
 [CNCF Code of Conduct][cncf-coc], and [Microsoft Open Source Code of Conduct][microsoft-coc].
 
 This Code of Conduct is licensed under the [Creative Commons Attribution 3.0 License][cc-by-3-us].
 
-[contributor-covenant-home]: https://www.contributor-covenant.org (https://www.contributor-covenant.org/)
+[contributor-covenant-home]: https://www.contributor-covenant.org
 [golang-coc]: https://golang.org/conduct
 [cncf-coc]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
 [microsoft-coc]: https://opensource.microsoft.com/codeofconduct/
