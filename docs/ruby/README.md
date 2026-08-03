@@ -71,10 +71,10 @@ Buildpacks:
   heroku/java                Heroku Java                 7.0.13         https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.13         https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.13         https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.7.10         https://github.com/heroku/buildpacks-nodejs
-  heroku/php                 Heroku PHP                  1.6.6          https://github.com/heroku/buildpacks-php
+  heroku/nodejs              Heroku Node.js              5.7.11         https://github.com/heroku/buildpacks-nodejs
+  heroku/php                 Heroku PHP                  1.6.7          https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.3          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               6.5.4          https://github.com/heroku/buildpacks-python
+  heroku/python              Heroku Python               6.5.5          https://github.com/heroku/buildpacks-python
   heroku/ruby                Heroku Ruby                 12.4.1         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.13         https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.13         https://github.com/heroku/buildpacks-jvm
@@ -154,7 +154,7 @@ Skipping buildpack layer analysis
 ## Heroku Ruby Buildpack
 
 - Ruby version `3.4.9` from `Gemfile.lock`
-  - Installing ..... (2.6s)
+  - Installing .... (1.0s)
 - Bundler version `4.0.5` from `Gemfile.lock`
   - Running `gem install bundler --version 4.0.5 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.3s)
 - Bundle install gems
@@ -288,20 +288,20 @@ Skipping buildpack layer analysis
       Fetching activemodel 8.1.2.1
       Installing rails-dom-testing 2.3.0
       Installing globalid 1.3.0
-      Fetching actionview 8.1.2.1
-      Fetching activejob 8.1.2.1
       Installing activemodel 8.1.2.1
+      Fetching activejob 8.1.2.1
+      Fetching actionview 8.1.2.1
       Installing activejob 8.1.2.1
       Installing actionview 8.1.2.1
       Fetching activerecord 8.1.2.1
-      Fetching actionpack 8.1.2.1
       Installing activerecord 8.1.2.1
+      Fetching actionpack 8.1.2.1
       Installing actionpack 8.1.2.1
       Fetching railties 8.1.2.1
       Fetching actioncable 8.1.2.1
       Fetching actionmailer 8.1.2.1
-      Installing actioncable 8.1.2.1
       Installing actionmailer 8.1.2.1
+      Installing actioncable 8.1.2.1
       Installing railties 8.1.2.1
       Fetching propshaft 1.3.2
       Installing propshaft 1.3.2
@@ -311,8 +311,8 @@ Skipping buildpack layer analysis
       Installing actionmailbox 8.1.2.1
       Fetching action_text-trix 2.1.18
       Fetching importmap-rails 2.2.3
-      Installing action_text-trix 2.1.18
       Installing importmap-rails 2.2.3
+      Installing action_text-trix 2.1.18
       Fetching actiontext 8.1.2.1
       Installing actiontext 8.1.2.1
       Fetching rails 8.1.2.1
@@ -321,14 +321,14 @@ Skipping buildpack layer analysis
       Gems in the groups 'development' and 'test' were not installed.
       Use `bundle info [gemname]` to see where a bundled gem is installed.
 
-  - Done (34.7s)
+  - Done (32.8s)
   - Running `bundle clean --force` ... (0.2s)
 - Default process detection
   - Running `bundle list` ... (0.1s)
   - Detected rails app (`rails` gem found)
 - Rake assets install
   - Detected rake (`rake` gem found, `Rakefile` found at `/workspace/Rakefile`)
-  - Running `rake -P --trace` .... (1.1s)
+  - Running `rake -P --trace` .... (1.0s)
   - Compiling assets with cache (detected `rake assets:precompile` and `rake assets:clean` via `rake -P`)
   - Creating cache for /workspace/public/assets
   - Creating cache for /workspace/tmp/cache/assets
@@ -359,7 +359,7 @@ Skipping buildpack layer analysis
   - Done (0.7s)
   - Storing cache for /workspace/public/assets
   - Storing cache for (empty) /workspace/tmp/cache/assets
-- Done (finished in 40.2s)
+- Done (finished in 36.5s)
 
 ## Procfile Buildpack
 
@@ -385,7 +385,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (3734055479b0):
+*** Images (a0869f6c88f1):
       my-image-name
 Adding cache layer 'heroku/ruby:binruby'
 Adding cache layer 'heroku/ruby:bundler'
@@ -403,7 +403,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-3734055479b0   my-image-name                                latest
+a0869f6c88f1   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -608,7 +608,7 @@ $ pack build my-image-name --path .
 ===> ANALYZING
 Image with name "my-image-name" not found
 ===> DETECTING
-heroku/nodejs   5.7.10
+heroku/nodejs   5.7.11
 heroku/ruby     12.4.1
 heroku/procfile 4.2.3
 ===> RESTORING
@@ -619,25 +619,25 @@ Skipping buildpack layer analysis
 
 - Checking Node.js version
   - Node.js version not specified, using `24.x`
-  - Resolved Node.js version: `24.18.0`
+  - Resolved Node.js version: `24.18.1`
 - Installing Node.js distribution
-  - GET https://nodejs.org/download/release/v24.18.0/node-v24.18.0-linux-x64.tar.gz ... (0.3s)
+  - GET https://nodejs.org/download/release/v24.18.1/node-v24.18.1-linux-x64.tar.gz ... (0.2s)
   - Validating ... (< 0.1s)
   - Extracting .... (1.0s)
   - Verifying checksum
-  - Extracting Node.js `24.18.0 (linux-amd64)`
-  - Installing Node.js `24.18.0 (linux-amd64)` ... (< 0.1s)
+  - Extracting Node.js `24.18.1 (linux-amd64)`
+  - Installing Node.js `24.18.1 (linux-amd64)` ... (< 0.1s)
 - Determining npm package information
   - No npm version requested
   - Using bundled npm version `11.16.0`
-- Done (finished in 1.5s)
+- Done (finished in 1.4s)
 
 ## Heroku Ruby Buildpack
 
 - Ruby version `3.4.9` from `Gemfile.lock`
-  - Installing ..... (2.6s)
+  - Installing .... (1.0s)
 - Bundler version `4.0.5` from `Gemfile.lock`
-  - Running `gem install bundler --version 4.0.5 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.4s)
+  - Running `gem install bundler --version 4.0.5 --install-dir /layers/heroku_ruby/bundler --bindir /layers/heroku_ruby/bundler/bin --force --no-document --env-shebang` ... (0.3s)
 - Bundle install gems
   - Running `BUNDLE_FROZEN="1" BUNDLE_GEMFILE="/workspace/Gemfile" BUNDLE_WITHOUT="development:test" bundle install`
 
@@ -656,8 +656,8 @@ Skipping buildpack layer analysis
       Fetching json 2.19.4
       Fetching logger 1.7.0
       Installing concurrent-ruby 1.3.7
-      Installing logger 1.7.0
       Installing json 2.19.4 with native extensions
+      Installing logger 1.7.0
       Fetching prism 1.9.0
       Installing prism 1.9.0 with native extensions
       Fetching securerandom 0.4.1
@@ -721,14 +721,14 @@ Skipping buildpack layer analysis
       Fetching rack-session 2.1.2
       Installing rack-session 2.1.2
       Fetching rack-test 2.2.0
-      Fetching rackup 2.3.1
       Installing rack-test 2.2.0
-      Fetching pp 0.6.3
+      Fetching rackup 2.3.1
       Installing rackup 2.3.1
-      Fetching psych 5.3.1
+      Fetching pp 0.6.3
       Installing pp 0.6.3
-      Fetching websocket-driver 0.8.1
+      Fetching psych 5.3.1
       Installing psych 5.3.1 with native extensions
+      Fetching websocket-driver 0.8.1
       Installing websocket-driver 0.8.1 with native extensions
       Fetching net-protocol 0.2.2
       Installing net-protocol 0.2.2
@@ -769,14 +769,14 @@ Skipping buildpack layer analysis
       Fetching activemodel 8.1.2.1
       Installing rails-dom-testing 2.3.0
       Installing globalid 1.3.0
-      Fetching actionview 8.1.2.1
       Installing activemodel 8.1.2.1
       Fetching activejob 8.1.2.1
-      Installing actionview 8.1.2.1
+      Fetching actionview 8.1.2.1
       Installing activejob 8.1.2.1
+      Installing actionview 8.1.2.1
       Fetching activerecord 8.1.2.1
-      Fetching actionpack 8.1.2.1
       Installing activerecord 8.1.2.1
+      Fetching actionpack 8.1.2.1
       Installing actionpack 8.1.2.1
       Fetching railties 8.1.2.1
       Fetching actioncable 8.1.2.1
@@ -792,8 +792,8 @@ Skipping buildpack layer analysis
       Installing actionmailbox 8.1.2.1
       Fetching action_text-trix 2.1.18
       Fetching importmap-rails 2.2.3
-      Installing action_text-trix 2.1.18
       Installing importmap-rails 2.2.3
+      Installing action_text-trix 2.1.18
       Fetching actiontext 8.1.2.1
       Installing actiontext 8.1.2.1
       Fetching rails 8.1.2.1
@@ -802,14 +802,14 @@ Skipping buildpack layer analysis
       Gems in the groups 'development' and 'test' were not installed.
       Use `bundle info [gemname]` to see where a bundled gem is installed.
 
-  - Done (34.4s)
+  - Done (32.5s)
   - Running `bundle clean --force` ... (0.2s)
 - Default process detection
   - Running `bundle list` ... (0.1s)
   - Detected rails app (`rails` gem found)
 - Rake assets install
   - Detected rake (`rake` gem found, `Rakefile` found at `/workspace/Rakefile`)
-  - Running `rake -P --trace` .... (1.1s)
+  - Running `rake -P --trace` .... (1.0s)
   - Compiling assets with cache (detected `rake assets:precompile` and `rake assets:clean` via `rake -P`)
   - Creating cache for /workspace/public/assets
   - Creating cache for /workspace/tmp/cache/assets
@@ -837,10 +837,10 @@ Skipping buildpack layer analysis
       Writing rails-ujs-20eaf715.js
       Writing rails-ujs.esm-e925103b.js
 
-  - Done (0.7s)
+  - Done (0.6s)
   - Storing cache for /workspace/public/assets
   - Storing cache for (empty) /workspace/tmp/cache/assets
-- Done (finished in 39.9s)
+- Done (finished in 36.2s)
 
 ## Procfile Buildpack
 
@@ -870,7 +870,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (89552830d6ac):
+*** Images (cc0b1a95bfab):
       my-image-name
 Adding cache layer 'heroku/nodejs:dist'
 Adding cache layer 'heroku/ruby:binruby'
