@@ -29,7 +29,7 @@ jobs:
         with:
           ruby-version: "3.3"
           bundler-cache: true # do run 'bundle install' and cache
-      - uses: buildpacks/github-actions/setup-pack@e3b14c6e906f91da358e01dc2849ce068188107f # v5.12.5
+      - uses: buildpacks/github-actions/setup-pack@c1c71086a0e89a65c04ea113390227fd7f05d9df # v6.0.0
 
       # [CONFIG] add different languages set up here
       - run: |
