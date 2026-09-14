@@ -65,13 +65,13 @@ $ pack builder inspect heroku/builder:26 | awk '/^Buildpacks:/ && !seen {flag=1}
 Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
   heroku/deb-packages        Heroku .deb Packages        1.0.1          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet              Heroku .NET                 1.0.15         https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet              Heroku .NET                 1.0.16         https://github.com/heroku/buildpacks-dotnet
   heroku/go                  Heroku Go                   4.1.0          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.14         https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.14         https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.14         https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.14         https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.7.15         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs              Heroku Node.js              5.7.17         https://github.com/heroku/buildpacks-nodejs
   heroku/php                 Heroku PHP                  1.6.8          https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.3          https://github.com/heroku/buildpacks-procfile
   heroku/python              Heroku Python               6.6.1          https://github.com/heroku/buildpacks-python
@@ -152,12 +152,12 @@ Skipping buildpack layer analysis
   - Selected major version `17` resolves to `17.0.20.1`
 - OpenJDK Installation
   - Downloading and unpacking OpenJDK distribution
-  - Done (1.7s)
+  - Done (1.8s)
 - Applying JDK overlay
   - Skipping (directory `.jdk-overlay` not present)
 - Linking base image certificates as OpenJDK keystore
   - Done
-- Done (finished in 1.7s)
+- Done (finished in 1.8s)
 
 ## Heroku Maven Buildpack
 
@@ -169,47 +169,47 @@ Skipping buildpack layer analysis
       Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
       [INFO] Scanning for projects...
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/4.1.1/spring-boot-starter-parent-4.1.1.pom
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/4.1.1/spring-boot-starter-parent-4.1.1.pom (14 kB at 163 kB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-parent/4.1.1/spring-boot-starter-parent-4.1.1.pom (14 kB at 168 kB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/4.1.1/spring-boot-dependencies-4.1.1.pom
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/4.1.1/spring-boot-dependencies-4.1.1.pom (141 kB at 4.4 MB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-dependencies/4.1.1/spring-boot-dependencies-4.1.1.pom (141 kB at 4.2 MB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/activemq/activemq-bom/6.2.9/activemq-bom-6.2.9.pom
       [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/activemq/activemq-bom/6.2.9/activemq-bom-6.2.9.pom (7.9 kB at 438 kB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/artemis/artemis-bom/2.53.0/artemis-bom-2.53.0.pom
       [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/artemis/artemis-bom/2.53.0/artemis-bom-2.53.0.pom (18 kB at 1.0 MB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/artemis/artemis-project/2.53.0/artemis-project-2.53.0.pom
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/artemis/artemis-project/2.53.0/artemis-project-2.53.0.pom (55 kB at 2.5 MB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/artemis/artemis-project/2.53.0/artemis-project-2.53.0.pom (55 kB at 2.8 MB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/apache/37/apache-37.pom
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/37/apache-37.pom (26 kB at 1.3 MB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/apache/37/apache-37.pom (26 kB at 1.4 MB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-bom/3.27.7/assertj-bom-3.27.7.pom
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-bom/3.27.7/assertj-bom-3.27.7.pom (3.3 kB at 196 kB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/assertj/assertj-bom/3.27.7/assertj-bom-3.27.7.pom (3.3 kB at 209 kB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/zipkin/reporter2/zipkin-reporter-bom/3.5.3/zipkin-reporter-bom-3.5.3.pom
       [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/zipkin/reporter2/zipkin-reporter-bom/3.5.3/zipkin-reporter-bom-3.5.3.pom (6.1 kB at 358 kB/s)
 ...
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.pom
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.pom (2.2 kB at 106 kB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.pom (2.2 kB at 148 kB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.pom
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.pom (7.8 kB at 373 kB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.pom (7.8 kB at 435 kB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/17/plexus-17.pom
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/17/plexus-17.pom (28 kB at 1.2 MB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus/17/plexus-17.pom (28 kB at 1.6 MB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.22/maven-resolver-util-1.9.22.jar
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.22/maven-resolver-util-1.9.22.jar (196 kB at 9.3 MB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-util/1.9.22/maven-resolver-util-1.9.22.jar (196 kB at 14 MB/s)
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.jar
       [INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.jar
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.jar (193 kB at 9.2 MB/s)
-      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.jar (157 kB at 7.5 MB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/4.0.1/plexus-utils-4.0.1.jar (193 kB at 13 MB/s)
+      [INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/resolver/maven-resolver-api/1.9.22/maven-resolver-api-1.9.22.jar (157 kB at 5.6 MB/s)
       [INFO] Installing /workspace/pom.xml to /layers/heroku_maven/repository/com/heroku/java-getting-started/1.0.0-SNAPSHOT/java-getting-started-1.0.0-SNAPSHOT.pom
       [INFO] Installing /workspace/target/java-getting-started-1.0.0-SNAPSHOT.jar to /layers/heroku_maven/repository/com/heroku/java-getting-started/1.0.0-SNAPSHOT/java-getting-started-1.0.0-SNAPSHOT.jar
       [INFO] ------------------------------------------------------------------------
       [INFO] BUILD SUCCESS
       [INFO] ------------------------------------------------------------------------
-      [INFO] Total time:  10.070 s
-      [INFO] Finished at: 2026-09-07T08:29:02Z
+      [INFO] Total time:  9.789 s
+      [INFO] Finished at: 2026-09-14T08:29:33Z
       [INFO] ------------------------------------------------------------------------
 
-  - Done (12.0s)
+  - Done (11.7s)
 - Running `./mvnw dependency:list` quietly
   - Done (5.9s)
-- Done (finished in 17.9s)
+- Done (finished in 17.6s)
 
 ## Procfile Buildpack
 
@@ -230,7 +230,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (2bbccc5f836f):
+*** Images (e4e17a7a4340):
       my-image-name
 Adding cache layer 'heroku/jvm:openjdk'
 Adding cache layer 'heroku/maven:repository'
@@ -245,7 +245,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-2bbccc5f836f   my-image-name                                latest
+e4e17a7a4340   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -292,15 +292,15 @@ Picked up JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=80.0 -Dfile.encoding=UTF-8
 
 :: Built with Spring Boot :: 4.1.1
 
-2026-09-07T08:29:17.226Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Starting GettingStartedApplication v1.0.0-SNAPSHOT using Java 17.0.20.1 with PID 1 (/workspace/target/java-getting-started-1.0.0-SNAPSHOT.jar started by heroku in /workspace)
-2026-09-07T08:29:17.231Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : No active profile set, falling back to 1 default profile: "default"
-2026-09-07T08:29:18.303Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 5006 (http)
-2026-09-07T08:29:18.317Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-09-07T08:29:18.317Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
-2026-09-07T08:29:18.345Z  INFO 1 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1052 ms
-2026-09-07T08:29:18.487Z  INFO 1 --- [           main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
-2026-09-07T08:29:18.797Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 5006 (http) with context path '/'
-2026-09-07T08:29:18.815Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Started GettingStartedApplication in 2.055 seconds (process running for 2.55)
+2026-09-14T08:29:48.136Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Starting GettingStartedApplication v1.0.0-SNAPSHOT using Java 17.0.20.1 with PID 1 (/workspace/target/java-getting-started-1.0.0-SNAPSHOT.jar started by heroku in /workspace)
+2026-09-14T08:29:48.142Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-09-14T08:29:49.244Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 5006 (http)
+2026-09-14T08:29:49.260Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-09-14T08:29:49.261Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-09-14T08:29:49.293Z  INFO 1 --- [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1091 ms
+2026-09-14T08:29:49.440Z  INFO 1 --- [           main] o.s.b.w.a.WelcomePageHandlerMapping      : Adding welcome page template: index
+2026-09-14T08:29:49.803Z  INFO 1 --- [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 5006 (http) with context path '/'
+2026-09-14T08:29:49.820Z  INFO 1 --- [           main] c.heroku.java.GettingStartedApplication  : Started GettingStartedApplication in 2.217 seconds (process running for 2.729)
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 
