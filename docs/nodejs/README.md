@@ -71,11 +71,11 @@ Buildpacks:
   heroku/java                Heroku Java                 7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.15         https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.7.20         https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs              Heroku Node.js              5.8.0          https://github.com/heroku/buildpacks-nodejs
   heroku/php                 Heroku PHP                  1.6.9          https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.3          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               6.6.1          https://github.com/heroku/buildpacks-python
-  heroku/ruby                Heroku Ruby                 12.4.1         https://github.com/heroku/buildpacks-ruby
+  heroku/python              Heroku Python               6.7.0          https://github.com/heroku/buildpacks-python
+  heroku/ruby                Heroku Ruby                 12.4.2         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.15         https://github.com/heroku/buildpacks-jvm
 ```
@@ -138,7 +138,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/nodejs   5.7.20
+heroku/nodejs   5.8.0
 heroku/procfile 4.2.3
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -150,65 +150,75 @@ Skipping buildpack layer analysis
   - Detected Node.js version range: `22.x || 24.x || 26.x`
   - Resolved Node.js version: `26.10.0`
 - Installing Node.js distribution
-  - GET https://nodejs.org/download/release/v26.10.0/node-v26.10.0-linux-x64.tar.gz ... (0.3s)
+  - GET https://nodejs.org/download/release/v26.10.0/node-v26.10.0-linux-x64.tar.gz ... (0.2s)
   - Validating ... (< 0.1s)
-  - Extracting .... (1.0s)
+  - Extracting .... (1.1s)
   - Verifying checksum
   - Extracting Node.js `26.10.0 (linux-amd64)`
   - Installing Node.js `26.10.0 (linux-amd64)` ... (< 0.1s)
 - Determining npm package information
   - Found `engines.npm` version `12.x` declared in `package.json`
-  - GET https://registry.npmjs.org/npm ... (< 0.1s)
-  - Resolved npm version `12.x` to `12.1.0`
+  - GET https://registry.npmjs.org/npm ... (0.1s)
+  - Resolved npm version `12.x` to `12.2.0`
 - Installing npm
-  - GET https://registry.npmjs.org/npm/-/npm-12.1.0.tgz ... (< 0.1s)
+  - GET https://registry.npmjs.org/npm/-/npm-12.2.0.tgz ... (< 0.1s)
   - Extracting ... (0.1s)
-  - Successfully installed `npm@12.1.0`
+  - Successfully installed `npm@12.2.0`
 - Installing node modules
-  - Using npm version `12.1.0`
+  - Using npm version `12.2.0`
   - Creating npm cache
   - Configuring npm cache directory
   - Running `npm ci`
 
       npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
-      added 345 packages, and audited 346 packages in 2s
+      added 345 packages, and audited 346 packages in 3s
 
       68 packages are looking for funding
         run `npm fund` for details
 
-      found 0 vulnerabilities
+      1 high severity vulnerability
+
+      To address all issues, run:
+        npm audit fix
+
+      Run `npm audit` for details.
       npm warn install-scripts 2 packages had install scripts blocked because they are not covered by allowScripts:
       npm warn install-scripts   @parcel/watcher@2.6.0 (install: node scripts/build-from-source.js)
       npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
       npm warn install-scripts
       npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
 
-  - Done (2.3s)
+  - Done (3.2s)
 - Running scripts
   - No build scripts found
 - Pruning dev dependencies
   - Running `npm prune`
 
 
-      up to date, audited 346 packages in 513ms
+      up to date, audited 346 packages in 656ms
 
       68 packages are looking for funding
         run `npm fund` for details
 
-      found 0 vulnerabilities
+      1 high severity vulnerability
+
+      To address all issues, run:
+        npm audit fix
+
+      Run `npm audit` for details.
       npm warn install-scripts 2 packages had install scripts blocked because they are not covered by allowScripts:
       npm warn install-scripts   @parcel/watcher@2.6.0 (install: node-gyp rebuild)
       npm warn install-scripts   unrs-resolver@1.12.2 (postinstall: node postinstall.js)
       npm warn install-scripts
       npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
 
-  - Done (0.5s)
+  - Done (0.7s)
 - Configuring default processes
   - Skipping default web process (Procfile detected)
 - Removing non-deterministic build artifacts before export
   - Nothing to cleanup
-- Done (finished in 5.1s)
+- Done (finished in 6.3s)
 
 ## Procfile Buildpack
 
@@ -233,7 +243,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (f6eb8519c230):
+*** Images (50a401e1493a):
       my-image-name
 Adding cache layer 'heroku/nodejs:dist'
 Adding cache layer 'heroku/nodejs:npm_cache'
@@ -250,7 +260,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-f6eb8519c230   my-image-name                                latest
+50a401e1493a   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -264,7 +274,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/nodejs   5.7.20
+heroku/nodejs   5.8.0
 heroku/procfile 4.2.3
 ===> RESTORING
 Skipping buildpack layer analysis
