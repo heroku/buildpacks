@@ -64,17 +64,17 @@ You can view the contents of a builder via the command `pack builder inspect`. F
 $ pack builder inspect heroku/builder:26 | awk '/^Buildpacks:/ && !seen {flag=1} /^Detection Order:/ {flag=0; seen=1} flag'
 Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
-  heroku/deb-packages        Heroku .deb Packages        1.0.1          https://github.com/heroku/buildpacks-deb-packages
+  heroku/deb-packages        Heroku .deb Packages        1.0.2          https://github.com/heroku/buildpacks-deb-packages
   heroku/dotnet              Heroku .NET                 1.0.16         https://github.com/heroku/buildpacks-dotnet
-  heroku/go                  Heroku Go                   4.1.0          https://github.com/heroku/buildpacks-go
+  heroku/go                  Heroku Go                   4.1.2          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.15         https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.8.0          https://github.com/heroku/buildpacks-nodejs
-  heroku/php                 Heroku PHP                  1.6.9          https://github.com/heroku/buildpacks-php
-  heroku/procfile            Heroku Procfile             4.2.3          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               6.7.0          https://github.com/heroku/buildpacks-python
+  heroku/nodejs              Heroku Node.js              5.8.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/php                 Heroku PHP                  1.6.10         https://github.com/heroku/buildpacks-php
+  heroku/procfile            Heroku Procfile             4.2.4          https://github.com/heroku/buildpacks-procfile
+  heroku/python              Heroku Python               6.8.0          https://github.com/heroku/buildpacks-python
   heroku/ruby                Heroku Ruby                 12.4.2         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.15         https://github.com/heroku/buildpacks-jvm
@@ -138,8 +138,8 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/go       4.1.0
-heroku/procfile 4.2.3
+heroku/go       4.1.2
+heroku/procfile 4.2.4
 ===> RESTORING
 Skipping buildpack layer analysis
 ===> BUILDING
@@ -148,9 +148,9 @@ Skipping buildpack layer analysis
 
 - Reading build configuration
   - Detected Go version requirement: =1.27
-  - Resolved Go version: go1.27.1 (linux-amd64)
+  - Resolved Go version: go1.27.2 (linux-amd64)
 - Installing Go distribution
-  - Installing go1.27.1 (linux-amd64) from https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
+  - Installing go1.27.2 (linux-amd64) from https://go.dev/dl/go1.27.2.linux-amd64.tar.gz
 - Building Go binaries
   - Creating new Go modules cache
   - Creating Go build cache
@@ -170,23 +170,23 @@ Skipping buildpack layer analysis
       go: downloading go.mongodb.org/mongo-driver/v2 v2.9.1
       go: downloading google.golang.org/protobuf v1.36.12
       go: downloading golang.org/x/sys v0.48.0
-      go: downloading github.com/quic-go/qpack v0.6.0
       go: downloading github.com/gabriel-vasile/mimetype v1.4.15
       go: downloading github.com/go-playground/universal-translator v0.18.2
       go: downloading github.com/leodido/go-urn v1.5.0
       go: downloading golang.org/x/crypto v0.57.0
       go: downloading golang.org/x/text v0.42.0
+      go: downloading github.com/quic-go/qpack v0.6.0
       go: downloading github.com/go-playground/locales v0.14.2
       github.com/heroku/go-getting-started
 
-  - Done (1.6s)
+  - Done (1.4s)
 - Building packages:
   - github.com/heroku/go-getting-started
   - Running `go install -tags heroku github.com/heroku/go-getting-started`
 
   - Done (29.7s)
 - Skipping launch process registration (Procfile detected)
-- Done (finished in 34.4s)
+- Done (finished in 33.0s)
 
 ## Procfile Buildpack
 
@@ -206,7 +206,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (024e92ec2f00):
+*** Images (8fc7c719607f):
       my-image-name
 Adding cache layer 'heroku/go:go_build'
 Adding cache layer 'heroku/go:go_deps'
@@ -222,7 +222,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-024e92ec2f00   my-image-name                                latest
+8fc7c719607f   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -236,8 +236,8 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/go       4.1.0
-heroku/procfile 4.2.3
+heroku/go       4.1.2
+heroku/procfile 4.2.4
 ===> RESTORING
 Skipping buildpack layer analysis
 ```
@@ -264,10 +264,10 @@ $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
  - using code:	gin.SetMode(gin.ReleaseMode)
 
 [GIN-debug] Loaded HTML Templates (4): 
+	- 
 	- header.tmpl.html
 	- index.tmpl.html
 	- nav.tmpl.html
-	- 
 
 [GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (2 handlers)
 [GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (2 handlers)
