@@ -65,17 +65,17 @@ $ pack builder inspect heroku/builder:26 | awk '/^Buildpacks:/ && !seen {flag=1}
 Buildpacks:
   ID                         NAME                        VERSION        HOMEPAGE
   heroku/deb-packages        Heroku .deb Packages        1.0.2          https://github.com/heroku/buildpacks-deb-packages
-  heroku/dotnet              Heroku .NET                 1.0.16         https://github.com/heroku/buildpacks-dotnet
+  heroku/dotnet              Heroku .NET                 1.1.0          https://github.com/heroku/buildpacks-dotnet
   heroku/go                  Heroku Go                   4.1.2          https://github.com/heroku/buildpacks-go
   heroku/gradle              Heroku Gradle               7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/java                Heroku Java                 7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/jvm                 Heroku OpenJDK              7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/maven               Heroku Maven                7.0.15         https://github.com/heroku/buildpacks-jvm
-  heroku/nodejs              Heroku Node.js              5.8.2          https://github.com/heroku/buildpacks-nodejs
+  heroku/nodejs              Heroku Node.js              5.8.3          https://github.com/heroku/buildpacks-nodejs
   heroku/php                 Heroku PHP                  1.6.10         https://github.com/heroku/buildpacks-php
   heroku/procfile            Heroku Procfile             4.2.4          https://github.com/heroku/buildpacks-procfile
-  heroku/python              Heroku Python               6.8.0          https://github.com/heroku/buildpacks-python
-  heroku/ruby                Heroku Ruby                 12.4.2         https://github.com/heroku/buildpacks-ruby
+  heroku/python              Heroku Python               6.9.0          https://github.com/heroku/buildpacks-python
+  heroku/ruby                Heroku Ruby                 12.5.0         https://github.com/heroku/buildpacks-ruby
   heroku/sbt                 Heroku sbt                  7.0.15         https://github.com/heroku/buildpacks-jvm
   heroku/scala               Heroku Scala                7.0.15         https://github.com/heroku/buildpacks-jvm
 ```
@@ -138,7 +138,7 @@ $ pack build my-image-name --path .
 Image with name "my-image-name" not found
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/dotnet   1.0.16
+heroku/dotnet   1.1.0
 heroku/procfile 4.2.4
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -150,9 +150,9 @@ Skipping buildpack layer analysis
   - Detected .NET solution: `/workspace/GettingStarted.slnx`
   - Inferring version requirement from `/workspace/GettingStarted.slnx`
   - Detected version requirement: `^10.0`
-  - Resolved .NET SDK version `10.0.401` (linux-amd64)
+  - Resolved .NET SDK version `10.0.402` (linux-amd64)
 - SDK installation
-  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-linux-x64.tar.gz ... (0.7s)
+  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.402/dotnet-sdk-10.0.402-linux-x64.tar.gz ... (0.9s)
   - Verifying SDK checksum
   - Installing SDK
 - Restore .NET tools
@@ -161,7 +161,7 @@ Skipping buildpack layer analysis
 
       Tool 'dotnet-ef' (version '8.0.31') was restored. Available commands: dotnet-ef
 
-      A newer version of tool 'dotnet-ef' is available (version '10.0.12'). Consider updating your manifest file.
+      A newer version of tool 'dotnet-ef' is available (version '10.0.13'). Consider updating your manifest file.
 
       Restore was successful.
 
@@ -172,7 +172,7 @@ Skipping buildpack layer analysis
         Determining projects to restore...
       /workspace/Frontend/Frontend.csproj : warning NU1901: Package 'NuGet.Packaging' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg [/workspace/GettingStarted.slnx]
       /workspace/Frontend/Frontend.csproj : warning NU1901: Package 'NuGet.Protocol' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg [/workspace/GettingStarted.slnx]
-        Restored /workspace/Frontend/Frontend.csproj (in 3.18 sec).
+        Restored /workspace/Frontend/Frontend.csproj (in 2.73 sec).
       /workspace/Frontend/Frontend.csproj : warning NU1901: Package 'NuGet.Packaging' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg
       /workspace/Frontend/Frontend.csproj : warning NU1901: Package 'NuGet.Protocol' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg
         Frontend -> /tmp/build_artifacts/bin/Frontend/release_linux-x64/Frontend.dll
@@ -184,13 +184,13 @@ Skipping buildpack layer analysis
         Done. Migrations Bundle: /workspace/Frontend/bin/publish/efbundle
         Don't forget to copy appsettings.json alongside your bundle if you need it to apply migrations.
 
-  - Done (21.0s)
+  - Done (19.0s)
 - Process types
   - Detecting process types from published artifacts
   - Found `web`: bash -c cd Frontend/bin/publish; ./Frontend --urls http://*:$PORT
   - Procfile detected
   - Skipping process type registration (add process types to your Procfile as needed)
-- Done (finished in 27.1s)
+- Done (finished in 24.1s)
 
 ## Procfile Buildpack
 
@@ -210,7 +210,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (e9c76db17aef):
+*** Images (7ab48f5b3f9d):
       my-image-name
 Adding cache layer 'heroku/dotnet:nuget-cache'
 Adding cache layer 'heroku/dotnet:sdk'
@@ -225,7 +225,7 @@ Verify that you see “Successfully built image my-image-name” at the end of t
 
 ```
 $ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" | grep my-image-name
-e9c76db17aef   my-image-name                                latest
+7ab48f5b3f9d   my-image-name                                latest
 ```
 <!-- STOP. This document is autogenerated. Do not manually modify. See the top of the doc for more details. -->
 ## What does `pack build` do?
@@ -239,7 +239,7 @@ When you run `pack build` with a builder, each buildpack runs a detection script
 ```
 ===> DETECTING
 2 of 3 buildpacks participating
-heroku/dotnet   1.0.16
+heroku/dotnet   1.1.0
 heroku/procfile 4.2.4
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -265,7 +265,7 @@ $ docker run -it --rm --env PORT=5006 -p 5006:5006 my-image-name
 warn: Microsoft.AspNetCore.DataProtection.Repositories.FileSystemXmlRepository[60]
       Storing keys in a directory '/home/heroku/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
 warn: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[35]
-      No XML encryptor configured. Key {a339d078-e9f3-4971-9856-df93762a37f4} may be persisted to storage in unencrypted form.
+      No XML encryptor configured. Key {f98ae478-76a2-4df8-923d-e3e4fb3cc8f0} may be persisted to storage in unencrypted form.
 info: Microsoft.Hosting.Lifetime[14]
       Now listening on: http://[::]:5006
 info: Microsoft.Hosting.Lifetime[0]
@@ -417,8 +417,8 @@ $ pack build my-image-name --path .
 ===> ANALYZING
 Image with name "my-image-name" not found
 ===> DETECTING
-heroku/python   6.8.0
-heroku/dotnet   1.0.16
+heroku/python   6.9.0
+heroku/dotnet   1.1.0
 heroku/procfile 4.2.4
 ===> RESTORING
 Skipping buildpack layer analysis
@@ -445,9 +445,9 @@ Running 'pip install -r requirements.txt'
   - Detected .NET solution: `/workspace/GettingStarted.slnx`
   - Inferring version requirement from `/workspace/GettingStarted.slnx`
   - Detected version requirement: `^10.0`
-  - Resolved .NET SDK version `10.0.401` (linux-amd64)
+  - Resolved .NET SDK version `10.0.402` (linux-amd64)
 - SDK installation
-  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-linux-x64.tar.gz ... (0.7s)
+  - Downloading SDK from https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.402/dotnet-sdk-10.0.402-linux-x64.tar.gz ... (0.7s)
   - Verifying SDK checksum
   - Installing SDK
 - Restore .NET tools
@@ -456,18 +456,18 @@ Running 'pip install -r requirements.txt'
 
       Tool 'dotnet-ef' (version '8.0.31') was restored. Available commands: dotnet-ef
 
-      A newer version of tool 'dotnet-ef' is available (version '10.0.12'). Consider updating your manifest file.
+      A newer version of tool 'dotnet-ef' is available (version '10.0.13'). Consider updating your manifest file.
 
       Restore was successful.
 
-  - Done (1.5s)
+  - Done (1.6s)
 - Publish app
   - Running `dotnet publish /workspace/GettingStarted.slnx --runtime linux-x64 "-p:PublishDir=bin/publish" --artifacts-path /tmp/build_artifacts`
 
         Determining projects to restore...
       /workspace/Frontend/Frontend.csproj : warning NU1901: Package 'NuGet.Packaging' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg [/workspace/GettingStarted.slnx]
       /workspace/Frontend/Frontend.csproj : warning NU1901: Package 'NuGet.Protocol' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg [/workspace/GettingStarted.slnx]
-        Restored /workspace/Frontend/Frontend.csproj (in 3.09 sec).
+        Restored /workspace/Frontend/Frontend.csproj (in 4.59 sec).
       /workspace/Frontend/Frontend.csproj : warning NU1901: Package 'NuGet.Packaging' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg
       /workspace/Frontend/Frontend.csproj : warning NU1901: Package 'NuGet.Protocol' 6.11.0 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg
         Frontend -> /tmp/build_artifacts/bin/Frontend/release_linux-x64/Frontend.dll
@@ -479,13 +479,13 @@ Running 'pip install -r requirements.txt'
         Done. Migrations Bundle: /workspace/Frontend/bin/publish/efbundle
         Don't forget to copy appsettings.json alongside your bundle if you need it to apply migrations.
 
-  - Done (20.8s)
+  - Done (21.4s)
 - Process types
   - Detecting process types from published artifacts
   - Found `web`: bash -c cd Frontend/bin/publish; ./Frontend --urls http://*:$PORT
   - Procfile detected
   - Skipping process type registration (add process types to your Procfile as needed)
-- Done (finished in 26.8s)
+- Done (finished in 26.1s)
 
 ## Procfile Buildpack
 
@@ -507,7 +507,7 @@ Adding label 'io.buildpacks.project.metadata'
 Adding label 'io.buildpacks.exec-env'
 Setting default process type 'web'
 Saving my-image-name...
-*** Images (8b120433958d):
+*** Images (519dea481d4a):
       my-image-name
 Adding cache layer 'heroku/python:pip'
 Adding cache layer 'heroku/python:pip-cache'
