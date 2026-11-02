@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   test-rundoc:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     env:
       BUNDLE_GEMFILE: .rundoc-workspace/Gemfile
     strategy:
@@ -27,7 +27,7 @@ jobs:
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
+          ruby-version: "4.0"
           bundler-cache: true # do run 'bundle install' and cache
       - uses: buildpacks/github-actions/setup-pack@324e5c43145b68f60bf74a269f5ba7b2969e03db # v6.2.1
 
